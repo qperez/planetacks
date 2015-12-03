@@ -10,6 +10,6 @@ public class Appli {
 
             }
         });*/
-        System.out.println("Hello world, it's was the first commit in the space beacause ponies are the most beautiful. JOHN CEEEEEEEEEENAAAAAAAAA");
+        System.out.println("Hello world, it's was the first commit in the space beacause ponies are the most beautiful. JOHN CEEEEEEEEEENAAAAAAAAAAAA");
     }
 }
