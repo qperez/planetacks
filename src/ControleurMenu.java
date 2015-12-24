@@ -5,14 +5,25 @@ import java.awt.event.ActionEvent;
  */
 public class ControleurMenu extends Controleur {
 
-    public ControleurMenu(Fenetre fenetre){
-        super(fenetre);
+    public ControleurMenu(Fenetre fenetre, Modele modele){
+        super(fenetre, modele);
     }
 
     public void actionPerformed(ActionEvent e){
-
-        if(fenetre.itemQuitter == e.getSource()) {
+        if(fenetre.getItemQuitter() == e.getSource()) {
             System.exit(0);
+        }
+
+        else if (fenetre.getItemNouveauSysteme() == e.getSource()) {
+
+        }
+
+        else if (fenetre.getItemSauvegarder() == e.getSource()) {
+            
+        }
+
+        else if (fenetre.getItemRestaurer() == e.getSource()) {
+
         }
     }
 }
