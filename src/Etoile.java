@@ -16,7 +16,7 @@ public class Etoile extends Astre {
      * avec les param&egrave;tres du constructeur.
      * </p>
      *
-     * @param nom       Le nom de l'étoile
+     * @param nom Le nom de l'étoile
      * @see Astre#nom
      * @see Etoile#positionX
      * @see Etoile#positionY

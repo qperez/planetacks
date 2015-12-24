@@ -15,14 +15,30 @@ import java.awt.*;
  * </ul>
  */
 public class Fenetre extends JFrame{
+
+    //Constante permettant de parametrer le chemin relatif aux ressources images nécessaires
     private static final String PATH_RESSOURCES_IMG = "./resources/img/";
+
+
 
     private Modele modele;
 
-    private JMenuItem itemQuitter;
+    protected JMenuItem itemQuitter;
     private JMenuItem itemNouveauSysteme;
     private JMenuItem itemSauvegarder;
 
+    private ControleurMenu controleurMenu;
+
+    /**
+     * Constructeur Fenetre.
+     * <p>
+     * A la construction d'un objet Fenetre, la Fenetre est initinitialis&eacute;e
+     * avec commme param&egrave;tres un Modele.
+     * </p>
+     *
+     * @param modele le modele servant à la construction
+     * @see Fenetre#modele
+     */
     public Fenetre(Modele modele){
         this.modele = modele;
         setIconImage(new ImageIcon(PATH_RESSOURCES_IMG+"icone_appli.jpg").getImage()); //Affiche une icone d'application
@@ -38,20 +54,28 @@ public class Fenetre extends JFrame{
 
     }
 
+    /**
+     * Fonction permettant d'initialiser les éléments graphiques Java Swing,
+     * ainsi que l'ajout des Actions Listener sur les éléments
+     * */
     private void initAttributs() {
         itemQuitter = new JMenuItem("Quitter", new ImageIcon(PATH_RESSOURCES_IMG+"exit.png"));
         itemNouveauSysteme = new JMenuItem("Nouveau système planétaire");
         itemSauvegarder = new JMenuItem("Sauvegarder le système planétaire");
     }
 
+    /**
+     * Fonction permettant de créer la barre de menu (JMenuBar)
+     * @return la barre de menu JMenuBar
+     * */
     private JMenuBar creerMenu() {
         JMenuBar menuBar = new JMenuBar();
         JMenu menuFichier = new JMenu("Fichier");
         JMenu menuOptions = new JMenu("Outils");
         JMenu menuSon = new JMenu("Son");
 
-        menuFichier.add(itemSauvegarder);
         menuFichier.add(itemNouveauSysteme);
+        menuFichier.add(itemSauvegarder);
         menuFichier.add(itemQuitter);
 
         menuBar.add(menuFichier);
@@ -59,9 +83,18 @@ public class Fenetre extends JFrame{
         menuBar.add(menuSon);
 
         setJMenuBar(menuBar);
+
+        controleurMenu = new ControleurMenu(this);
+        itemQuitter.addActionListener(controleurMenu);
+
+
+
         return menuBar;
     }
 
+    /**
+     * Fonction permettant d'ajouter les différents éléments graphiques à la JFrame
+     * */
     private void creerVue() {
         JPanel jpanGlobal = new JPanel(); //JPanel global de la fenêtre
         setContentPane(jpanGlobal);
