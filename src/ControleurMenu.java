@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 
 /**
@@ -14,15 +15,22 @@ public class ControleurMenu extends Controleur {
             System.exit(0);
         }
 
-        else if (fenetre.getItemNouveauSysteme() == e.getSource()) {
-
+        else if (fenetre.getItemRestaurer() == e.getSource()) {
+            int choix = FenetreDialogue.confirmationRestauration();
+            if(choix == JOptionPane.YES_OPTION){
+                fenetre.restaurationAffichage(new Modele());
+            }
         }
 
         else if (fenetre.getItemSauvegarder() == e.getSource()) {
             
         }
 
-        else if (fenetre.getItemRestaurer() == e.getSource()) {
+        else if (fenetre.getItemSonOn() == e.getSource()) {
+
+        }
+
+        else if (fenetre.getItemSonOff() == e.getSource()) {
 
         }
     }

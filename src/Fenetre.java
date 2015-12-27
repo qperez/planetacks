@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * Created by quentin on 23/12/15.
@@ -18,16 +17,21 @@ public class Fenetre extends JFrame{
 
     //Constante permettant de parametrer le chemin relatif aux ressources images nécessaires
     private static final String PATH_RESSOURCES_IMG = "./resources/img/";
-
+    private static final String PATH_RESSOURCES_SOUNDS = "./resources/sounds/";
 
 
     private Modele modele;
 
-    protected JMenuItem itemQuitter;
-    private JMenuItem itemNouveauSysteme;
+    private JMenuItem itemQuitter;
+    private JMenuItem itemRestaurer;
     private JMenuItem itemSauvegarder;
 
+    private JMenuItem itemSonOn;
+    private JMenuItem itemSonOff;
+
     private ControleurMenu controleurMenu;
+
+    private Audio audio;
 
     /**
      * Constructeur Fenetre.
@@ -51,7 +55,7 @@ public class Fenetre extends JFrame{
         setVisible(true); //Affiche la fenêtre
         setResizable(false); //Permet de ne pas resizer la fenêtre
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Gère la fermeture
-
+        audio.genererSon(PATH_RESSOURCES_SOUNDS+"star_wars_theme.wav");
     }
 
     /**
@@ -60,8 +64,13 @@ public class Fenetre extends JFrame{
      * */
     private void initAttributs() {
         itemQuitter = new JMenuItem("Quitter", new ImageIcon(PATH_RESSOURCES_IMG+"exit.png"));
-        itemNouveauSysteme = new JMenuItem("Nouveau système planétaire");
+        itemRestaurer = new JMenuItem("Nouveau système planétaire");
         itemSauvegarder = new JMenuItem("Sauvegarder le système planétaire");
+
+        itemSonOn = new JMenuItem("Activer le son");
+        itemSonOff = new JMenuItem("Couper le son");
+
+        audio = new Audio();
     }
 
     /**
@@ -74,9 +83,12 @@ public class Fenetre extends JFrame{
         JMenu menuOptions = new JMenu("Outils");
         JMenu menuSon = new JMenu("Son");
 
-        menuFichier.add(itemNouveauSysteme);
+        menuFichier.add(itemRestaurer);
         menuFichier.add(itemSauvegarder);
         menuFichier.add(itemQuitter);
+
+        menuSon.add(itemSonOn);
+        menuSon.add(itemSonOff);
 
         menuBar.add(menuFichier);
         menuBar.add(menuOptions);
@@ -84,10 +96,13 @@ public class Fenetre extends JFrame{
 
         setJMenuBar(menuBar);
 
-        controleurMenu = new ControleurMenu(this);
+        //Création du controleur du menu et ajout des actions listener sur les items
+        controleurMenu = new ControleurMenu(this, modele);
+        itemRestaurer.addActionListener(controleurMenu);
         itemQuitter.addActionListener(controleurMenu);
 
-
+        itemSonOn.addActionListener(controleurMenu);
+        itemSonOff.addActionListener(controleurMenu);
 
         return menuBar;
     }
@@ -99,5 +114,60 @@ public class Fenetre extends JFrame{
         JPanel jpanGlobal = new JPanel(); //JPanel global de la fenêtre
         setContentPane(jpanGlobal);
     }
+
+    /**
+     * Fonction r&eacute;initialisant l'affichage de la JFrame
+     */
+    public void restaurationAffichage(Modele modele) {
+        setVisible(false);
+        initAttributs();
+        getContentPane().removeAll();
+        creerVue();
+        creerMenu();
+        setSize(1000,700); //Fixe la taille par défaut
+        add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG+"fond_voielact_jpanel.jpg")));
+        setVisible(true);
+    }
+
+    public Modele getModele() {
+        return modele;
+    }
+
+    public Audio getAudio() {
+        return audio;
+    }
+
+    /**
+     * Retourne le JMenuItem permettant de quitter l'application
+     * @return Item quitter
+     */
+    public JMenuItem getItemQuitter() {
+        return itemQuitter;
+    }
+
+    /**
+     * Retourne le JMenuItem permettant de restaurer le système planétaire
+     * @return Item restaurer
+     */
+    public JMenuItem getItemRestaurer() {
+        return itemRestaurer;
+    }
+
+    /**
+     * Retourne le JMenuItem permettant de sauvegarder
+     * @return Item sauvegarder
+     */
+    public JMenuItem getItemSauvegarder() {
+        return itemSauvegarder;
+    }
+
+    public JMenuItem getItemSonOn() {
+        return itemSonOn;
+    }
+
+    public JMenuItem getItemSonOff() {
+        return itemSonOff;
+    }
+
 
 }
