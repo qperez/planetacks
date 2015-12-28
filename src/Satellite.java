@@ -24,6 +24,7 @@ public class Satellite extends Astre{
      * </p>
      *
      * @param nom       Le nom du satellite
+     * @param nomImage  Le nom de l'image du satellite
      * @param demiGrandAxe Taille du demi-grand axe
      * @param demiPetitAxe Taille du demi-petit axe
      * @param periode periode de révolution de l'astre
@@ -35,14 +36,15 @@ public class Satellite extends Astre{
      * @see Satellite#periode
      * @see Satellite#astre
      */
-    public Satellite(String nom,
+    public Satellite(String nom, String nomImage,
                      int demiGrandAxe, int demiPetitAxe,
                      int periode, Astre astre) {
-        super(nom, astre.getPositionX(), astre.getPositionY());
+        super(nom, nomImage, astre.getPositionX(), astre.getPositionY());
         this.demiGrandAxe = demiGrandAxe;
         this.demiPetitAxe = demiPetitAxe;
         this.periode = periode;
         this.astre = astre;
+        this.astre.ajouterSatellite(this);
     }
 
     /**
@@ -127,6 +129,10 @@ public class Satellite extends Astre{
         int x = (int) (demiGrandAxe * Math.cos(t/periode) * astre.getPositionX());
         setPositionX(x);
         return x;
+    }
+
+    public String toString() {
+        return getNom();
     }
 
     public int calculPositionSatelliteY(int t) {

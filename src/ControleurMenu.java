@@ -38,7 +38,7 @@ public class ControleurMenu extends Controleur {
         }
 
         else if (fenetre.getItemNouveauSatellite() == e.getSource()) {
-            FenetreDialogue.nouveauSatellite();
+            FenetreDialogue.nouveauSatellite(fenetre);
         }
 
         else if (fenetre.getItemNouvelleEtoile() == e.getSource()) {

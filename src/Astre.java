@@ -1,3 +1,7 @@
+import javax.swing.tree.DefaultMutableTreeNode;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 /**
  * <b>Classe permettant de mod&eacute;liser un astre.</b>
  * Un Astre est caract&eacute;ris&eacute; par les informations suivantes :
@@ -8,8 +12,10 @@
 public class Astre {
 
     private String nom;
+    private String nomImage;
     private int positionX;
     private int positionY;
+    ArrayList<Satellite> listeSatellites;
 
     /**
      * Constructeur Astre.
@@ -26,10 +32,12 @@ public class Astre {
      * @see Astre#positionX
      * @see Astre#positionY
      */
-    public Astre(String nom, int positionX, int positionY){
+    public Astre(String nom, String nomImage, int positionX, int positionY){
         this.nom = nom;
+        this.nomImage = nomImage;
         this.positionX = positionX;
         this.positionY = positionY;
+        this.listeSatellites = new ArrayList<Satellite>();
     }
 
     /**
@@ -49,6 +57,24 @@ public class Astre {
      */
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    /**
+     * Retourne le nom de l'image de l'astre
+     * @return Nom de l'image de l'astre
+     */
+    public String getNomImage() {
+        return nomImage;
+    }
+
+    public DefaultMutableTreeNode getArbreSatellites() {
+        Iterator<Satellite> it = this.getListeSatellites().iterator();
+        DefaultMutableTreeNode branche = new DefaultMutableTreeNode();
+        while (it.hasNext()) {
+            Satellite s = it.next();
+            branche.add(s.getArbreSatellites());
+        }
+        return branche;
     }
 
     /**
@@ -87,5 +113,17 @@ public class Astre {
      */
     public void setPositionY(int positionY) {
         this.positionY = positionY;
+    }
+
+    public ArrayList<Satellite> getListeSatellites() {
+        return listeSatellites;
+    }
+
+    public String toString() {
+        return this.nom;
+    }
+
+    public void ajouterSatellite(Satellite s) {
+        this.listeSatellites.add(s);
     }
 }

@@ -1,3 +1,8 @@
+import javax.swing.tree.DefaultMutableTreeNode;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 /**
  * <b>Classe permettant de mod&eacute;liser une étoile.</b>
  * Une Etoile est caract&eacute;ris&eacute; par les informations suivantes :
@@ -21,8 +26,18 @@ public class Etoile extends Astre {
      * @see Etoile#positionX
      * @see Etoile#positionY
      */
-    public Etoile(String nom, int positionX, int positionY) {
-        super(nom, positionX, positionY);
+
+    public Etoile(String nom, String nomImage, int positionX, int positionY) {
+        super(nom, nomImage, positionX, positionY);
+    }
+
+    public Etoile(String nom, String nomImage, int positionX, int positionY, ArrayList<Satellite> listeSatellites) {
+        super(nom, nomImage, positionX, positionY);
+        this.listeSatellites = listeSatellites;
+    }
+
+    public String toString() {
+        return getNom();
     }
 }
 
