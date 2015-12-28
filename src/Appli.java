@@ -11,6 +11,6 @@ public class Appli {
                 Fenetre fenetre = new Fenetre(modele);
             }
         });
-        System.out.println("Hello world, it's was the first commit in the space beacause ponies are the most beautiful");
+        System.out.println("Hello world, it's was the first commit in the space because ponies are the most beautiful");
     }
 }

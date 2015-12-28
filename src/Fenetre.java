@@ -26,6 +26,9 @@ public class Fenetre extends JFrame{
     private JMenuItem itemRestaurer;
     private JMenuItem itemSauvegarder;
 
+    private JMenuItem itemNouvelleEtoile;
+    private JMenuItem itemNouveauSatellite;
+
     private JMenuItem itemSonOn;
     private JMenuItem itemSonOff;
 
@@ -49,9 +52,10 @@ public class Fenetre extends JFrame{
         initAttributs();
         creerVue();
         creerMenu();
-        setSize(1000,700); //Fixe la taille par défaut
+        setSize(1024,768); //Fixe la taille par défaut
         setTitle("Planethacks : système planétaire");
-        add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG+"fond_voielact_jpanel.jpg"))); //ajout de l'image de fond de la Jframe
+        // add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG+"fond_voielact_jpanel.jpg"))); //ajout de l'image de fond de la Jframe
+        add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG+"backscreen.jpg")));
         setVisible(true); //Affiche la fenêtre
         setResizable(false); //Permet de ne pas resizer la fenêtre
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Gère la fermeture
@@ -66,6 +70,9 @@ public class Fenetre extends JFrame{
         itemQuitter = new JMenuItem("Quitter", new ImageIcon(PATH_RESSOURCES_IMG+"exit.png"));
         itemRestaurer = new JMenuItem("Nouveau système planétaire");
         itemSauvegarder = new JMenuItem("Sauvegarder le système planétaire");
+
+        itemNouvelleEtoile = new JMenuItem("Nouvelle étoile");
+        itemNouveauSatellite = new JMenuItem("Nouveau satellite");
 
         itemSonOn = new JMenuItem("Activer le son");
         itemSonOff = new JMenuItem("Couper le son");
@@ -86,6 +93,9 @@ public class Fenetre extends JFrame{
         menuFichier.add(itemRestaurer);
         menuFichier.add(itemSauvegarder);
         menuFichier.add(itemQuitter);
+
+        menuOptions.add(itemNouvelleEtoile);
+        menuOptions.add(itemNouveauSatellite);
 
         menuSon.add(itemSonOn);
         menuSon.add(itemSonOff);
@@ -118,16 +128,17 @@ public class Fenetre extends JFrame{
     /**
      * Fonction r&eacute;initialisant l'affichage de la JFrame
      */
-    public void restaurationAffichage(Modele modele) {
+    /* public void restaurationAffichage(Modele modele) {
         setVisible(false);
         initAttributs();
         getContentPane().removeAll();
         creerVue();
         creerMenu();
-        setSize(1000,700); //Fixe la taille par défaut
-        add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG+"fond_voielact_jpanel.jpg")));
+        setSize(1024,768); //Fixe la taille par défaut
+        //add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG+"fond_voielact_jpanel.jpg")));
+        add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG+"backscreen.jpg")));
         setVisible(true);
-    }
+    } */
 
     public Modele getModele() {
         return modele;
