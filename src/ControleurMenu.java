@@ -42,7 +42,7 @@ public class ControleurMenu extends Controleur {
         }
 
         else if (fenetre.getItemNouvelleEtoile() == e.getSource()) {
-
+            FenetreDialogue.nouvelleEtoile(fenetre);
         }
 
         else { System.out.println("Are you high bro?"); }

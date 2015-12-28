@@ -146,7 +146,7 @@ public class FenetreDialogue {
         jd.setVisible(true);
     }
 
-    public static Etoile nouvelleEtoile() {
+    public static Etoile nouvelleEtoile(Fenetre f) {
         final JDialog jd = new JDialog();
         jd.setTitle("Nouveau satellite");
         jd.setModal(true);
@@ -159,32 +159,32 @@ public class FenetreDialogue {
         label.setAlignmentX(Component.RIGHT_ALIGNMENT);
         text.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-        JPanel left = new JPanel();
-        JPanel right = new JPanel();
-        left.add(new JLabel("Entrez le nom de l'étoile : "));
-        right.add(new JTextField(15));
-        label.add(left);
-        text.add(right);
+        JPanel leftNom = new JPanel();
+        JPanel rightNom = new JPanel();
+        leftNom.add(new JLabel("Entrez le nom de l'étoile : "));
+        rightNom.add(new JTextField(15));
+        label.add(leftNom);
+        text.add(rightNom);
 
-        left = new JPanel();
-        right = new JPanel();
-        left.add(new JLabel("Entrez la position X : "));
-        right.add(new JTextField(5));
-        label.add(left);
-        text.add(right);
+        JPanel leftPosX = new JPanel();
+        JPanel rightPosX = new JPanel();
+        leftPosX.add(new JLabel("Entrez la position X : "));
+        rightPosX.add(new JTextField(5));
+        label.add(leftPosX);
+        text.add(rightPosX);
 
-        left = new JPanel();
-        right = new JPanel();
-        left.add(new JLabel("Entrez la position Y : "));
-        right.add(new JTextField(5));
-        label.add(left);
-        text.add(right);
+        JPanel leftPosY = new JPanel();
+        JPanel rightPosY = new JPanel();
+        leftPosY.add(new JLabel("Entrez la position Y : "));
+        rightPosY.add(new JTextField(5));
+        label.add(leftPosY);
+        text.add(rightPosY);
 
         binfos.add(label);
         binfos.add(text);
 
         JPanel buttonImage = new JPanel();
-        JButton image = new JButton("Image satellite");
+        JButton image = new JButton("Image étoile");
         final JLabel apercu = new JLabel("");
         image.addActionListener(new ActionListener() {
             @Override
