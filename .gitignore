@@ -1,3 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
-#exclure le dossier .idea
+#exclure le dossier .idea et le dossier out
 .idea
+out

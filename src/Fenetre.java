@@ -55,7 +55,7 @@ public class Fenetre extends JFrame{
         setVisible(true); //Affiche la fenêtre
         setResizable(false); //Permet de ne pas resizer la fenêtre
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Gère la fermeture
-        audio.genererSon(PATH_RESSOURCES_SOUNDS+"star_wars_theme.wav");
+        audio.launchSound(PATH_RESSOURCES_SOUNDS+"star_wars_theme.wav");
     }
 
     /**
@@ -161,11 +161,11 @@ public class Fenetre extends JFrame{
         return itemSauvegarder;
     }
 
-    public JMenuItem getItemSonOn() {
+    public JMenuItem getItemSoundOn() {
         return itemSonOn;
     }
 
-    public JMenuItem getItemSonOff() {
+    public JMenuItem getItemSoundOff() {
         return itemSonOff;
     }
 

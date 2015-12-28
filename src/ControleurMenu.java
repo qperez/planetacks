@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
  * Created by quentin on 24/12/15.
  */
 public class ControleurMenu extends Controleur {
+    private static final String PATH_RESSOURCES_SOUNDS = "./resources/sounds/";
 
     public ControleurMenu(Fenetre fenetre, Modele modele){
         super(fenetre, modele);
@@ -26,12 +27,13 @@ public class ControleurMenu extends Controleur {
             
         }
 
-        else if (fenetre.getItemSonOn() == e.getSource()) {
-
+        else if (fenetre.getItemSoundOn() == e.getSource()) {
+            fenetre.getAudio().stopSound();
+            fenetre.getAudio().launchSound(PATH_RESSOURCES_SOUNDS+"star_wars_theme.wav");
         }
 
-        else if (fenetre.getItemSonOff() == e.getSource()) {
-
+        else if (fenetre.getItemSoundOff() == e.getSource()) {
+            fenetre.getAudio().stopSound();
         }
     }
 }

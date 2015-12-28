@@ -16,7 +16,7 @@ public class Audio {
         p = AudioPlayer.player;
     }
 
-    public void genererSon(String nomFichierAudio) {
+    public void launchSound(String nomFichierAudio) {
         try {
             as = new AudioStream(new FileInputStream(nomFichierAudio));
             p.start(as);
@@ -25,7 +25,7 @@ public class Audio {
         }
     }
 
-    public void stopSon(){
+    public void stopSound(){
         p.stop(as);
     }
 }
