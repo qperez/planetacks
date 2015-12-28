@@ -37,5 +37,15 @@ public class ControleurMenu extends Controleur {
         else if (fenetre.getItemSoundOff() == e.getSource()) {
             fenetre.getAudio().stopSound();
         }
+
+        else if (fenetre.getItemNouveauSatellite() == e.getSource()) {
+            FenetreDialogue.nouveauSatellite();
+        }
+
+        else if (fenetre.getItemNouvelleEtoile() == e.getSource()) {
+
+        }
+
+        else { System.out.println("Are you high bro?"); }
     }
 }

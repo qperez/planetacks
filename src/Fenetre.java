@@ -59,7 +59,7 @@ public class Fenetre extends JFrame{
         setVisible(true); //Affiche la fenêtre
         setResizable(false); //Permet de ne pas resizer la fenêtre
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Gère la fermeture
-        audio.launchSound(PATH_RESSOURCES_SOUNDS+"star_wars_theme.wav");
+        //audio.launchSound(PATH_RESSOURCES_SOUNDS+"star_wars_theme.wav");
     }
 
     /**
@@ -110,6 +110,9 @@ public class Fenetre extends JFrame{
         controleurMenu = new ControleurMenu(this, modele);
         itemRestaurer.addActionListener(controleurMenu);
         itemQuitter.addActionListener(controleurMenu);
+
+        itemNouveauSatellite.addActionListener(controleurMenu);
+        itemNouvelleEtoile.addActionListener(controleurMenu);
 
         itemSonOn.addActionListener(controleurMenu);
         itemSonOff.addActionListener(controleurMenu);
@@ -180,5 +183,12 @@ public class Fenetre extends JFrame{
         return itemSonOff;
     }
 
+    public JMenuItem getItemNouvelleEtoile() {
+        return itemNouvelleEtoile;
+    }
+
+    public JMenuItem getItemNouveauSatellite() {
+        return itemNouveauSatellite;
+    }
 
 }
