@@ -2,6 +2,7 @@
  * Created by quentin on 23/12/15.
  */
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -14,10 +15,10 @@ import java.util.Iterator;
  */
 
 public class Modele {
-    private ArrayList<Etoile> listeEtoiles = new ArrayList<Etoile>();
+    private ArrayList<Etoile> listeEtoiles;
 
     public Modele(){
-        this.listeEtoiles = new ArrayList<>();
+        this.listeEtoiles = new ArrayList<Etoile>();
     }
 
     public Modele(ArrayList<Etoile> listeEtoiles) {
@@ -39,5 +40,21 @@ public class Modele {
 
     public ArrayList<Etoile> getListeEtoiles() {
         return this.listeEtoiles;
+    }
+
+    public void sauvegarder(String nomFichierXML){
+        try {
+            XMLTools.encodeToFile(listeEtoiles, nomFichierXML);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void charger(String nomFichierXML){
+        try {
+            listeEtoiles = (ArrayList<Etoile>)XMLTools.decodeFromFile(nomFichierXML);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

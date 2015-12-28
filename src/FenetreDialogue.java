@@ -39,7 +39,7 @@ public class FenetreDialogue {
         JPanel leftNom = new JPanel();
         JPanel rightNom = new JPanel();
         leftNom.add(new JLabel("Entrez le nom du satellite : "));
-        JTextField nomSatellite = new JTextField(15);
+        final JTextField nomSatellite = new JTextField(15);
         rightNom.add(nomSatellite);
         label.add(leftNom);
         text.add(rightNom);
@@ -56,7 +56,7 @@ public class FenetreDialogue {
             Etoile e = it.next();
             arbre.add(e.getArbreSatellites());
         }
-        JTree arbreAstres = new JTree(arbre);
+        final JTree arbreAstres = new JTree(arbre);
         arbreAstres.setPreferredSize(dim);
         rightArbre.add(arbreAstres);
         label.add(leftArbre);
@@ -65,7 +65,7 @@ public class FenetreDialogue {
         JPanel leftDemiX = new JPanel();
         JPanel rightDemiX = new JPanel();
         leftDemiX.add(new JLabel("Entrez le demi grand axe X : "));
-        JTextField demiX = new JTextField(5);
+        final JTextField demiX = new JTextField(5);
         rightDemiX.add(demiX);
         label.add(leftDemiX);
         text.add(rightDemiX);
@@ -73,7 +73,7 @@ public class FenetreDialogue {
         JPanel leftDemiY = new JPanel();
         JPanel rightDemiY = new JPanel();
         leftDemiY.add(new JLabel("Entrez le demi grand axe Y : "));
-        JTextField demiY = new JTextField(5);
+        final JTextField demiY = new JTextField(5);
         rightDemiY.add(demiY);
         label.add(leftDemiY);
         text.add(rightDemiY);
@@ -81,7 +81,7 @@ public class FenetreDialogue {
         JPanel leftPeriode = new JPanel();
         JPanel rightPeriode = new JPanel();
         leftPeriode.add(new JLabel("Entrez la période de révolution : "));
-        JTextField periodeRevolution = new JTextField(5);
+        final JTextField periodeRevolution = new JTextField(5);
         rightPeriode.add(periodeRevolution);
         label.add(leftPeriode);
         text.add(rightPeriode);
@@ -147,7 +147,7 @@ public class FenetreDialogue {
         jd.setVisible(true);
     }
 
-    public static Etoile nouvelleEtoile(Fenetre f) {
+    public static Etoile nouvelleEtoile(final Fenetre f) {
         final JDialog jd = new JDialog();
         jd.setTitle("Nouveau satellite");
         jd.setModal(true);
@@ -163,7 +163,7 @@ public class FenetreDialogue {
         JPanel leftNom = new JPanel();
         JPanel rightNom = new JPanel();
         leftNom.add(new JLabel("Entrez le nom de l'étoile : "));
-        JTextField nomEtoile = new JTextField(15);
+        final JTextField nomEtoile = new JTextField(15);
         rightNom.add(nomEtoile);
         label.add(leftNom);
         text.add(rightNom);
@@ -171,7 +171,7 @@ public class FenetreDialogue {
         JPanel leftPosX = new JPanel();
         JPanel rightPosX = new JPanel();
         leftPosX.add(new JLabel("Entrez la position X : "));
-        JTextField posXEtoile = new JTextField(5);
+        final JTextField posXEtoile = new JTextField(5);
         rightPosX.add(posXEtoile);
         label.add(leftPosX);
         text.add(rightPosX);
@@ -179,7 +179,7 @@ public class FenetreDialogue {
         JPanel leftPosY = new JPanel();
         JPanel rightPosY = new JPanel();
         leftPosY.add(new JLabel("Entrez la position Y : "));
-        JTextField posYEtoile = new JTextField(5);
+        final JTextField posYEtoile = new JTextField(5);
         rightPosY.add(posYEtoile);
         label.add(leftPosY);
         text.add(rightPosY);

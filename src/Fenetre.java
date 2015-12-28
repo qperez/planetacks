@@ -16,7 +16,7 @@ import javax.swing.*;
 public class Fenetre extends JFrame{
 
     //Constante permettant de parametrer le chemin relatif aux ressources images nécessaires
-    private static final String PATH_RESSOURCES_IMG = "./resources/img/";
+    private static final String PATH_RESSOURCES_IMG_APPLI = "./resources/img/appli/";
     private static final String PATH_RESSOURCES_SOUNDS = "./resources/sounds/";
 
 
@@ -48,14 +48,14 @@ public class Fenetre extends JFrame{
      */
     public Fenetre(Modele modele){
         this.modele = modele;
-        setIconImage(new ImageIcon(PATH_RESSOURCES_IMG+"icone_appli.jpg").getImage()); //Affiche une icone d'application
+        setIconImage(new ImageIcon(PATH_RESSOURCES_IMG_APPLI +"icone_appli.jpg").getImage()); //Affiche une icone d'application
         initAttributs();
         creerVue();
         creerMenu();
         setSize(1024,768); //Fixe la taille par défaut
         setTitle("Planethacks : système planétaire");
-        // add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG+"fond_voielact_jpanel.jpg"))); //ajout de l'image de fond de la Jframe
-        add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG+"backscreen.jpg")));
+        // add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG_APPLI+"fond_voielact_jpanel.jpg"))); //ajout de l'image de fond de la Jframe
+        add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG_APPLI +"backscreen.jpg")));
         setVisible(true); //Affiche la fenêtre
         setResizable(false); //Permet de ne pas resizer la fenêtre
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Gère la fermeture
@@ -67,15 +67,15 @@ public class Fenetre extends JFrame{
      * ainsi que l'ajout des Actions Listener sur les éléments
      * */
     private void initAttributs() {
-        itemQuitter = new JMenuItem("Quitter", new ImageIcon(PATH_RESSOURCES_IMG+"exit.png"));
+        itemQuitter = new JMenuItem("Quitter", new ImageIcon(PATH_RESSOURCES_IMG_APPLI +"exit.png"));
         itemRestaurer = new JMenuItem("Nouveau système planétaire");
         itemSauvegarder = new JMenuItem("Sauvegarder le système planétaire");
 
         itemNouvelleEtoile = new JMenuItem("Nouvelle étoile");
         itemNouveauSatellite = new JMenuItem("Nouveau satellite");
 
-        itemSonOn = new JMenuItem("Activer le son", new ImageIcon(PATH_RESSOURCES_IMG+"sonOn.png"));
-        itemSonOff = new JMenuItem("Couper le son", new ImageIcon(PATH_RESSOURCES_IMG+"sonOff.png"));
+        itemSonOn = new JMenuItem("Activer le son", new ImageIcon(PATH_RESSOURCES_IMG_APPLI +"sonOn.png"));
+        itemSonOff = new JMenuItem("Couper le son", new ImageIcon(PATH_RESSOURCES_IMG_APPLI +"sonOff.png"));
 
         audio = new Audio();
     }
@@ -138,8 +138,8 @@ public class Fenetre extends JFrame{
         creerVue();
         creerMenu();
         setSize(1024,768); //Fixe la taille par défaut
-        //add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG+"fond_voielact_jpanel.jpg")));
-        add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG+"backscreen.jpg")));
+        //add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG_APPLI+"fond_voielact_jpanel.jpg")));
+        add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG_APPLI+"backscreen.jpg")));
         setVisible(true);
     } */
 
