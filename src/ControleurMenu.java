@@ -19,14 +19,13 @@ public class ControleurMenu extends Controleur {
         else if (fenetre.getItemRestaurer() == e.getSource()) {
             int choix = FenetreDialogue.confirmationRestauration();
             if(choix == JOptionPane.YES_OPTION){
-                //fenetre.restaurationAffichage(new Modele());
                 fenetre.getAudio().stopSound();
-                fenetre = new Fenetre(this.modele);
+                fenetre = new Fenetre(new Modele());
             }
         }
 
         else if (fenetre.getItemSauvegarder() == e.getSource()) {
-            
+
         }
 
         else if (fenetre.getItemSoundOn() == e.getSource()) {

@@ -74,8 +74,8 @@ public class Fenetre extends JFrame{
         itemNouvelleEtoile = new JMenuItem("Nouvelle étoile");
         itemNouveauSatellite = new JMenuItem("Nouveau satellite");
 
-        itemSonOn = new JMenuItem("Activer le son");
-        itemSonOff = new JMenuItem("Couper le son");
+        itemSonOn = new JMenuItem("Activer le son", new ImageIcon(PATH_RESSOURCES_IMG+"sonOn.png"));
+        itemSonOff = new JMenuItem("Couper le son", new ImageIcon(PATH_RESSOURCES_IMG+"sonOff.png"));
 
         audio = new Audio();
     }
