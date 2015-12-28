@@ -69,7 +69,7 @@ public class Astre {
 
     public DefaultMutableTreeNode getArbreSatellites() {
         Iterator<Satellite> it = this.getListeSatellites().iterator();
-        DefaultMutableTreeNode branche = new DefaultMutableTreeNode();
+        DefaultMutableTreeNode branche = new DefaultMutableTreeNode(this);
         while (it.hasNext()) {
             Satellite s = it.next();
             branche.add(s.getArbreSatellites());

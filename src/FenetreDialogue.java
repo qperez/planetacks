@@ -127,8 +127,9 @@ public class FenetreDialogue {
                 int dX = Integer.parseInt(demiX.getText());
                 int dY = Integer.parseInt(demiY.getText());
                 int pr = Integer.parseInt(periodeRevolution.getText());
-                Astre a = (Astre)arbreAstres.getLastSelectedPathComponent();
-                System.out.println(ni);
+                Astre a = (Astre)((DefaultMutableTreeNode)arbreAstres.getLastSelectedPathComponent()).getUserObject();
+                Satellite s = new Satellite(ns, ni, dX, dY, pr, a);
+                jd.dispose();
             }
         });
 
@@ -162,21 +163,24 @@ public class FenetreDialogue {
         JPanel leftNom = new JPanel();
         JPanel rightNom = new JPanel();
         leftNom.add(new JLabel("Entrez le nom de l'étoile : "));
-        rightNom.add(new JTextField(15));
+        JTextField nomEtoile = new JTextField(15);
+        rightNom.add(nomEtoile);
         label.add(leftNom);
         text.add(rightNom);
 
         JPanel leftPosX = new JPanel();
         JPanel rightPosX = new JPanel();
         leftPosX.add(new JLabel("Entrez la position X : "));
-        rightPosX.add(new JTextField(5));
+        JTextField posXEtoile = new JTextField(5);
+        rightPosX.add(posXEtoile);
         label.add(leftPosX);
         text.add(rightPosX);
 
         JPanel leftPosY = new JPanel();
         JPanel rightPosY = new JPanel();
         leftPosY.add(new JLabel("Entrez la position Y : "));
-        rightPosY.add(new JTextField(5));
+        JTextField posYEtoile = new JTextField(5);
+        rightPosY.add(posYEtoile);
         label.add(leftPosY);
         text.add(rightPosY);
 
@@ -215,7 +219,13 @@ public class FenetreDialogue {
         valider.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
+                String ne = nomEtoile.getText();
+                String ni = apercu.getIcon().toString();
+                int dX = Integer.parseInt(posXEtoile.getText());
+                int dY = Integer.parseInt(posYEtoile.getText());
+                Etoile e = new Etoile(ne, ni, dX, dY);
+                f.getModele().ajouterEtoile(e);
+                jd.dispose();
             }
         });
 
