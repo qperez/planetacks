@@ -97,16 +97,13 @@ public class FenetreDialogue {
         JButton image = new JButton("Image satellite");
         final JLabel apercu = new JLabel("");
 
-        image.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFileChooser fileChooser = new JFileChooser(PATH_RESSOURCES_IMG_ASTRES);
-                if (fileChooser.showOpenDialog(null) == 0) {
-                    String filename = PATH_RESSOURCES_IMG_ASTRES + fileChooser.getSelectedFile().getName();
-                    ImageIcon image = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT));
-                    apercu.setIcon(image);
-                    ((Component) e.getSource()).getParent().repaint();
-                }
+        image.addActionListener(e -> {
+            JFileChooser fileChooser = new JFileChooser(PATH_RESSOURCES_IMG_ASTRES);
+            if (fileChooser.showOpenDialog(null) == 0) {
+                String filename = PATH_RESSOURCES_IMG_ASTRES + fileChooser.getSelectedFile().getName();
+                ImageIcon image1 = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT));
+                apercu.setIcon(image1);
+                ((Component) e.getSource()).getParent().repaint();
             }
         });
         buttonImage.add(apercu);
@@ -115,26 +112,18 @@ public class FenetreDialogue {
         JPanel validate = new JPanel();
 
         JButton annuler = new JButton("Annuler");
-        annuler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                jd.dispose();
-            }
-        });
+        annuler.addActionListener(actionEvent -> jd.dispose());
 
         JButton valider = new JButton("Valider");
-        valider.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                String ns = nomSatellite.getText();
-                String ni = apercu.getIcon().toString();
-                int dX = Integer.parseInt(demiX.getText());
-                int dY = Integer.parseInt(demiY.getText());
-                int pr = Integer.parseInt(periodeRevolution.getText());
-                Astre a = (Astre)((DefaultMutableTreeNode)arbreAstres.getLastSelectedPathComponent()).getUserObject();
-                Satellite s = new Satellite(ns, ni, dX, dY, pr, a);
-                jd.dispose();
-            }
+        valider.addActionListener(actionEvent -> {
+            String ns = nomSatellite.getText();
+            String ni = apercu.getIcon().toString();
+            int dX = Integer.parseInt(demiX.getText());
+            int dY = Integer.parseInt(demiY.getText());
+            int pr = Integer.parseInt(periodeRevolution.getText());
+            Astre a = (Astre)((DefaultMutableTreeNode)arbreAstres.getLastSelectedPathComponent()).getUserObject();
+            Satellite s = new Satellite(ns, ni, dX, dY, pr, a);
+            jd.dispose();
         });
 
         validate.add(annuler);
@@ -194,16 +183,13 @@ public class FenetreDialogue {
         JPanel buttonImage = new JPanel();
         JButton image = new JButton("Image étoile");
         final JLabel apercu = new JLabel("");
-        image.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFileChooser fileChooser = new JFileChooser(PATH_RESSOURCES_IMG_ASTRES);
-                if (fileChooser.showOpenDialog(null) == 0) {
-                    String filename = PATH_RESSOURCES_IMG_ASTRES + fileChooser.getSelectedFile().getName();
-                    ImageIcon image = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT));
-                    apercu.setIcon(image);
-                    ((Component) e.getSource()).getParent().repaint();
-                }
+        image.addActionListener(e -> {
+            JFileChooser fileChooser = new JFileChooser(PATH_RESSOURCES_IMG_ASTRES);
+            if (fileChooser.showOpenDialog(null) == 0) {
+                String filename = PATH_RESSOURCES_IMG_ASTRES + fileChooser.getSelectedFile().getName();
+                ImageIcon image1 = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT));
+                apercu.setIcon(image1);
+                ((Component) e.getSource()).getParent().repaint();
             }
         });
         buttonImage.add(apercu);
@@ -212,25 +198,17 @@ public class FenetreDialogue {
         JPanel validate = new JPanel();
 
         JButton annuler = new JButton("Annuler");
-        annuler.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                jd.dispose();
-            }
-        });
+        annuler.addActionListener(actionEvent -> jd.dispose());
 
         JButton valider = new JButton("Valider");
-        valider.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                String ne = nomEtoile.getText();
-                String ni = apercu.getIcon().toString();
-                int dX = Integer.parseInt(posXEtoile.getText());
-                int dY = Integer.parseInt(posYEtoile.getText());
-                Etoile e = new Etoile(ne, ni, dX, dY);
-                f.getModele().ajouterEtoile(e);
-                jd.dispose();
-            }
+        valider.addActionListener(actionEvent -> {
+            String ne = nomEtoile.getText();
+            String ni = apercu.getIcon().toString();
+            int dX = Integer.parseInt(posXEtoile.getText());
+            int dY = Integer.parseInt(posYEtoile.getText());
+            Etoile e = new Etoile(ne, ni, dX, dY);
+            f.getModele().ajouterEtoile(e);
+            jd.dispose();
         });
 
         validate.add(annuler);
