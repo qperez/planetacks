@@ -16,10 +16,10 @@ import java.util.Iterator;
 public class Astre {
 
     private String nom;
-    private String nomImage;
+    protected String nomImage;
     private int positionX;
-    private int positionY;
-    ArrayList<Satellite> listeSatellites;
+    protected int positionY;
+    protected ArrayList<Satellite> listeSatellites;
     
 
     /**
@@ -80,6 +80,14 @@ public class Astre {
      */
     public String getNomImage() {
         return nomImage;
+    }
+
+    public void setNomImage(String nomImage) {
+        this.nomImage = nomImage;
+    }
+
+    public void setListeSatellites(ArrayList<Satellite> listeSatellites) {
+        this.listeSatellites = listeSatellites;
     }
 
     /**

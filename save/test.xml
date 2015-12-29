@@ -2,9 +2,42 @@
 <java version="1.8.0_66" class="java.beans.XMLDecoder">
  <object class="java.util.ArrayList">
   <void method="add">
-   <object class="Etoile">
+   <object class="Etoile" id="Etoile0">
+    <void property="listeSatellites">
+     <void method="add">
+      <object class="Satellite">
+       <void property="astre">
+        <object idref="Etoile0"/>
+       </void>
+       <void property="demiGrandAxe">
+        <int>2</int>
+       </void>
+       <void property="demiPetitAxe">
+        <int>2</int>
+       </void>
+       <void property="nom">
+        <string>s</string>
+       </void>
+       <void property="nomImage">
+        <string>s</string>
+       </void>
+       <void property="periode">
+        <int>2</int>
+       </void>
+       <void property="positionX">
+        <int>100</int>
+       </void>
+       <void property="positionY">
+        <int>100</int>
+       </void>
+      </object>
+     </void>
+    </void>
     <void property="nom">
      <string>Soleil</string>
+    </void>
+    <void property="nomImage">
+     <string>exit.png</string>
     </void>
     <void property="positionX">
      <int>100</int>
@@ -18,6 +51,9 @@
    <object class="Etoile">
     <void property="nom">
      <string>Soleil2</string>
+    </void>
+    <void property="nomImage">
+     <string>exit.png</string>
     </void>
     <void property="positionX">
      <int>100</int>
