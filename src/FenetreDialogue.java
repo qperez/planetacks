@@ -103,7 +103,7 @@ public class FenetreDialogue {
                 JFileChooser fileChooser = new JFileChooser(PATH_RESSOURCES_IMG_ASTRES);
                 if (fileChooser.showOpenDialog(null) == 0) {
                     String filename = PATH_RESSOURCES_IMG_ASTRES + fileChooser.getSelectedFile().getName();
-                    ImageIcon image = new ImageIcon(filename);
+                    ImageIcon image = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT));
                     apercu.setIcon(image);
                     ((Component) e.getSource()).getParent().repaint();
                 }
@@ -200,8 +200,8 @@ public class FenetreDialogue {
                 JFileChooser fileChooser = new JFileChooser(PATH_RESSOURCES_IMG_ASTRES);
                 if (fileChooser.showOpenDialog(null) == 0) {
                     String filename = PATH_RESSOURCES_IMG_ASTRES + fileChooser.getSelectedFile().getName();
-                    System.out.println(filename);
-                    apercu.setIcon(new ImageIcon(filename));
+                    ImageIcon image = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT));
+                    apercu.setIcon(image);
                     ((Component) e.getSource()).getParent().repaint();
                 }
             }
