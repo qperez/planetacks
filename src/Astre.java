@@ -7,6 +7,10 @@ import java.util.Iterator;
  * Un Astre est caract&eacute;ris&eacute; par les informations suivantes :
  * <ul>
  * <li>Un nom.</li>
+ * <li>Un nom d'image.</li>
+ * <li>Une position en X.</li>
+ * <li>Une position en Y.</li>
+ * <li>Une liste de satellites.</li>
  * </ul>
  */
 public class Astre {
@@ -16,6 +20,16 @@ public class Astre {
     private int positionX;
     private int positionY;
     ArrayList<Satellite> listeSatellites;
+
+    /**
+     * Constructeur Astre.
+     * <p>
+     * Constructeur vide nécessaire à la sauvegarde XML.
+     * </p>
+     */
+    public Astre(){
+
+    }
 
     /**
      * Constructeur Astre.
@@ -67,6 +81,10 @@ public class Astre {
         return nomImage;
     }
 
+    /**
+     * Retourne un arbre TreeNode avec les satellites gravitant autour de l'astre
+     * @return DefaultMutableTreeNode arbre des satellites de l'Astre
+     */
     public DefaultMutableTreeNode getArbreSatellites() {
         Iterator<Satellite> it = this.getListeSatellites().iterator();
         DefaultMutableTreeNode branche = new DefaultMutableTreeNode(this);
@@ -115,15 +133,27 @@ public class Astre {
         this.positionY = positionY;
     }
 
+    /**
+     * Retourne la liste de satellites de l'Astre
+     * @return ArrayList de satellites de l'Astre
+     */
     public ArrayList<Satellite> getListeSatellites() {
         return listeSatellites;
     }
 
+    /**
+     * Retourne le nom de l'astre
+     * @return String nom de l'astre
+     */
     public String toString() {
-        return this.nom;
+        return nom;
     }
 
+    /**
+     * Ajoute un satellite à liste des satellites de l'Astre
+     * @param s Satellite à ajouter
+     */
     public void ajouterSatellite(Satellite s) {
-        this.listeSatellites.add(s);
+        listeSatellites.add(s);
     }
 }

@@ -25,7 +25,7 @@ public class ControleurMenu extends Controleur {
         }
 
         else if (fenetre.getItemSauvegarder() == e.getSource()) {
-
+            FenetreDialogue.sauvegarder(fenetre);
         }
 
         else if (fenetre.getItemSoundOn() == e.getSource()) {

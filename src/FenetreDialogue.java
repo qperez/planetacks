@@ -5,13 +5,17 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.Iterator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by quentin on 27/12/15.
  */
 public class FenetreDialogue {
-    private static final String PATH_RESSOURCES_IMG = "./resources/img/";
+    private static final String PATH_RESSOURCES_IMG_ASTRES = "./resources/img/astres/";
+    private static final String PATH_RESSOURCES_SAVE = "./save/";
 
     public static int confirmationRestauration() {
         JOptionPane jop = new JOptionPane();
@@ -96,9 +100,9 @@ public class FenetreDialogue {
         image.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFileChooser fileChooser = new JFileChooser(PATH_RESSOURCES_IMG);
+                JFileChooser fileChooser = new JFileChooser(PATH_RESSOURCES_IMG_ASTRES);
                 if (fileChooser.showOpenDialog(null) == 0) {
-                    String filename = PATH_RESSOURCES_IMG + fileChooser.getSelectedFile().getName();
+                    String filename = PATH_RESSOURCES_IMG_ASTRES + fileChooser.getSelectedFile().getName();
                     ImageIcon image = new ImageIcon(filename);
                     apercu.setIcon(image);
                     ((Component) e.getSource()).getParent().repaint();
@@ -193,9 +197,9 @@ public class FenetreDialogue {
         image.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFileChooser fileChooser = new JFileChooser(PATH_RESSOURCES_IMG);
+                JFileChooser fileChooser = new JFileChooser(PATH_RESSOURCES_IMG_ASTRES);
                 if (fileChooser.showOpenDialog(null) == 0) {
-                    String filename = PATH_RESSOURCES_IMG + fileChooser.getSelectedFile().getName();
+                    String filename = PATH_RESSOURCES_IMG_ASTRES + fileChooser.getSelectedFile().getName();
                     System.out.println(filename);
                     apercu.setIcon(new ImageIcon(filename));
                     ((Component) e.getSource()).getParent().repaint();
@@ -243,5 +247,25 @@ public class FenetreDialogue {
         jd.setVisible(true);
 
         return null;
+    }
+
+    public static void sauvegarder(Fenetre fenetre){
+        JOptionPane jop = new JOptionPane();
+        String nomFichierXML = jop.showInputDialog(null, "Veuillez entrer le nom du fichier de sauvegarde ", "Sauveagrde du système planétaire", JOptionPane.QUESTION_MESSAGE);
+    //----- Debug ----------
+        System.out.println(nomFichierXML);
+        while(nomFichierXML.equals("")){
+            JOptionPane jopErreurStringVide = new JOptionPane();
+            jopErreurStringVide.showMessageDialog(null, "Veuillez entrer un nom de fichier");
+            nomFichierXML = jop.showInputDialog(null, "Veuillez entrer le nom du fichier de sauvegarde ", "Sauveagrde du système planétaire", JOptionPane.QUESTION_MESSAGE);
+        }
+
+        try {
+            fenetre.getModele().sauvegarder(PATH_RESSOURCES_SAVE+nomFichierXML+".xml");
+        } catch (IOException e) {
+            JOptionPane jopException = new JOptionPane();
+            jopException.showMessageDialog(null, e.toString());
+            e.printStackTrace();
+        }
     }
 }

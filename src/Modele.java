@@ -42,19 +42,11 @@ public class Modele {
         return this.listeEtoiles;
     }
 
-    public void sauvegarder(String nomFichierXML){
-        try {
-            XMLTools.encodeToFile(listeEtoiles, nomFichierXML);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void sauvegarder(String nomFichierXML) throws IOException {
+        XMLTools.encodeToFile(listeEtoiles, nomFichierXML);
     }
 
-    public void charger(String nomFichierXML){
-        try {
-            listeEtoiles = (ArrayList<Etoile>)XMLTools.decodeFromFile(nomFichierXML);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void charger(String nomFichierXML) throws IOException {
+        listeEtoiles = (ArrayList<Etoile>)XMLTools.decodeFromFile(nomFichierXML);
     }
 }

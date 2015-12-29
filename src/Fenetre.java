@@ -54,7 +54,7 @@ public class Fenetre extends JFrame{
         creerMenu();
         setSize(1024,768); //Fixe la taille par défaut
         setTitle("Planethacks : système planétaire");
-        // add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG_APPLI+"fond_voielact_jpanel.jpg"))); //ajout de l'image de fond de la Jframe
+        add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG_APPLI+"fond_voielact_jpanel.jpg"))); //ajout de l'image de fond de la Jframe
         add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG_APPLI +"backscreen.jpg")));
         setVisible(true); //Affiche la fenêtre
         setResizable(false); //Permet de ne pas resizer la fenêtre
@@ -109,6 +109,7 @@ public class Fenetre extends JFrame{
         //Création du controleur du menu et ajout des actions listener sur les items
         controleurMenu = new ControleurMenu(this, modele);
         itemRestaurer.addActionListener(controleurMenu);
+        itemSauvegarder.addActionListener(controleurMenu);
         itemQuitter.addActionListener(controleurMenu);
 
         itemNouveauSatellite.addActionListener(controleurMenu);
@@ -128,20 +129,6 @@ public class Fenetre extends JFrame{
         setContentPane(jpanGlobal);
     }
 
-    /**
-     * Fonction r&eacute;initialisant l'affichage de la JFrame
-     */
-    /* public void restaurationAffichage(Modele modele) {
-        setVisible(false);
-        initAttributs();
-        getContentPane().removeAll();
-        creerVue();
-        creerMenu();
-        setSize(1024,768); //Fixe la taille par défaut
-        //add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG_APPLI+"fond_voielact_jpanel.jpg")));
-        add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG_APPLI+"backscreen.jpg")));
-        setVisible(true);
-    } */
 
     public Modele getModele() {
         return modele;

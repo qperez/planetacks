@@ -17,6 +17,16 @@ public class Satellite extends Astre{
     private Astre astre;
 
     /**
+     * Constructeur Astre.
+     * <p>
+     * Constructeur vide nécessaire à la sauvegarde XML.
+     * </p>
+     */
+    public Satellite(){
+        super();
+    }
+
+    /**
      * Constructeur Satellite.
      * <p>
      * A la construction d'un objet Astre, le Satellite est initinitialisé
@@ -123,6 +133,19 @@ public class Satellite extends Astre{
         this.astre = astre;
     }
 
+    /**
+     * Retourne le nomp du Satellite
+     * @return String le nom du Satellite
+     */
+    public String toString() {
+        return getNom();
+    }
+
+    /**
+     * Calcul et met à jour la position du Satellite en X en fonction du temps t
+     * @param t le temps
+     * @return int la nouvelle position X
+     */
     public int calculPositionSatelliteX(int t) {
         /*x=a.cos(t/p)+xAstreRéférent
           y=b.sin(t/p)+yAstreRéférent*/
@@ -131,10 +154,11 @@ public class Satellite extends Astre{
         return x;
     }
 
-    public String toString() {
-        return getNom();
-    }
-
+    /**
+     * Calcul et met à jour la position du Satellite en Y en fonction du temps t
+     * @param t le temps
+     * @return int la nouvelle position Y
+     */
     public int calculPositionSatelliteY(int t) {
         /*x=a.cos(t/p)+xAstreRéférent
           y=b.sin(t/p)+yAstreRéférent*/
