@@ -28,7 +28,7 @@ public class Astre {
      * </p>
      */
     public Astre(){
-
+        listeSatellites = new ArrayList<Satellite>();
     }
 
     /**

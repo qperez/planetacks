@@ -1,7 +1,4 @@
-import javax.swing.tree.DefaultMutableTreeNode;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * <b>Classe permettant de mod&eacute;liser une étoile.</b>

@@ -47,6 +47,6 @@ public class Modele {
     }
 
     public void charger(String nomFichierXML) throws IOException {
-        listeEtoiles = (ArrayList<Etoile>)XMLTools.decodeFromFile(nomFichierXML);
+        this.listeEtoiles = (ArrayList<Etoile>)XMLTools.decodeFromFile(nomFichierXML);
     }
 }

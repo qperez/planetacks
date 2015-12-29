@@ -23,8 +23,9 @@ public class Fenetre extends JFrame{
     private Modele modele;
 
     private JMenuItem itemQuitter;
-    private JMenuItem itemRestaurer;
+    private JMenuItem itemNouveau;
     private JMenuItem itemSauvegarder;
+    private JMenuItem itemRestaurer;
 
     private JMenuItem itemNouvelleEtoile;
     private JMenuItem itemNouveauSatellite;
@@ -54,7 +55,7 @@ public class Fenetre extends JFrame{
         creerMenu();
         setSize(1024,768); //Fixe la taille par défaut
         setTitle("Planethacks : système planétaire");
-        add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG_APPLI+"fond_voielact_jpanel.jpg"))); //ajout de l'image de fond de la Jframe
+        //add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG_APPLI+"fond_voielact_jpanel.jpg"))); //ajout de l'image de fond de la Jframe
         add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG_APPLI +"backscreen.jpg")));
         setVisible(true); //Affiche la fenêtre
         setResizable(false); //Permet de ne pas resizer la fenêtre
@@ -68,8 +69,9 @@ public class Fenetre extends JFrame{
      * */
     private void initAttributs() {
         itemQuitter = new JMenuItem("Quitter", new ImageIcon(PATH_RESSOURCES_IMG_APPLI +"exit.png"));
-        itemRestaurer = new JMenuItem("Nouveau système planétaire");
+        itemNouveau = new JMenuItem("Nouveau système planétaire");
         itemSauvegarder = new JMenuItem("Sauvegarder le système planétaire");
+        itemRestaurer = new JMenuItem("Restaurer un système enregistré");
 
         itemNouvelleEtoile = new JMenuItem("Nouvelle étoile");
         itemNouveauSatellite = new JMenuItem("Nouveau satellite");
@@ -90,8 +92,9 @@ public class Fenetre extends JFrame{
         JMenu menuOptions = new JMenu("Outils");
         JMenu menuSon = new JMenu("Son");
 
-        menuFichier.add(itemRestaurer);
+        menuFichier.add(itemNouveau);
         menuFichier.add(itemSauvegarder);
+        menuFichier.add(itemRestaurer);
         menuFichier.add(itemQuitter);
 
         menuOptions.add(itemNouvelleEtoile);
@@ -108,8 +111,9 @@ public class Fenetre extends JFrame{
 
         //Création du controleur du menu et ajout des actions listener sur les items
         controleurMenu = new ControleurMenu(this, modele);
-        itemRestaurer.addActionListener(controleurMenu);
+        itemNouveau.addActionListener(controleurMenu);
         itemSauvegarder.addActionListener(controleurMenu);
+        itemRestaurer.addActionListener(controleurMenu);
         itemQuitter.addActionListener(controleurMenu);
 
         itemNouveauSatellite.addActionListener(controleurMenu);
@@ -150,8 +154,8 @@ public class Fenetre extends JFrame{
      * Retourne le JMenuItem permettant de restaurer le système planétaire
      * @return Item restaurer
      */
-    public JMenuItem getItemRestaurer() {
-        return itemRestaurer;
+    public JMenuItem getItemNouveau() {
+        return itemNouveau;
     }
 
     /**
@@ -161,6 +165,12 @@ public class Fenetre extends JFrame{
     public JMenuItem getItemSauvegarder() {
         return itemSauvegarder;
     }
+
+    /**
+     * Retourne le JMenuItem permettant de restaurer
+     * @return Item restaurer
+     */
+    public JMenuItem getItemRestaurer() {return itemRestaurer; }
 
     public JMenuItem getItemSoundOn() {
         return itemSonOn;

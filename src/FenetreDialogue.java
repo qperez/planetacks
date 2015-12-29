@@ -1,6 +1,7 @@
 
 import javax.swing.*;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -17,7 +18,7 @@ public class FenetreDialogue {
     private static final String PATH_RESSOURCES_IMG_ASTRES = "./resources/img/astres/";
     private static final String PATH_RESSOURCES_SAVE = "./save/";
 
-    public static int confirmationRestauration() {
+    public static int confirmationNouveau() {
         JOptionPane jop = new JOptionPane();
         int reponse = jop.showConfirmDialog(null,
                 "Etes-vous sur de vouloir créer un nouveau système planétaire ?",
@@ -121,7 +122,7 @@ public class FenetreDialogue {
             int dX = Integer.parseInt(demiX.getText());
             int dY = Integer.parseInt(demiY.getText());
             int pr = Integer.parseInt(periodeRevolution.getText());
-            Astre a = (Astre)((DefaultMutableTreeNode)arbreAstres.getLastSelectedPathComponent()).getUserObject();
+            Astre a = (Astre) ((DefaultMutableTreeNode) arbreAstres.getLastSelectedPathComponent()).getUserObject();
             Satellite s = new Satellite(ns, ni, dX, dY, pr, a);
             jd.dispose();
         });
@@ -227,23 +228,38 @@ public class FenetreDialogue {
         return null;
     }
 
-    public static void sauvegarder(Fenetre fenetre){
+    public static void sauvegarder(Fenetre fenetre) {
         JOptionPane jop = new JOptionPane();
         String nomFichierXML = jop.showInputDialog(null, "Veuillez entrer le nom du fichier de sauvegarde ", "Sauveagrde du système planétaire", JOptionPane.QUESTION_MESSAGE);
-    //----- Debug ----------
+        //----- Debug ----------
         System.out.println(nomFichierXML);
-        while(nomFichierXML.equals("")){
+        while (nomFichierXML.equals("")) {
             JOptionPane jopErreurStringVide = new JOptionPane();
             jopErreurStringVide.showMessageDialog(null, "Veuillez entrer un nom de fichier");
             nomFichierXML = jop.showInputDialog(null, "Veuillez entrer le nom du fichier de sauvegarde ", "Sauveagrde du système planétaire", JOptionPane.QUESTION_MESSAGE);
         }
 
         try {
-            fenetre.getModele().sauvegarder(PATH_RESSOURCES_SAVE+nomFichierXML+".xml");
+            fenetre.getModele().sauvegarder(PATH_RESSOURCES_SAVE + nomFichierXML + ".xml");
         } catch (IOException e) {
             JOptionPane jopException = new JOptionPane();
             jopException.showMessageDialog(null, e.toString());
             e.printStackTrace();
+        }
+    }
+
+    public static void restaurer(Fenetre fenetre) {
+        JFileChooser fileChooser = new JFileChooser(PATH_RESSOURCES_SAVE);
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("XML Files", "xml");
+        fileChooser.addChoosableFileFilter(filter);
+
+        if (fileChooser.showOpenDialog(null) == 0) {
+            String filename = PATH_RESSOURCES_SAVE + fileChooser.getSelectedFile().getName();
+            try {
+                fenetre.getModele().charger(filename);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

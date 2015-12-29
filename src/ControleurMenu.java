@@ -16,8 +16,8 @@ public class ControleurMenu extends Controleur {
             System.exit(0);
         }
 
-        else if (fenetre.getItemRestaurer() == e.getSource()) {
-            int choix = FenetreDialogue.confirmationRestauration();
+        else if (fenetre.getItemNouveau() == e.getSource()) {
+            int choix = FenetreDialogue.confirmationNouveau();
             if(choix == JOptionPane.YES_OPTION){
                 fenetre.getAudio().stopSound();
                 fenetre = new Fenetre(new Modele());
@@ -26,6 +26,10 @@ public class ControleurMenu extends Controleur {
 
         else if (fenetre.getItemSauvegarder() == e.getSource()) {
             FenetreDialogue.sauvegarder(fenetre);
+        }
+
+        else if (fenetre.getItemRestaurer() == e.getSource()) {
+            FenetreDialogue.restaurer(fenetre);
         }
 
         else if (fenetre.getItemSoundOn() == e.getSource()) {
