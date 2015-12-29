@@ -166,7 +166,7 @@ public class FenetreDialogue {
         jd.setVisible(true);
     }
 
-    public static Etoile nouvelleEtoile(final Fenetre f) {
+    public static void nouvelleEtoile(final Fenetre f) {
         final JDialog jd = new JDialog();
         jd.setTitle("Nouveau satellite");
         jd.setModal(true);
@@ -268,15 +268,12 @@ public class FenetreDialogue {
         jd.setLocation(width/2 - widthWindow/2, height/2 - heigthWindow/2);
         jd.setResizable(false);
         jd.setVisible(true);
-
-        return null;
     }
 
     public static void sauvegarder(Fenetre fenetre) {
         JOptionPane jop = new JOptionPane();
         String nomFichierXML = jop.showInputDialog(null, "Veuillez entrer le nom du fichier de sauvegarde ", "Sauveagrde du système planétaire", JOptionPane.QUESTION_MESSAGE);
         //----- Debug ----------
-        System.out.println(nomFichierXML);
         while (nomFichierXML.equals("")) {
             JOptionPane jopErreurStringVide = new JOptionPane();
             jopErreurStringVide.showMessageDialog(null, "Veuillez entrer un nom de fichier");

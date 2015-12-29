@@ -20,6 +20,7 @@ public class Astre {
     private int positionX;
     private int positionY;
     ArrayList<Satellite> listeSatellites;
+    
 
     /**
      * Constructeur Astre.
@@ -155,5 +156,9 @@ public class Astre {
      */
     public void ajouterSatellite(Satellite s) {
         listeSatellites.add(s);
+    }
+
+    public void affiche() {
+
     }
 }
