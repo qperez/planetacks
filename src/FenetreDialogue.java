@@ -51,7 +51,7 @@ public class FenetreDialogue {
 
         JPanel leftArbre = new JPanel();
         JPanel rightArbre = new JPanel();
-        Dimension dim = new Dimension(200, 200);
+        Dimension dim = new Dimension(180, 200);
         leftArbre.setPreferredSize(dim);
         leftArbre.add(new JLabel("Choisissez l'astre référent : "));
         // Création d'une fonction récursive si un satellite a un satellite etc
@@ -155,8 +155,13 @@ public class FenetreDialogue {
         btot.add(validate);
 
         jd.add(btot);
-        jd.setLocation(400, 200);
-        jd.pack();
+        Dimension dimension = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        int width = (int)dimension.getWidth();
+        int height = (int)dimension.getHeight();
+        int widthWindow = 500;
+        int heigthWindow = 450;
+        jd.setSize(widthWindow, heigthWindow);
+        jd.setLocation(width/2 - widthWindow/2, height/2 - heigthWindow/2);
         jd.setResizable(false);
         jd.setVisible(true);
     }
@@ -254,8 +259,13 @@ public class FenetreDialogue {
         btot.add(validate);
 
         jd.add(btot);
-        jd.setLocation(400, 200);
-        jd.pack();
+        Dimension dimension = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        int width = (int)dimension.getWidth();
+        int height = (int)dimension.getHeight();
+        int widthWindow = 400;
+        int heigthWindow = 200;
+        jd.setSize(widthWindow, heigthWindow);
+        jd.setLocation(width/2 - widthWindow/2, height/2 - heigthWindow/2);
         jd.setResizable(false);
         jd.setVisible(true);
 
