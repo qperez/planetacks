@@ -117,14 +117,34 @@ public class FenetreDialogue {
 
         JButton valider = new JButton("Valider");
         valider.addActionListener(actionEvent -> {
-            String ns = nomSatellite.getText();
-            String ni = apercu.getIcon().toString();
-            int dX = Integer.parseInt(demiX.getText());
-            int dY = Integer.parseInt(demiY.getText());
-            int pr = Integer.parseInt(periodeRevolution.getText());
-            Astre a = (Astre) ((DefaultMutableTreeNode) arbreAstres.getLastSelectedPathComponent()).getUserObject();
-            Satellite s = new Satellite(ns, ni, dX, dY, pr, a);
-            jd.dispose();
+            if (nomSatellite.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Veuillez entrer le nom du satellite", "Erreur", JOptionPane.ERROR_MESSAGE);
+            } else if (apercu.getIcon() == null) {
+                JOptionPane.showMessageDialog(null, "Veuillez choisir l'image du satellite", "Erreur", JOptionPane.ERROR_MESSAGE);
+            } else if (demiX.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Veuillez entrer le demi grand axe X du satellite", "Erreur", JOptionPane.ERROR_MESSAGE);
+            } else if (demiY.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Veuillez entrer le demi grand axe Y du satellite", "Erreur", JOptionPane.ERROR_MESSAGE);
+            } else if (periodeRevolution.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Veuillez entrer la période du satellite", "Erreur", JOptionPane.ERROR_MESSAGE);
+            } else if (!demiX.getText().matches("[-+]?\\d*\\.?\\d+")) {
+                JOptionPane.showMessageDialog(null, "Le demi grand axe X du satellite doit être un nombre", "Erreur", JOptionPane.ERROR_MESSAGE);
+            } else if (!demiY.getText().matches("[-+]?\\d*\\.?\\d+")) {
+                JOptionPane.showMessageDialog(null, "Le demi grand axe X du satellite doit être un nombre", "Erreur", JOptionPane.ERROR_MESSAGE);
+            } else if (!periodeRevolution.getText().matches("[-+]?\\d*\\.?\\d+")) {
+                JOptionPane.showMessageDialog(null, "La période du satellite doit être un nombre", "Erreur", JOptionPane.ERROR_MESSAGE);
+            } else if (arbreAstres.getLastSelectedPathComponent() == null) {
+                JOptionPane.showMessageDialog(null, "Veuillez choisir l'astre référent du satellite", "Erreur", JOptionPane.ERROR_MESSAGE);
+            } else {
+                String ns = nomSatellite.getText();
+                String ni = apercu.getIcon().toString();
+                int dX = Integer.parseInt(demiX.getText());
+                int dY = Integer.parseInt(demiY.getText());
+                int pr = Integer.parseInt(periodeRevolution.getText());
+                Astre a = (Astre) ((DefaultMutableTreeNode) arbreAstres.getLastSelectedPathComponent()).getUserObject();
+                Satellite s = new Satellite(ns, ni, dX, dY, pr, a);
+                jd.dispose();
+            }
         });
 
         validate.add(annuler);
@@ -203,13 +223,27 @@ public class FenetreDialogue {
 
         JButton valider = new JButton("Valider");
         valider.addActionListener(actionEvent -> {
-            String ne = nomEtoile.getText();
-            String ni = apercu.getIcon().toString();
-            int dX = Integer.parseInt(posXEtoile.getText());
-            int dY = Integer.parseInt(posYEtoile.getText());
-            Etoile e = new Etoile(ne, ni, dX, dY);
-            f.getModele().ajouterEtoile(e);
-            jd.dispose();
+            if (nomEtoile.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Veuillez entrer le nom de l'étoile", "Erreur", JOptionPane.ERROR_MESSAGE);
+            } else if (apercu.getIcon() == null) {
+                JOptionPane.showMessageDialog(null, "Veuillez choisir l'image de l'étoile", "Erreur", JOptionPane.ERROR_MESSAGE);
+            } else if (posXEtoile.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Veuillez entrer la position X de l'étoile", "Erreur", JOptionPane.ERROR_MESSAGE);
+            } else if (posYEtoile.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Veuillez entrer la position Y de l'étoile", "Erreur", JOptionPane.ERROR_MESSAGE);
+            } else if (!posXEtoile.getText().matches("[-+]?\\d*\\.?\\d+")) {
+                JOptionPane.showMessageDialog(null, "La position X de l'étoile doit être un nombre", "Erreur", JOptionPane.ERROR_MESSAGE);
+            } else if (!posYEtoile.getText().matches("[-+]?\\d*\\.?\\d+")) {
+                JOptionPane.showMessageDialog(null, "La position Y de l'étoile doit être un nombre", "Erreur", JOptionPane.ERROR_MESSAGE);
+            } else {
+                String ne = nomEtoile.getText();
+                String ni = apercu.getIcon().toString();
+                int dX = Integer.parseInt(posXEtoile.getText());
+                int dY = Integer.parseInt(posYEtoile.getText());
+                Etoile e = new Etoile(ne, ni, dX, dY);
+                f.getModele().ajouterEtoile(e);
+                jd.dispose();
+            }
         });
 
         validate.add(annuler);
