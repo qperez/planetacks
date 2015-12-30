@@ -170,9 +170,11 @@ public class Astre {
         Iterator<Satellite> it;
         it = getListeSatellites().iterator();
 
-        while (it.hasNext()) {
-            Satellite s = it.next();
-            s.supprimer(m);
+        if (it.hasNext()) {
+            while (it.hasNext()) {
+                Satellite s = it.next();
+                s.getAstre().listeSatellites.remove(this);
+            }
         }
 
         if (this.getClass() == Etoile.class) m.getListeEtoiles().remove(this);
