@@ -9,7 +9,7 @@ public class Appli {
                 Fenetre fenetre = new Fenetre(modele);
                 Etoile soleil = new Etoile("Soleil", "exit.png", 100, 100);
                 modele.ajouterEtoile(soleil);
-                Satellite satellite = new Satellite("s", "s", 2, 2, 2, soleil);
+                Satellite satellite = new Satellite("s", "exit.png", 2, 2, 2, soleil);
                 modele.ajouterEtoile(new Etoile("Soleil2", "exit.png", 100, 100));
             }
         });

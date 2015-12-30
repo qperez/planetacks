@@ -29,6 +29,7 @@ public class Fenetre extends JFrame{
 
     private JMenuItem itemNouvelleEtoile;
     private JMenuItem itemNouveauSatellite;
+    private JMenuItem itemSupprimerAstre;
 
     private JMenuItem itemSonOn;
     private JMenuItem itemSonOff;
@@ -75,6 +76,7 @@ public class Fenetre extends JFrame{
 
         itemNouvelleEtoile = new JMenuItem("Nouvelle étoile");
         itemNouveauSatellite = new JMenuItem("Nouveau satellite");
+        itemSupprimerAstre = new JMenuItem("Supprimer astre");
 
         itemSonOn = new JMenuItem("Activer le son", new ImageIcon(PATH_RESSOURCES_IMG_APPLI +"sonOn.png"));
         itemSonOff = new JMenuItem("Couper le son", new ImageIcon(PATH_RESSOURCES_IMG_APPLI +"sonOff.png"));
@@ -99,6 +101,7 @@ public class Fenetre extends JFrame{
 
         menuOptions.add(itemNouvelleEtoile);
         menuOptions.add(itemNouveauSatellite);
+        menuOptions.add(itemSupprimerAstre);
 
         menuSon.add(itemSonOn);
         menuSon.add(itemSonOff);
@@ -118,6 +121,7 @@ public class Fenetre extends JFrame{
 
         itemNouveauSatellite.addActionListener(controleurMenu);
         itemNouvelleEtoile.addActionListener(controleurMenu);
+        itemSupprimerAstre.addActionListener(controleurMenu);
 
         itemSonOn.addActionListener(controleurMenu);
         itemSonOff.addActionListener(controleurMenu);
@@ -188,4 +192,5 @@ public class Fenetre extends JFrame{
         return itemNouveauSatellite;
     }
 
+    public JMenuItem getItemSupprimerAstre() { return itemSupprimerAstre; }
 }

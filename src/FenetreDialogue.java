@@ -4,12 +4,8 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Iterator;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Created by quentin on 27/12/15.
@@ -302,5 +298,55 @@ public class FenetreDialogue {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static void supprimerAstre(Fenetre fenetre) {
+        final JDialog jd = new JDialog();
+        jd.setTitle("Supprimer astre");
+        jd.setModal(true);
+
+        JPanel arbre = new JPanel();
+        Dimension dim = new Dimension(180, 200);
+        arbre.setPreferredSize(dim);
+        arbre.add(new JLabel("Choisissez l'astre à supprimer : "));
+        DefaultMutableTreeNode a = new DefaultMutableTreeNode("Astres existants");
+        Iterator<Etoile> it = fenetre.getModele().getListeEtoiles().iterator();
+        while (it.hasNext()) {
+            Etoile e = it.next();
+            a.add(e.getArbreSatellites());
+        }
+        final JTree arbreAstres = new JTree(a);
+        arbreAstres.setPreferredSize(dim);
+        arbre.add(arbreAstres);
+
+        JButton annuler = new JButton("Annuler");
+        annuler.addActionListener(actionEvent -> jd.dispose());
+
+        JButton valider = new JButton("Supprimer");
+        valider.addActionListener(actionEvent -> {
+            if (arbreAstres.getLastSelectedPathComponent() == null) {
+                JOptionPane.showMessageDialog(null, "Veuillez choisir l'astre à supprimer", "Erreur", JOptionPane.ERROR_MESSAGE);
+            }
+            else {
+                Astre astre = (Astre) ((DefaultMutableTreeNode) arbreAstres.getLastSelectedPathComponent()).getUserObject();
+                astre.supprimer(fenetre.getModele());
+                jd.dispose();
+            }
+        });
+
+        arbre.add(annuler);
+        arbre.add(valider);
+
+        jd.add(arbre);
+
+        Dimension dimension = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        int width = (int)dimension.getWidth();
+        int height = (int)dimension.getHeight();
+        int widthWindow = 600;
+        int heigthWindow = 400;
+        jd.setSize(widthWindow, heigthWindow);
+        jd.setLocation(width/2 - widthWindow/2, height/2 - heigthWindow/2);
+        jd.setResizable(false);
+        jd.setVisible(true);
     }
 }

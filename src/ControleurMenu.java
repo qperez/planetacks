@@ -49,6 +49,10 @@ public class ControleurMenu extends Controleur {
             FenetreDialogue.nouvelleEtoile(fenetre);
         }
 
+        else if (fenetre.getItemSupprimerAstre() == e.getSource()) {
+            FenetreDialogue.supprimerAstre(fenetre);
+        }
+
         else { System.out.println("Are you high bro?"); }
     }
 }

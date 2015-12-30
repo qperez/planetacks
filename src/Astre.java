@@ -166,6 +166,23 @@ public class Astre {
         listeSatellites.add(s);
     }
 
+    public void supprimer(Modele m) {
+        Iterator<Satellite> it;
+        it = getListeSatellites().iterator();
+
+        while (it.hasNext()) {
+            Satellite s = it.next();
+            s.supprimer(m);
+        }
+
+        if (this.getClass() == Etoile.class) m.getListeEtoiles().remove(this);
+
+        else {
+            Satellite s = (Satellite) this;
+            s.getAstre().listeSatellites.remove(this);
+        }
+    }
+
     public void affiche() {
 
     }
