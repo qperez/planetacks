@@ -1,3 +1,4 @@
+import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -14,13 +15,15 @@ import java.util.Iterator;
  * </ul>
  */
 public class Astre {
+    private static final String PATH_RESSOURCES_IMG_ASTRES = "./resources/img/astres/";
 
     private String nom;
     protected String nomImage;
     private int positionX;
     protected int positionY;
     protected ArrayList<Satellite> listeSatellites;
-    
+    private JLabel labelImage;
+    private ImageIcon image;
 
     /**
      * Constructeur Astre.
@@ -53,6 +56,8 @@ public class Astre {
         this.positionX = positionX;
         this.positionY = positionY;
         this.listeSatellites = new ArrayList<Satellite>();
+        this.image = new ImageIcon(PATH_RESSOURCES_IMG_ASTRES+nomImage);
+        this.labelImage = new JLabel();
     }
 
     /**
@@ -185,7 +190,9 @@ public class Astre {
         }
     }
 
-    public void affiche() {
-
+    public void affiche(Fenetre f) {
+        labelImage = new JLabel(image);
+        labelImage.setBounds(this.getPositionX(), this.getPositionY(), image.getIconWidth(), image.getIconHeight());
+        f.getJpaneGlobal().add(labelImage);
     }
 }
