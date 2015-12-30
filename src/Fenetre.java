@@ -1,8 +1,14 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by quentin on 23/12/15.
  */
+
 /**
  * <b>Classe permettant créer et gérer l'affichage</b>
  * Une Fenetre est caractérisée par les informations suivantes :
@@ -13,7 +19,7 @@ import javax.swing.*;
  * <li>Des JLabels</li>
  * </ul>
  */
-public class Fenetre extends JFrame{
+public class Fenetre extends JFrame {
 
     //Constante permettant de parametrer le chemin relatif aux ressources images nécessaires
     private static final String PATH_RESSOURCES_IMG_APPLI = "./resources/img/appli/";
@@ -21,6 +27,7 @@ public class Fenetre extends JFrame{
 
 
     private Modele modele;
+    private JPanel jpaneGlobal;
 
     private JMenuItem itemQuitter;
     private JMenuItem itemNouveau;
@@ -48,28 +55,22 @@ public class Fenetre extends JFrame{
      * @param modele le modele servant à la construction
      * @see Fenetre#modele
      */
-    public Fenetre(Modele modele){
+    public Fenetre(Modele modele) {
         this.modele = modele;
-        setIconImage(new ImageIcon(PATH_RESSOURCES_IMG_APPLI +"icone_appli.jpg").getImage()); //Affiche une icone d'application
+        setIconImage(new ImageIcon(PATH_RESSOURCES_IMG_APPLI + "icone_appli.jpg").getImage()); //Affiche une icone d'application
         initAttributs();
         creerVue();
         creerMenu();
-        setSize(1024,768); //Fixe la taille par défaut
-        setTitle("Planethacks : système planétaire");
-        //add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG_APPLI+"fond_voielact_jpanel.jpg"))); //ajout de l'image de fond de la Jframe
-        add(new JLabel(new ImageIcon(PATH_RESSOURCES_IMG_APPLI +"backscreen.jpg")));
-        setVisible(true); //Affiche la fenêtre
-        setResizable(false); //Permet de ne pas resizer la fenêtre
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Gère la fermeture
+
         //audio.launchSound(PATH_RESSOURCES_SOUNDS+"star_wars_theme.wav");
     }
 
     /**
      * Fonction permettant d'initialiser les éléments graphiques Java Swing,
      * ainsi que l'ajout des Actions Listener sur les éléments
-     * */
+     */
     private void initAttributs() {
-        itemQuitter = new JMenuItem("Quitter", new ImageIcon(PATH_RESSOURCES_IMG_APPLI +"exit.png"));
+        itemQuitter = new JMenuItem("Quitter", new ImageIcon(PATH_RESSOURCES_IMG_APPLI + "exit.png"));
         itemNouveau = new JMenuItem("Nouveau système planétaire");
         itemSauvegarder = new JMenuItem("Sauvegarder le système planétaire");
         itemRestaurer = new JMenuItem("Restaurer un système enregistré");
@@ -78,16 +79,17 @@ public class Fenetre extends JFrame{
         itemNouveauSatellite = new JMenuItem("Nouveau satellite");
         itemSupprimerAstre = new JMenuItem("Supprimer astre");
 
-        itemSonOn = new JMenuItem("Activer le son", new ImageIcon(PATH_RESSOURCES_IMG_APPLI +"sonOn.png"));
-        itemSonOff = new JMenuItem("Couper le son", new ImageIcon(PATH_RESSOURCES_IMG_APPLI +"sonOff.png"));
+        itemSonOn = new JMenuItem("Activer le son", new ImageIcon(PATH_RESSOURCES_IMG_APPLI + "sonOn.png"));
+        itemSonOff = new JMenuItem("Couper le son", new ImageIcon(PATH_RESSOURCES_IMG_APPLI + "sonOff.png"));
 
         audio = new Audio();
     }
 
     /**
      * Fonction permettant de créer la barre de menu (JMenuBar)
+     *
      * @return la barre de menu JMenuBar
-     * */
+     */
     private JMenuBar creerMenu() {
         JMenuBar menuBar = new JMenuBar();
         JMenu menuFichier = new JMenu("Fichier");
@@ -131,10 +133,36 @@ public class Fenetre extends JFrame{
 
     /**
      * Fonction permettant d'ajouter les différents éléments graphiques à la JFrame
-     * */
+     */
     private void creerVue() {
-        JPanel jpanGlobal = new JPanel(); //JPanel global de la fenêtre
-        setContentPane(jpanGlobal);
+        setSize(1024, 768); //Fixe la taille par défaut
+        setTitle("Planethacks : système planétaire");setVisible(true); //Affiche la fenêtre
+        setResizable(false); //Permet de ne pas resizer la fenêtre
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Gère la fermeture
+        jpaneGlobal = new JPanel();
+        try {
+            jpaneGlobal = new JPanel() {
+                private static final long serialVersionUID = 1;
+
+                private BufferedImage buf = ImageIO.read(new File(PATH_RESSOURCES_IMG_APPLI + "background.jpg"));
+
+                @Override
+                protected void paintComponent(Graphics g) {
+                    super.paintComponent(g);
+                    g.drawImage(buf, 0, 0, null);
+                }
+            };
+
+            jpaneGlobal.setLayout(null);
+            setContentPane(jpaneGlobal);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        /*ImageIcon lune = new ImageIcon(PATH_RESSOURCES_IMG_APPLI + "../astres/lune.png");
+        JLabel a = new JLabel(lune);
+        a.setBounds(100, 100, lune.getIconWidth(), lune.getIconHeight());
+        jpaneGlobal.add(a);*/
     }
 
 
@@ -148,6 +176,7 @@ public class Fenetre extends JFrame{
 
     /**
      * Retourne le JMenuItem permettant de quitter l'application
+     *
      * @return Item quitter
      */
     public JMenuItem getItemQuitter() {
@@ -156,6 +185,7 @@ public class Fenetre extends JFrame{
 
     /**
      * Retourne le JMenuItem permettant de restaurer le système planétaire
+     *
      * @return Item restaurer
      */
     public JMenuItem getItemNouveau() {
@@ -164,6 +194,7 @@ public class Fenetre extends JFrame{
 
     /**
      * Retourne le JMenuItem permettant de sauvegarder
+     *
      * @return Item sauvegarder
      */
     public JMenuItem getItemSauvegarder() {
@@ -172,9 +203,12 @@ public class Fenetre extends JFrame{
 
     /**
      * Retourne le JMenuItem permettant de restaurer
+     *
      * @return Item restaurer
      */
-    public JMenuItem getItemRestaurer() {return itemRestaurer; }
+    public JMenuItem getItemRestaurer() {
+        return itemRestaurer;
+    }
 
     public JMenuItem getItemSoundOn() {
         return itemSonOn;
@@ -192,5 +226,11 @@ public class Fenetre extends JFrame{
         return itemNouveauSatellite;
     }
 
-    public JMenuItem getItemSupprimerAstre() { return itemSupprimerAstre; }
+    public JMenuItem getItemSupprimerAstre() {
+        return itemSupprimerAstre;
+    }
+
+    public JPanel getJpaneGlobal() {
+        return jpaneGlobal;
+    }
 }
