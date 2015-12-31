@@ -48,8 +48,6 @@ public class Fenetre extends JFrame {
     private Audio audio;
 
     private AffichageAstres affichageAstres;
-    private JLabel test;
-    private ArrayList<JLabel> jlabelAstres;
 
     /**
      * Constructeur Fenetre.
@@ -71,11 +69,10 @@ public class Fenetre extends JFrame {
         this.modele.ajouterEtoile(soleil);
         Etoile en = new Etoile("Etoile noire", "etoile_noire.png",300, 500);
         this.modele.ajouterEtoile(en);
-        Satellite satellite = new Satellite("s", "coruscant.png", 100, 100, 100, soleil);
+        Satellite satellite = new Satellite("s", "coruscant.png", 150, 100, 100, soleil);
         this.modele.ajouterEtoile(new Etoile("Soleil2", "exit.png", 100, 100));
         affichageAstres = new AffichageAstres(this);
         affichageAstres.start();
-        jlabelAstres = new ArrayList<>();
         //audio.launchSound(PATH_RESSOURCES_SOUNDS+"star_wars_theme.wav");
     }
 
@@ -97,8 +94,6 @@ public class Fenetre extends JFrame {
         itemSonOff = new JMenuItem("Couper le son", new ImageIcon(PATH_RESSOURCES_IMG_APPLI + "sonOff.png"));
 
         audio = new Audio();
-
-        test = new JLabel("HELLLOOOO");
     }
 
     /**
@@ -250,6 +245,18 @@ public class Fenetre extends JFrame {
         return jpaneGlobal;
     }
 
+    /**
+     * Commentaire d'explication:
+     * La méthode JFrame prend en paramètre un flottant qui correspond au temps en provenance du Thread
+     * je supprime l'ensemble des composants genre Jlabels à l'aide de removeAll sur le JPanel global ;)
+     * ensuite je parcours comme toi la liste d'étoile du modele
+     * pour chacune des étoiles:
+     *  je l'ajoute au jpaneGlobal
+     *  je parcours la liste des satellites de l'étoile
+     *  pour chacun des satellites:
+     *      je le crée puis l'ajoute au jpaneGlobal en ayant pris soin de calculer sa position X et Y en fonction du temps
+     * j'appelle ensuite la méthode repaint() native de Swing afin de rafraichir l'affichage
+     * */
     public void repaint(float t) {
         jpaneGlobal.removeAll();
         for (Etoile e : modele.getListeEtoiles()) {
@@ -257,26 +264,18 @@ public class Fenetre extends JFrame {
             System.out.println("Astre = "+e.getNom());
             System.out.println("X = "+e.getPositionX());
             System.out.println("Y = "+e.getPositionY());
-            jlabastre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+            //jlabastre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
             jlabastre.setBounds(e.getPositionX(), e.getPositionY(), e.getImage().getIconWidth(), e.getImage().getIconHeight());
+
             jpaneGlobal.add(jlabastre);
+
             for (Satellite s : e.getListeSatellites()){
                 JLabel jlabsat = new JLabel(s.getImage());
-                jlabsat.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-                /*System.out.println(s.getPositionX()+s.getDemiGrandAxe());
-                System.out.println(s.getPositionY()+s.getDemiPetitAxe());*/
-                /*System.out.println("X fonction de t = "+s.calculPositionSatelliteX(t));
-                System.out.println("Y fonction de t = "+s.calculPositionSatelliteY(t));
-                System.out.println("Y = "+s.getPositionY()+s.getDemiPetitAxe());*/
                 jlabsat.setBounds(s.calculPositionSatelliteX(t), s.calculPositionSatelliteY(t), s.getImage().getIconWidth(), s.getImage().getIconHeight());
                 jpaneGlobal.add(jlabsat);
             }
         }
-        //setContentPane(jpaneGlobal);
         jpaneGlobal.repaint();
     }
 
-    public JLabel getTest() {
-        return test;
-    }
 }

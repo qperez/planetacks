@@ -190,11 +190,10 @@ public class Astre {
         }
     }
 
-    /*public void affiche(Fenetre f) {
-        labelImage = new JLabel(image);
-        labelImage.setBounds(this.getPositionX(), this.getPositionY(), image.getIconWidth(), image.getIconHeight());
-        f.getJpaneGlobal().add(labelImage);
-    }*/
+    /*
+    * Il n'y a plus de méthode d'affichage dans Astre, j'ai préférer laisser la Fenetre
+    * faire le job afin d'être un peu plus MVC compliant
+    * */
 
     public ImageIcon getImage() {
         return image;

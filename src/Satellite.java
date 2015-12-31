@@ -142,7 +142,7 @@ public class Satellite extends Astre{
     }
 
     /**
-     * Calcul et met à jour la position du Satellite en X en fonction du temps t
+     * Calcul la position du Satellite en X en fonction du temps t
      * @param t le temps
      * @return int la nouvelle position X
      */
@@ -154,7 +154,7 @@ public class Satellite extends Astre{
     }
 
     /**
-     * Calcul et met à jour la position du Satellite en Y en fonction du temps t
+     * Calcul la position du Satellite en Y en fonction du temps t
      * @param t le temps
      * @return int la nouvelle position Y
      */
