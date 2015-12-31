@@ -146,11 +146,10 @@ public class Satellite extends Astre{
      * @param t le temps
      * @return int la nouvelle position X
      */
-    public int calculPositionSatelliteX(int t) {
+    public int calculPositionSatelliteX(float t) {
         /*x=a.cos(t/p)+xAstreRéférent
           y=b.sin(t/p)+yAstreRéférent*/
-        int x = (int) (demiGrandAxe * Math.cos(t/periode) * astre.getPositionX());
-        setPositionX(x);
+        int x = (int) (demiGrandAxe * Math.cos(t/periode) + astre.getPositionX() + (astre.getImage().getIconWidth() - this.getImage().getIconWidth())/2);
         return x;
     }
 
@@ -159,11 +158,10 @@ public class Satellite extends Astre{
      * @param t le temps
      * @return int la nouvelle position Y
      */
-    public int calculPositionSatelliteY(int t) {
+    public int calculPositionSatelliteY(float t) {
         /*x=a.cos(t/p)+xAstreRéférent
           y=b.sin(t/p)+yAstreRéférent*/
-        int y = (int) (demiGrandAxe * Math.cos(t/periode) * astre.getPositionY());
-        setPositionY(y);
+        int y = (int) (demiPetitAxe * Math.sin(t/periode) + astre.getPositionY() + (astre.getImage().getIconHeight() - this.getImage().getIconHeight())/2);
         return y;
     }
 

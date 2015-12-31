@@ -4,6 +4,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by quentin on 23/12/15.
@@ -45,6 +47,10 @@ public class Fenetre extends JFrame {
 
     private Audio audio;
 
+    private AffichageAstres affichageAstres;
+    private JLabel test;
+    private ArrayList<JLabel> jlabelAstres;
+
     /**
      * Constructeur Fenetre.
      * <p>
@@ -61,7 +67,15 @@ public class Fenetre extends JFrame {
         initAttributs();
         creerVue();
         creerMenu();
-
+        Etoile soleil = new Etoile("Soleil", "soleil.png", 300, 300);
+        this.modele.ajouterEtoile(soleil);
+        Etoile en = new Etoile("Etoile noire", "etoile_noire.png",300, 500);
+        this.modele.ajouterEtoile(en);
+        Satellite satellite = new Satellite("s", "coruscant.png", 100, 100, 100, soleil);
+        this.modele.ajouterEtoile(new Etoile("Soleil2", "exit.png", 100, 100));
+        affichageAstres = new AffichageAstres(this);
+        affichageAstres.start();
+        jlabelAstres = new ArrayList<>();
         //audio.launchSound(PATH_RESSOURCES_SOUNDS+"star_wars_theme.wav");
     }
 
@@ -83,6 +97,8 @@ public class Fenetre extends JFrame {
         itemSonOff = new JMenuItem("Couper le son", new ImageIcon(PATH_RESSOURCES_IMG_APPLI + "sonOff.png"));
 
         audio = new Audio();
+
+        test = new JLabel("HELLLOOOO");
     }
 
     /**
@@ -135,16 +151,15 @@ public class Fenetre extends JFrame {
      * Fonction permettant d'ajouter les différents éléments graphiques à la JFrame
      */
     private void creerVue() {
-        setSize(1024, 768); //Fixe la taille par défaut
+        setSize(1024, 700); //Fixe la taille par défaut
         setTitle("Planethacks : système planétaire");setVisible(true); //Affiche la fenêtre
         setResizable(false); //Permet de ne pas resizer la fenêtre
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Gère la fermeture
-        jpaneGlobal = new JPanel();
         try {
             jpaneGlobal = new JPanel() {
                 private static final long serialVersionUID = 1;
 
-                private BufferedImage buf = ImageIO.read(new File(PATH_RESSOURCES_IMG_APPLI + "background.jpg"));
+                private BufferedImage buf = ImageIO.read(new File(PATH_RESSOURCES_IMG_APPLI + "fond_voielact_jpanel.jpg"));
 
                 @Override
                 protected void paintComponent(Graphics g) {
@@ -152,12 +167,13 @@ public class Fenetre extends JFrame {
                     g.drawImage(buf, 0, 0, null);
                 }
             };
-
-            jpaneGlobal.setLayout(null);
-            setContentPane(jpaneGlobal);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        jpaneGlobal.setLayout(null);
+        getContentPane().setLayout(null);
+        setContentPane(jpaneGlobal);
+
 
         /*ImageIcon lune = new ImageIcon(PATH_RESSOURCES_IMG_APPLI + "../astres/lune.png");
         JLabel a = new JLabel(lune);
@@ -232,5 +248,35 @@ public class Fenetre extends JFrame {
 
     public JPanel getJpaneGlobal() {
         return jpaneGlobal;
+    }
+
+    public void repaint(float t) {
+        jpaneGlobal.removeAll();
+        for (Etoile e : modele.getListeEtoiles()) {
+            JLabel jlabastre = new JLabel(e.getImage());
+            System.out.println("Astre = "+e.getNom());
+            System.out.println("X = "+e.getPositionX());
+            System.out.println("Y = "+e.getPositionY());
+            jlabastre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+            jlabastre.setBounds(e.getPositionX(), e.getPositionY(), e.getImage().getIconWidth(), e.getImage().getIconHeight());
+            jpaneGlobal.add(jlabastre);
+            for (Satellite s : e.getListeSatellites()){
+                JLabel jlabsat = new JLabel(s.getImage());
+                jlabsat.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+                /*System.out.println(s.getPositionX()+s.getDemiGrandAxe());
+                System.out.println(s.getPositionY()+s.getDemiPetitAxe());*/
+                /*System.out.println("X fonction de t = "+s.calculPositionSatelliteX(t));
+                System.out.println("Y fonction de t = "+s.calculPositionSatelliteY(t));
+                System.out.println("Y = "+s.getPositionY()+s.getDemiPetitAxe());*/
+                jlabsat.setBounds(s.calculPositionSatelliteX(t), s.calculPositionSatelliteY(t), s.getImage().getIconWidth(), s.getImage().getIconHeight());
+                jpaneGlobal.add(jlabsat);
+            }
+        }
+        //setContentPane(jpaneGlobal);
+        jpaneGlobal.repaint();
+    }
+
+    public JLabel getTest() {
+        return test;
     }
 }

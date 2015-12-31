@@ -53,11 +53,11 @@ public class Astre {
     public Astre(String nom, String nomImage, int positionX, int positionY){
         this.nom = nom;
         this.nomImage = nomImage;
-        this.positionX = positionX;
-        this.positionY = positionY;
         this.listeSatellites = new ArrayList<Satellite>();
         this.image = new ImageIcon(PATH_RESSOURCES_IMG_ASTRES+nomImage);
         this.labelImage = new JLabel();
+        this.positionX = positionX - this.image.getIconWidth()/2;
+        this.positionY = positionY - this.image.getIconHeight()/2;
     }
 
     /**
@@ -190,9 +190,13 @@ public class Astre {
         }
     }
 
-    public void affiche(Fenetre f) {
+    /*public void affiche(Fenetre f) {
         labelImage = new JLabel(image);
         labelImage.setBounds(this.getPositionX(), this.getPositionY(), image.getIconWidth(), image.getIconHeight());
         f.getJpaneGlobal().add(labelImage);
+    }*/
+
+    public ImageIcon getImage() {
+        return image;
     }
 }
