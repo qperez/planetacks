@@ -47,7 +47,7 @@ public class FenetreDialogue {
 
         JPanel leftArbre = new JPanel();
         JPanel rightArbre = new JPanel();
-        Dimension dim = new Dimension(180, 200);
+        Dimension dim = new Dimension(200, 400);
         leftArbre.setPreferredSize(dim);
         leftArbre.add(new JLabel("Choisissez l'astre référent : "));
         // Création d'une fonction récursive si un satellite a un satellite etc
@@ -155,7 +155,7 @@ public class FenetreDialogue {
         int width = (int)dimension.getWidth();
         int height = (int)dimension.getHeight();
         int widthWindow = 500;
-        int heigthWindow = 450;
+        int heigthWindow = 650;
         jd.setSize(widthWindow, heigthWindow);
         jd.setLocation(width/2 - widthWindow/2, height/2 - heigthWindow/2);
         jd.setResizable(false);
@@ -305,10 +305,12 @@ public class FenetreDialogue {
         jd.setTitle("Supprimer astre");
         jd.setModal(true);
 
+        Box btot = Box.createVerticalBox();
+        Box bbouttons = Box.createHorizontalBox();
+
         JPanel arbre = new JPanel();
-        Dimension dim = new Dimension(180, 200);
+        Dimension dim = new Dimension(300, 400);
         arbre.setPreferredSize(dim);
-        arbre.add(new JLabel("Choisissez l'astre à supprimer : "));
         DefaultMutableTreeNode a = new DefaultMutableTreeNode("Astres existants");
         Iterator<Etoile> it = fenetre.getModele().getListeEtoiles().iterator();
         while (it.hasNext()) {
@@ -319,11 +321,14 @@ public class FenetreDialogue {
         arbreAstres.setPreferredSize(dim);
         arbre.add(arbreAstres);
 
+        JPanel bannuler = new JPanel();
+        JPanel bsupprimer = new JPanel();
+
         JButton annuler = new JButton("Annuler");
         annuler.addActionListener(actionEvent -> jd.dispose());
 
-        JButton valider = new JButton("Supprimer");
-        valider.addActionListener(actionEvent -> {
+        JButton supprimer = new JButton("Supprimer");
+        supprimer.addActionListener(actionEvent -> {
             if (arbreAstres.getLastSelectedPathComponent() == null) {
                 JOptionPane.showMessageDialog(null, "Veuillez choisir l'astre à supprimer", "Erreur", JOptionPane.ERROR_MESSAGE);
             }
@@ -334,16 +339,21 @@ public class FenetreDialogue {
             }
         });
 
-        arbre.add(annuler);
-        arbre.add(valider);
+        bannuler.add(annuler);
+        bsupprimer.add(supprimer);
 
-        jd.add(arbre);
+        bbouttons.add(bannuler);
+        bbouttons.add(bsupprimer);
+
+        btot.add(arbre);
+        btot.add(bbouttons);
+        jd.add(btot);
 
         Dimension dimension = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
         int width = (int)dimension.getWidth();
         int height = (int)dimension.getHeight();
-        int widthWindow = 600;
-        int heigthWindow = 400;
+        int widthWindow = 350;
+        int heigthWindow = 450;
         jd.setSize(widthWindow, heigthWindow);
         jd.setLocation(width/2 - widthWindow/2, height/2 - heigthWindow/2);
         jd.setResizable(false);
