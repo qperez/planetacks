@@ -1,0 +1,104 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{algorithm,algpseudocode}
+
+%opening
+\title{Méthodes et Outils pour la Programmation: Rapport de projet \\% 
+Planethacks \\%
+UFR-ST Besançon}
+\author{Pierre LIMBALLE, groupe TP2B \\ Quentin PEREZ, groupe TP2B}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Sujet}
+\subsection{Contexte}
+Dans le cadre du module: Méthodes et Outils pour la Programmation (MOP) la réalisation d'un projet nous a été demandé afin de mettre
+en application les connaissances théoriques acquisent tout au long du semestre cinq. \\
+La conception de l'application a pour objectifs:
+\begin{itemize}
+  \item l'utilisation du langage de programmation Java en orienté objets
+  \item l'application du paradigme MVC (Modèle - Vue - Contrôleur)
+  \item l'approche du travail collaboratif par l'utilisation de logiciels de gestion de versions
+  \item la manipulation d'éléments graphiques de la bibliothèque graphique Java Swing
+\end{itemize}
+
+\subsection{But de l'application}
+La finalité de ce projet est la conception Java une application qui réalise une animation graphique en 2D 
+représentant un ensemble de planètes et leurs satellites en orbite autour d'une ou plusieurs étoiles.
+L'utilisateur doit disposer des fonctionnalités suivantes:
+\begin{itemize}
+  \item l'ajout et la suppression d'astres (étoiles ou satellites) dans l'application
+  \item l'affichage des astres dans une fenetre graphique animée
+  \item la possibilité de sauvegarder un système planétaire 
+\end{itemize}
+La contrainte d'ergonomie est également importante quant à l'utilisation du logiciel.
+
+\section{Conception}
+\subsection{Introduction}
+Planethacks est le nom choisi pour l'application. Du fait d'un travail en binôme l'utilisation
+du logiciel de gestion de version Git en lien avec le serveur d'hébergement \href{https://github.com}{GitHub} fut priviligiée (sources GitHub de Planethacks: \url{https://github.com/qperez/planetacks}). \\
+L'IDE (\textit{Internal Development Environement}) IntelliJ IDEA fut utilisé durant toute la phase de développement et de tests et ce afin 
+d'accélérer et faciliter le développement de l'application ainsi que son déboguage.
+
+\subsection{Structures de données au sein de l'application}
+La définition de classes permettant de structurer les données de notre programme fut la première étape de conception. Ainsi 3 classes 
+nous permettent de modéliser un astre:
+\begin{itemize}
+  \item Astre (classe abstraite)
+  \item Etoile
+  \item Satellite
+\end{itemize}
+
+Planethacks repose sur une conception basée sur le paradigme MVC. Ce paradigme impose l'utilisation à minima de 3 classes (Modèle - Vue - Contrôleur) permettant de
+séparer les données, de l'affichage et des interactions utilisateur. \\ 
+Dans un souçis de respect du modèle MVC nous disposons donc des classes suivantes:
+\begin{itemize}
+  \item Fenetre
+  \item Modele
+  \item Controleur (classe abstraite)
+  \item ControleurMenu
+  \item AffichageAstres
+\end{itemize}
+
+Afin de réaliser la fonctionnalité de sauvegarde une classe spécifique contenant les outils nécessaires fut créée: XMLTools. \\
+Le point d'entré de l'application est assuré par la classe: Appli
+
+\subsubsection{Modélisation d'un astre (Etoile ou Satellite}
+Le diagramme UML ci-dessous représente la modélisation choisie pour un astre:
+\begin{flushleft}
+  $\includegraphics[scale=0.4]{classes_astre.png}$
+\end{flushleft}
+Les méthodes : \textit{calculPositionSatelliteX(float)} et \textit{calculPositionSatelliteX(float)} présentes dans la classe Satellite permettent
+de calculer la position en X et en Y du Satellite en fonction du temps.
+\subsubsection{Architecture MVC}
+\begin{flushleft}
+  $\includegraphics[scale=0.4]{classes_mvc.png}$
+\end{flushleft}
+
+\begin{algorithm}
+\caption{méthode repaint de la classe Fenetre}
+\begin{algorithmic}
+\Function{repaint}{t temps}
+\State Supprimer l'ensemble des composants graphique du JPanel
+\For{chaque Etoile $e$ de la liste d'étoiles du Modele}
+    \State $jlabastre\gets$ nouveau JLabel avec l'image de $e$
+    \State Afficher $jlabastre$ en fonction de la position $X_{e}$ et $Y_{e}$
+    \State Ajouter le $jlabastre$ au JPanel
+    \For{chaque Satellite $s$ de la liste des satellites de $e$}
+	\State $jlabsat\gets$ nouveau JLabel avec l'image de $s$
+	\State Afficher $jlabsat$ en fonction de $s.calculPositionSatelliteX(t)$ et $s.calculPositionSatelliteY(t)$
+	\State Ajouter le $jlabsat$ au JPanel
+    \EndFor
+\EndFor
+\State Appel de la méthode $repaint()$ sur le JPanel
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\end{document}
