@@ -7,9 +7,6 @@ public class Appli {
             public void run() {
                 Modele modele = new Modele();
                 Fenetre fenetre = new Fenetre(modele);
-
-                /*en.affiche(fenetre);
-                soleil.affiche(fenetre);*/
             }
         });
         System.out.println("Hello world, it's was the first commit in the space because ponies are the most beautiful");

@@ -13,18 +13,16 @@ public class AffichageAstres extends Thread {
         this.fenetre = fenetre;
     }
 
-    public void run(){
+    public void run() {
         float t=0;
         System.out.println("Démarrage thread");
         while(true){
-            try{
+            try {
                 this.sleep(10);
                 t+=1;
                //System.out.println(t);
                 fenetre.repaint(t);
-            }catch(InterruptedException e){
-
-            }
+            } catch(InterruptedException e){}
         }
     }
 

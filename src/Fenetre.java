@@ -67,13 +67,13 @@ public class Fenetre extends JFrame {
         creerMenu();
         Etoile soleil = new Etoile("Soleil", "soleil.png", 300, 300);
         this.modele.ajouterEtoile(soleil);
-        Etoile en = new Etoile("Etoile noire", "etoile_noire.png",300, 500);
+        Etoile en = new Etoile("Etoile noire", "etoile_noire.png", 300, 500);
         this.modele.ajouterEtoile(en);
-        Satellite satellite = new Satellite("s", "coruscant.png", 150, 100, 100, soleil);
-        this.modele.ajouterEtoile(new Etoile("Soleil2", "exit.png", 100, 100));
+        Satellite satellite = new Satellite("s", "faucon_millenium.png", 150, 100, 100, soleil);
+        this.modele.ajouterEtoile(new Etoile("Soleil2", "premier_ordre.png", 100, 100));
         affichageAstres = new AffichageAstres(this);
         affichageAstres.start();
-        //audio.launchSound(PATH_RESSOURCES_SOUNDS+"star_wars_theme.wav");
+        // audio.launchSound(PATH_RESSOURCES_SOUNDS + "star_wars_theme.wav");
     }
 
     /**
@@ -147,14 +147,16 @@ public class Fenetre extends JFrame {
      */
     private void creerVue() {
         setSize(1024, 700); //Fixe la taille par défaut
-        setTitle("Planethacks : système planétaire");setVisible(true); //Affiche la fenêtre
+        setTitle("Planethacks : système planétaire");
+        setVisible(true); //Affiche la fenêtre
         setResizable(false); //Permet de ne pas resizer la fenêtre
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Gère la fermeture
         try {
             jpaneGlobal = new JPanel() {
                 private static final long serialVersionUID = 1;
 
-                private BufferedImage buf = ImageIO.read(new File(PATH_RESSOURCES_IMG_APPLI + "fond_voielact_jpanel.jpg"));
+                //private BufferedImage buf = ImageIO.read(new File(PATH_RESSOURCES_IMG_APPLI + "fond_voielact_jpanel.jpg"));
+                private BufferedImage buf = ImageIO.read(new File(PATH_RESSOURCES_IMG_APPLI + "background.jpg"));
 
                 @Override
                 protected void paintComponent(Graphics g) {
@@ -251,25 +253,31 @@ public class Fenetre extends JFrame {
      * je supprime l'ensemble des composants genre Jlabels à l'aide de removeAll sur le JPanel global ;)
      * ensuite je parcours comme toi la liste d'étoile du modele
      * pour chacune des étoiles:
-     *  je l'ajoute au jpaneGlobal
-     *  je parcours la liste des satellites de l'étoile
-     *  pour chacun des satellites:
-     *      je le crée puis l'ajoute au jpaneGlobal en ayant pris soin de calculer sa position X et Y en fonction du temps
+     * je l'ajoute au jpaneGlobal
+     * je parcours la liste des satellites de l'étoile
+     * pour chacun des satellites:
+     * je le crée puis l'ajoute au jpaneGlobal en ayant pris soin de calculer sa position X et Y en fonction du temps
      * j'appelle ensuite la méthode repaint() native de Swing afin de rafraichir l'affichage
-     * */
+     */
     public void repaint(float t) {
         jpaneGlobal.removeAll();
         for (Etoile e : modele.getListeEtoiles()) {
             JLabel jlabastre = new JLabel(e.getImage());
-            System.out.println("Astre = "+e.getNom());
-            System.out.println("X = "+e.getPositionX());
-            System.out.println("Y = "+e.getPositionY());
+            System.out.println("Astre = " + e.getNom());
+            System.out.println("X = " + e.getPositionX());
+            System.out.println("Y = " + e.getPositionY());
+            System.out.println(e.getPositionX());
+            System.out.println(e.getPositionY());
+            System.out.println(e.getImage().getIconWidth());
+            System.out.println(e.getImage().getIconHeight());
+            System.out.println(e.getImage().getDescription());
+
             //jlabastre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
             jlabastre.setBounds(e.getPositionX(), e.getPositionY(), e.getImage().getIconWidth(), e.getImage().getIconHeight());
 
             jpaneGlobal.add(jlabastre);
 
-            for (Satellite s : e.getListeSatellites()){
+            for (Satellite s : e.getListeSatellites()) {
                 JLabel jlabsat = new JLabel(s.getImage());
                 jlabsat.setBounds(s.calculPositionSatelliteX(t), s.calculPositionSatelliteY(t), s.getImage().getIconWidth(), s.getImage().getIconHeight());
                 jpaneGlobal.add(jlabsat);
@@ -277,5 +285,4 @@ public class Fenetre extends JFrame {
         }
         jpaneGlobal.repaint();
     }
-
 }

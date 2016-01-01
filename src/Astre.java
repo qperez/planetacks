@@ -54,7 +54,7 @@ public class Astre {
         this.nom = nom;
         this.nomImage = nomImage;
         this.listeSatellites = new ArrayList<Satellite>();
-        this.image = new ImageIcon(PATH_RESSOURCES_IMG_ASTRES+nomImage);
+        this.image = new ImageIcon(PATH_RESSOURCES_IMG_ASTRES + nomImage);
         this.labelImage = new JLabel();
         this.positionX = positionX - this.image.getIconWidth()/2;
         this.positionY = positionY - this.image.getIconHeight()/2;

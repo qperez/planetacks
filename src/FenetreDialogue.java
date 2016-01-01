@@ -13,6 +13,7 @@ import java.util.Iterator;
 public class FenetreDialogue {
     private static final String PATH_RESSOURCES_IMG_ASTRES = "./resources/img/astres/";
     private static final String PATH_RESSOURCES_SAVE = "./save/";
+    private String filename;
 
     public static int confirmationNouveau() {
         JOptionPane jop = new JOptionPane();
@@ -93,12 +94,14 @@ public class FenetreDialogue {
         JPanel buttonImage = new JPanel();
         JButton image = new JButton("Image satellite");
         final JLabel apercu = new JLabel("");
+        final JLabel nomimage = new JLabel("");
 
         image.addActionListener(e -> {
             JFileChooser fileChooser = new JFileChooser(PATH_RESSOURCES_IMG_ASTRES);
             if (fileChooser.showOpenDialog(null) == 0) {
-                String filename = PATH_RESSOURCES_IMG_ASTRES + fileChooser.getSelectedFile().getName();
-                ImageIcon image1 = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT));
+                String filename = fileChooser.getSelectedFile().getName();
+                nomimage.setText(filename);
+                ImageIcon image1 = new ImageIcon(new ImageIcon(PATH_RESSOURCES_IMG_ASTRES + filename).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT));
                 apercu.setIcon(image1);
                 ((Component) e.getSource()).getParent().repaint();
             }
@@ -133,7 +136,7 @@ public class FenetreDialogue {
                 JOptionPane.showMessageDialog(null, "Veuillez choisir l'astre référent du satellite", "Erreur", JOptionPane.ERROR_MESSAGE);
             } else {
                 String ns = nomSatellite.getText();
-                String ni = apercu.getIcon().toString();
+                String ni = nomimage.getText();
                 int dX = Integer.parseInt(demiX.getText());
                 int dY = Integer.parseInt(demiY.getText());
                 int pr = Integer.parseInt(periodeRevolution.getText());
@@ -205,11 +208,13 @@ public class FenetreDialogue {
         JPanel buttonImage = new JPanel();
         JButton image = new JButton("Image étoile");
         final JLabel apercu = new JLabel("");
+        final JLabel nomimage = new JLabel("");
         image.addActionListener(e -> {
             JFileChooser fileChooser = new JFileChooser(PATH_RESSOURCES_IMG_ASTRES);
             if (fileChooser.showOpenDialog(null) == 0) {
-                String filename = PATH_RESSOURCES_IMG_ASTRES + fileChooser.getSelectedFile().getName();
-                ImageIcon image1 = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT));
+                String filename = fileChooser.getSelectedFile().getName();
+                nomimage.setText(filename);
+                ImageIcon image1 = new ImageIcon(new ImageIcon(PATH_RESSOURCES_IMG_ASTRES + filename).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT));
                 apercu.setIcon(image1);
                 ((Component) e.getSource()).getParent().repaint();
             }
@@ -238,7 +243,7 @@ public class FenetreDialogue {
                 JOptionPane.showMessageDialog(null, "La position Y de l'étoile doit être un nombre", "Erreur", JOptionPane.ERROR_MESSAGE);
             } else {
                 String ne = nomEtoile.getText();
-                String ni = apercu.getIcon().toString();
+                String ni = nomimage.getText();
                 int dX = Integer.parseInt(posXEtoile.getText());
                 int dY = Integer.parseInt(posYEtoile.getText());
                 Etoile e = new Etoile(ne, ni, dX, dY);
@@ -359,4 +364,13 @@ public class FenetreDialogue {
         jd.setResizable(false);
         jd.setVisible(true);
     }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
 }
