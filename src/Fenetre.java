@@ -146,7 +146,10 @@ public class Fenetre extends JFrame {
      * Fonction permettant d'ajouter les différents éléments graphiques à la JFrame
      */
     private void creerVue() {
-        setSize(1024, 700); //Fixe la taille par défaut
+        Dimension dimension = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        int width = (int)dimension.getWidth();
+        int height = (int)dimension.getHeight();
+        setSize(width, height); //Fixe la taille par défaut
         setTitle("Planethacks : système planétaire");
         setVisible(true); //Affiche la fenêtre
         setResizable(false); //Permet de ne pas resizer la fenêtre
