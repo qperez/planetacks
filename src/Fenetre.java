@@ -263,14 +263,14 @@ public class Fenetre extends JFrame {
         jpaneGlobal.removeAll();
         for (Etoile e : modele.getListeEtoiles()) {
             JLabel jlabastre = new JLabel(e.getImage());
-            System.out.println("Astre = " + e.getNom());
+            /*System.out.println("Astre = " + e.getNom());
             System.out.println("X = " + e.getPositionX());
             System.out.println("Y = " + e.getPositionY());
             System.out.println(e.getPositionX());
             System.out.println(e.getPositionY());
             System.out.println(e.getImage().getIconWidth());
             System.out.println(e.getImage().getIconHeight());
-            System.out.println(e.getImage().getDescription());
+            System.out.println(e.getImage().getDescription());*/
 
             //jlabastre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
             jlabastre.setBounds(e.getPositionX(), e.getPositionY(), e.getImage().getIconWidth(), e.getImage().getIconHeight());

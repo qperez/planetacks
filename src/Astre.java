@@ -1,5 +1,6 @@
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -22,7 +23,7 @@ public class Astre {
     private int positionX;
     protected int positionY;
     protected ArrayList<Satellite> listeSatellites;
-    private JLabel labelImage;
+    //private JLabel labelImage;
     private ImageIcon image;
 
     /**
@@ -55,7 +56,7 @@ public class Astre {
         this.nomImage = nomImage;
         this.listeSatellites = new ArrayList<Satellite>();
         this.image = new ImageIcon(PATH_RESSOURCES_IMG_ASTRES + nomImage);
-        this.labelImage = new JLabel();
+        //this.labelImage = new JLabel();
         this.positionX = positionX - this.image.getIconWidth()/2;
         this.positionY = positionY - this.image.getIconHeight()/2;
     }
@@ -190,12 +191,11 @@ public class Astre {
         }
     }
 
-    /*
-    * Il n'y a plus de méthode d'affichage dans Astre, j'ai préférer laisser la Fenetre
-    * faire le job afin d'être un peu plus MVC compliant
-    * */
-
     public ImageIcon getImage() {
         return image;
+    }
+
+    public void setImage(ImageIcon image) {
+        this.image = image;
     }
 }

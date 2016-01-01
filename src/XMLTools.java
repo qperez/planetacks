@@ -1,13 +1,18 @@
+import javax.swing.*;
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 /**
  * <b>Classe permettant de générer les fichiers XML de sauvegarde :</b>
  */
 public final class XMLTools {
+    private static final String PATH_RESSOURCES_IMG_ASTRES = "./resources/img/astres/";
     private XMLTools() {}
 
     /**
@@ -45,7 +50,15 @@ public final class XMLTools {
             // fermeture du decodeur
             decoder.close();
         }
-        return object;
+
+        ArrayList<Astre> la = (ArrayList<Astre>) object;
+        Iterator<Astre> it = la.iterator();
+        while (it.hasNext()) {
+            Astre a = it.next();
+            a.setImage(new ImageIcon(PATH_RESSOURCES_IMG_ASTRES + a.getNomImage()));
+        }
+
+        return la;
     }
 
 }
