@@ -65,12 +65,12 @@ public class Fenetre extends JFrame {
         initAttributs();
         creerVue();
         creerMenu();
-        Etoile soleil = new Etoile("Soleil", "soleil.png", 300, 300);
+        /*Etoile soleil = new Etoile("Soleil", "soleil.png", 300, 300);
         this.modele.ajouterEtoile(soleil);
         Etoile en = new Etoile("Etoile noire", "etoile_noire.png", 300, 500);
         this.modele.ajouterEtoile(en);
         Satellite satellite = new Satellite("s", "faucon_millenium.png", 150, 100, 100, soleil);
-        this.modele.ajouterEtoile(new Etoile("Soleil2", "premier_ordre.png", 100, 100));
+        this.modele.ajouterEtoile(new Etoile("Soleil2", "premier_ordre.png", 100, 100));*/
         affichageAstres = new AffichageAstres(this);
         affichageAstres.start();
         // audio.launchSound(PATH_RESSOURCES_SOUNDS + "star_wars_theme.wav");
@@ -277,12 +277,19 @@ public class Fenetre extends JFrame {
 
             jpaneGlobal.add(jlabastre);
 
-            for (Satellite s : e.getListeSatellites()) {
-                JLabel jlabsat = new JLabel(s.getImage());
-                jlabsat.setBounds(s.calculPositionSatelliteX(t), s.calculPositionSatelliteY(t), s.getImage().getIconWidth(), s.getImage().getIconHeight());
-                jpaneGlobal.add(jlabsat);
-            }
+            repaintSatellite(e.getListeSatellites(), t);
         }
         jpaneGlobal.repaint();
+    }
+
+    public void repaintSatellite(ArrayList<Satellite> ls, float t) {
+        Iterator<Satellite> it = ls.iterator();
+        while (it.hasNext()) {
+            Satellite s = it.next();
+            JLabel jlabsat = new JLabel(s.getImage());
+            jlabsat.setBounds(s.calculPositionSatelliteX(t), s.calculPositionSatelliteY(t), s.getImage().getIconWidth(), s.getImage().getIconHeight());
+            jpaneGlobal.add(jlabsat);
+            repaintSatellite(s.getListeSatellites(), t);
+        }
     }
 }

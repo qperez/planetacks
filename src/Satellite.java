@@ -150,6 +150,7 @@ public class Satellite extends Astre{
         /*x=a.cos(t/p)+xAstreRéférent
           y=b.sin(t/p)+yAstreRéférent*/
         int x = (int) (demiGrandAxe * Math.cos(t/periode) + astre.getPositionX() + (astre.getImage().getIconWidth() - this.getImage().getIconWidth())/2);
+        setPositionX(x);
         return x;
     }
 
@@ -162,6 +163,7 @@ public class Satellite extends Astre{
         /*x=a.cos(t/p)+xAstreRéférent
           y=b.sin(t/p)+yAstreRéférent*/
         int y = (int) (demiPetitAxe * Math.sin(t/periode) + astre.getPositionY() + (astre.getImage().getIconHeight() - this.getImage().getIconHeight())/2);
+        setPositionY(y);
         return y;
     }
 
