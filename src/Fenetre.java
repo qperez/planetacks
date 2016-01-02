@@ -170,6 +170,9 @@ public class Fenetre extends JFrame {
         jpaneGlobal.setLayout(null);
         getContentPane().setLayout(null);
         setContentPane(jpaneGlobal);
+
+        FenetreDialogue.ouverture(this);
+
         affichageAstres.start();
     }
 

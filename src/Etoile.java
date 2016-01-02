@@ -52,7 +52,7 @@ public class Etoile extends Astre {
      */
     public Etoile(String nom, String nomImage, int positionX, int positionY, ArrayList<Satellite> listeSatellites) {
         super(nom, nomImage, positionX, positionY);
-        this.listeSatellites = listeSatellites;
+        this.setListeSatellites(listeSatellites);
     }
 
     /**

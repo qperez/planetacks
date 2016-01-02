@@ -310,6 +310,18 @@ public class FenetreDialogue {
         }
     }
 
+    public static void ouverture(Fenetre f) {
+        JOptionPane jop = new JOptionPane();
+        int reponse = jop.showConfirmDialog(null,
+                "Voulez vous ouvrir une sauvegarde ?",
+                "Ouverture sauvegarde",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+        if (reponse == 0) {
+            restaurer(f);
+        }
+    }
+
     public static void supprimerAstre(Fenetre fenetre) {
         final JDialog jd = new JDialog();
         jd.setTitle("Supprimer astre");
