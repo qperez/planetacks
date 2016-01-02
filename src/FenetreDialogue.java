@@ -320,8 +320,13 @@ public class FenetreDialogue {
             String filename = fileChooser.getSelectedFile().getName();
             String filepath = PATH_RESSOURCES_SAVE + filename;
             try {
-                if (filename.equals("starwars.xml"))
+                if (filename.equals("starwars.xml")) {
+                    fenetre.getAudio().launchSound(PATH_RESSOURCES_SOUNDS + "tir.wav");
+                    fenetre.getAudio().launchSound(PATH_RESSOURCES_SOUNDS + "sabre.wav");
+                    fenetre.getAudio().launchSound(PATH_RESSOURCES_SOUNDS + "r2d2.wav");
+                    fenetre.getAudio().launchSound(PATH_RESSOURCES_SOUNDS + "darkvador.wav");
                     fenetre.getAudio().launchSound(PATH_RESSOURCES_SOUNDS + "star_wars_theme.wav");
+                }
                 else fenetre.getAudio().stopSound();
                 fenetre.getModele().charger(filepath);
             } catch (IOException e) {

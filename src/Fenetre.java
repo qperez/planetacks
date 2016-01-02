@@ -64,13 +64,6 @@ public class Fenetre extends JFrame {
         initAttributs();
         creerMenu();
         creerVue();
-        /*Etoile soleil = new Etoile("Soleil", "soleil.png", 300, 300);
-        this.modele.ajouterEtoile(soleil);
-        Etoile en = new Etoile("Etoile noire", "etoile_noire.png", 300, 500);
-        this.modele.ajouterEtoile(en);
-        Satellite satellite = new Satellite("s", "faucon_millenium.png", 150, 100, 100, soleil);
-        this.modele.ajouterEtoile(new Etoile("Soleil2", "premier_ordre.png", 100, 100));*/
-        // audio.launchSound(PATH_RESSOURCES_SOUNDS + "star_wars_theme.wav");
     }
 
     /**

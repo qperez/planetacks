@@ -128,7 +128,6 @@ Nous avons utilisé une structure de fichiers qui nous parraissait être la plus
 Nous pouvons retrouver les dossiers de production suivants, dans lesquels nous manipulions directement les fichiers :
 \begin{itemize}
  \item \begin{verbatim}src\end{verbatim} $\rightarrow$ dossier des sources (.java)
- \item \begin{verbatim}save\end{verbatim} $\rightarrow$ dossier des fichiers de sauvegarde (.xml)
  \item \begin{verbatim}ressources\end{verbatim} $\rightarrow$ dossier des différents fichiers image ou audio
  \begin{itemize}
   \item \begin{verbatim}img\end{verbatim} $\rightarrow$ dossier contenant toutes les images du projet
@@ -138,22 +137,51 @@ Nous pouvons retrouver les dossiers de production suivants, dans lesquels nous m
   \end{itemize}
   \item \begin{verbatim}sounds\end{verbatim} $\rightarrow$ dossier contenant tous les sons du projet
  \end{itemize}
- \item \begin{verbatim}rapport\end{verbatim} $\rightarrow$ dossier contenant les fichiers permettant de réaliser ce rapport
+ \item \begin{verbatim}rapport\end{verbatim} $\rightarrow$ dossier contenant les fichiers permettant de réaliser ce rapport (fichiers \LaTeX)
 \end{itemize}
-\\
+\vspace{0.5cm}
 Mais également des dossiers dont le contenu est généré automatiquement :
 \begin{itemize}
  \item \begin{verbatim}out\end{verbatim} $\rightarrow$ dossier des fichiers java compilés (.class)
+ \item \begin{verbatim}save\end{verbatim} $\rightarrow$ dossier des fichiers de sauvegarde générés par l'application (.xml)
  \item \begin{verbatim}documentation\end{verbatim} $\rightarrow$ dossier contenant la documentation du projet (.html)
  \item \begin{verbatim}.idea\end{verbatim} $\rightarrow$ dossier contenant les fichiers de configuration du logiciel \textit{IntelliJ IDEA}
 \end{itemize}
-
+\vspace{0.5cm}
+Ainsi que des fichiers seuls :
+\begin{itemize}
+ \item \begin{verbatim}.gitignore\end{verbatim} $\rightarrow$ fichier permettant d'ignorer l'envoi de fichiers sur GitHub (ex : dossier \textit{out})
+ \item \begin{verbatim}README.md\end{verbatim} $\rightarrow$ fichier MarkDown de présentation du projet sur GitHub
+ \item \begin{verbatim}planetacks.iml\end{verbatim} $\rightarrow$ fichier de configuration du projet pour \textit{IntelliJ IDEA}
+\end{itemize}
 
 \subsubsection{Architecture MVC}
 \begin{center}
   $\includegraphics[scale=0.4]{classes_mvc.png}$
 \end{center}
 
+Comme dit précédemment, nous avons utilisé le paradigme MVC afin de faciliter le développement. Dans cette architecture, nous pouvons retrouver 3 principales classes qui sont les représentantes du modèle MVC : 
+\begin{itemize}
+ \item \textit{Modele} abstraite implémentant la classe \textit{ActionListener}
+ \item \textit{Fenetre} étendue de la classe \textit{JFrame}
+ \item \textit{Controleur}
+\end{itemize}
+
+La classe \textit{Modele} nous permet de gérer la liste des astres, comme par exemple ajouter une Etoile, ainsi que l'enregistrement et la restauration d'un système planétaire. Plus généralement, elle est le modèle des données de l'application.
+
+La class \textit{Fenetre} s'occupe de tout ce qui touche à l'interface utilisateur, sauf la gestion différents pop-up que nous verrons dans la classe \textit{FenetreDialogue}. Elle regroupe la présentation et le design de l'application, comme le menu, l'image de fond...
+
+La classe \textit{Controleur} quant à elle, permet de faire le lien entre les deux classes précédente. Elle permet donc la gestion des événements, ainsi que la synchronisation entre les données et l'affichage.
+
+Ici, le contrôleur connait la vue et le modèle, la vue ne connait que le modèle, tandis que le modèle n'a pas d'informations sur les deux autres.
+
+La classe \textit{ControleurMenu} ne contrôle uniquement le menu et les actions qu'il peut avoir. Elle est étendue de la classe \textit{Controleur}.
+
+La classe \textit{FenetreDialogue} prend en compte toutes les interactions avec l'utilisateur, comme l'ajout d'un astre, ou encore la sauvegarde d'un système planétaire.
+
+La classe \textit{AffichageAstres} étendue de la classe \textit{Thread}, permet de lancer une boucle infinie pour desssiner les astres sur la fenêtre principale.
+
+La classe \textit{Audio} nous permet de gérer plus facilement la lancement et l'arrêt du son de l'application.
 
 \subsection{Les algorithmes intéressants}
 
@@ -166,18 +194,31 @@ Mais également des dossiers dont le contenu est généré automatiquement :
     \State $jlabastre\gets$ nouveau JLabel avec l'image de $e$
     \State Afficher $jlabastre$ en fonction de la position $X_{e}$ et $Y_{e}$
     \State Ajouter le $jlabastre$ au JPanel
-    \For{chaque Satellite $s$ de la liste des satellites de $e$}
-	\State $jlabsat\gets$ nouveau JLabel avec l'image de $s$
-	\State Afficher $jlabsat$ en fonction de $s.calculPositionSatelliteX(t)$ et $s.calculPositionSatelliteY(t)$
-	\State Ajouter le $jlabsat$ au JPanel
-    \EndFor
+    \State Appel de la fonction $repaintSatellite$ avec $e.getListeSatellite()$ et $t$
 \EndFor
 \State Appel de la méthode $repaint()$ sur le JPanel
 \EndFunction
 \end{algorithmic}
+
+\begin{algorithmic}
+\Function{repaintSatellite}{l listeSatellite, t temps}
+\For{chaque Satellite $s$ de la liste des satellites $l$}
+  \State $jlabsat\gets$ nouveau JLabel avec l'image de $s$
+  \State Afficher $jlabsat$ en fonction de $s.calculPositionSatelliteX(t)$ et $s.calculPositionSatelliteY(t)$
+  \State Ajouter le $jlabsat$ au JPanel
+  \State Appel récursif de $repaintSatellite$
+\EndFor
+\EndFunction
+\end{algorithmic}
 \end{algorithm}
 
+\newpage
 \subsection{Points intéressants et supplémentaires du programme}
+Afin de ne pas rester dans la banalité, avons décidé de créer un "mode" \textit{StarWars}. 
+
+Tout d'abord, il a fallu recréer des nouvelles planètes tirées de la saga, comme \textit{Tatooine}, \textit{Naboo}, \textit{Jakku}, l'\textit{étoile noire} ainsi qu'un \textit{fighter} (vaisseau côté obscur de la force) ou encore le \textit{Faucon Millenium} d'Han Solo. Ceci nous a fait découvrir l'utilisation de zones transparentes dans une image PNG, ainsi que le logiciel Gimp que nous n'avions pas utilisé dans notre formation jusqu'à présent.
+
+De plus, nous avons implémenté la gestion du son, que l'on peut activer ou désactiver grâce à un menu prévu pour. Celui-ci s'active automatiquement lorsque l'on charge la sauvegarde de l'environnement \textit{StarWars}, avec le thème original des 7 films. L'intégration de son dans une application était inconnue pour nous auparavant, c'est pourquoi nous avons décidé de l'ajouter à notre projet pour la découvrir.
 
 \newpage
 \section{Conclusion}

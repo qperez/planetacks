@@ -35,10 +35,10 @@
         <int>1000</int>
        </void>
        <void property="positionX">
-        <int>1174</int>
+        <int>1166</int>
        </void>
        <void property="positionY">
-        <int>410</int>
+        <int>570</int>
        </void>
       </object>
      </void>
@@ -85,10 +85,10 @@
            <int>50</int>
           </void>
           <void property="positionX">
-           <int>823</int>
+           <int>654</int>
           </void>
           <void property="positionY">
-           <int>813</int>
+           <int>776</int>
           </void>
          </object>
         </void>
@@ -103,10 +103,10 @@
         <int>800</int>
        </void>
        <void property="positionX">
-        <int>783</int>
+        <int>684</int>
        </void>
        <void property="positionY">
-        <int>824</int>
+        <int>811</int>
        </void>
       </object>
      </void>
@@ -136,15 +136,15 @@
         <int>500</int>
        </void>
        <void property="positionX">
-        <int>809</int>
+        <int>805</int>
        </void>
        <void property="positionY">
-        <int>385</int>
+        <int>654</int>
        </void>
       </object>
      </void>
      <void method="add">
-      <object class="Satellite">
+      <object class="Satellite" id="Satellite1">
        <void property="astre">
         <object idref="Etoile0"/>
        </void>
@@ -159,6 +159,41 @@
          <string>./resources/img/astres/premier_ordre.png</string>
         </object>
        </void>
+       <void property="listeSatellites">
+        <void method="add">
+         <object class="Satellite">
+          <void property="astre">
+           <object idref="Satellite1"/>
+          </void>
+          <void property="demiGrandAxe">
+           <int>60</int>
+          </void>
+          <void property="demiPetitAxe">
+           <int>60</int>
+          </void>
+          <void property="image">
+           <object class="javax.swing.ImageIcon">
+            <string>./resources/img/astres/fighter.png</string>
+           </object>
+          </void>
+          <void property="nom">
+           <string>fighter</string>
+          </void>
+          <void property="nomImage">
+           <string>fighter.png</string>
+          </void>
+          <void property="periode">
+           <int>250</int>
+          </void>
+          <void property="positionX">
+           <int>872</int>
+          </void>
+          <void property="positionY">
+           <int>560</int>
+          </void>
+         </object>
+        </void>
+       </void>
        <void property="nom">
         <string>premier ordre</string>
        </void>
@@ -169,10 +204,10 @@
         <int>200</int>
        </void>
        <void property="positionX">
-        <int>864</int>
+        <int>814</int>
        </void>
        <void property="positionY">
-        <int>412</int>
+        <int>509</int>
        </void>
       </object>
      </void>
@@ -202,10 +237,10 @@
         <int>300</int>
        </void>
        <void property="positionX">
-        <int>636</int>
+        <int>487</int>
        </void>
        <void property="positionY">
-        <int>702</int>
+        <int>535</int>
        </void>
       </object>
      </void>
@@ -235,10 +270,10 @@
         <int>500</int>
        </void>
        <void property="positionX">
-        <int>1068</int>
+        <int>1042</int>
        </void>
        <void property="positionY">
-        <int>402</int>
+        <int>604</int>
        </void>
       </object>
      </void>
