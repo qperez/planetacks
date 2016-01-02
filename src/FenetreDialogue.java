@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Iterator;
 
 /**
- * Created by quentin on 27/12/15.
+ * <b>Classe permettant d'afficher les différentes fenêtres de dialogue de l'application.</b>
  */
 public class FenetreDialogue {
     private static final String PATH_RESSOURCES_IMG_ASTRES = "./resources/img/astres/";
@@ -16,6 +16,11 @@ public class FenetreDialogue {
     private static final String PATH_RESSOURCES_SOUNDS = "./resources/sounds/";
     private String filename;
 
+    /**
+     * M&eacute;thode permettant de cr&eacute;er une boite de dialogue de confirmation de cr&eacute;ation
+     * d'un nouveau syst&egrave;me plan&eacute;taire
+     * @return l'entier correspondant au type de r&eacute;ponse
+     */
     public static int confirmationNouveau() {
         JOptionPane jop = new JOptionPane();
         int reponse = jop.showConfirmDialog(null,
@@ -26,6 +31,11 @@ public class FenetreDialogue {
         return reponse;
     }
 
+    /**
+     * M&eacute;thode affichant les boites de dialogues n&eacute;cessaires &agrave; l'ajout
+     * d'un nouveau Satellite dans l'application
+     * @param f la Fenetre de l'application
+     */
     public static void nouveauSatellite(Fenetre f) {
         final JDialog jd = new JDialog();
         jd.setTitle("Nouveau satellite");
@@ -166,6 +176,11 @@ public class FenetreDialogue {
         jd.setVisible(true);
     }
 
+    /**
+     * M&eacute;thode affichant les boites de dialogues n&eacute;cessaires &agrave; l'ajout
+     * d'une nouvelle Etoile dans l'application
+     * @param f la Fenetre de l'application
+     */
     public static void nouvelleEtoile(final Fenetre f) {
         final JDialog jd = new JDialog();
         jd.setTitle("Nouveau satellite");
@@ -291,6 +306,11 @@ public class FenetreDialogue {
         }
     }
 
+    /**
+     * M&eacute;thode affichant les boites de dialogues n&eacute;cessaires &agrave;
+     * la restauration de l'affichage
+     * @param fenetre la Fenetre de l'application
+     */
     public static void restaurer(Fenetre fenetre) {
         JFileChooser fileChooser = new JFileChooser(PATH_RESSOURCES_SAVE);
         FileNameExtensionFilter filter = new FileNameExtensionFilter("XML Files", "xml");
@@ -310,7 +330,12 @@ public class FenetreDialogue {
         }
     }
 
-    public static void ouverture(Fenetre f) {
+    /**
+     * M&eacute;thode affichant les boites de dialogues n&eacute;cessaires
+     * au chargement d'un syst&egrave;me plan&eacute;taire
+     * @param fenetre la Fenetre de l'application
+     */
+    public static void ouverture(Fenetre fenetre) {
         JOptionPane jop = new JOptionPane();
         int reponse = jop.showConfirmDialog(null,
                 "Voulez vous ouvrir une sauvegarde ?",
@@ -318,10 +343,15 @@ public class FenetreDialogue {
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE);
         if (reponse == 0) {
-            restaurer(f);
+            restaurer(fenetre);
         }
     }
 
+    /**
+     * M&eacute;thode affichant les boites de dialogues n&eacute;cessaires &agrave;
+     * la suppression d'un astre
+     * @param fenetre la Fenetre de l'application
+     */
     public static void supprimerAstre(Fenetre fenetre) {
         final JDialog jd = new JDialog();
         jd.setTitle("Supprimer astre");
@@ -382,10 +412,18 @@ public class FenetreDialogue {
         jd.setVisible(true);
     }
 
+    /**
+     * M&eacute;thode retournant la chaine de caract&egrave;res correspondant au nom du fichier
+     * @return le nom du fichier
+     */
     public String getFilename() {
         return filename;
     }
 
+    /**
+     * M&eacute;thode mettant &agrave; jour le nom du fichier
+     * @param filename le nouveau nom de fichier
+     */
     public void setFilename(String filename) {
         this.filename = filename;
     }

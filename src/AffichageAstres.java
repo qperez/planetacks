@@ -1,8 +1,6 @@
 /**
- * Created by quentin on 31/12/15.
- * La classe AffichageAstres a pour mission de faire runner un thread et d'appeler la méthode repaint
+ * La classe AffichageAstres a but de faire runner un thread et d'appeler la m&eacute;thode repaint
  * de la classe Fenetre en fonction du temps
- * en fonction du temps
  */
 public class AffichageAstres extends Thread {
 
@@ -20,9 +18,9 @@ public class AffichageAstres extends Thread {
     }
 
     /**
-     * Méthode permettant de démarrer le Thread et de le faire Runner.
-     * Le Thread s'arrête tout les 1/100 de seconde afin de mettre à jour
-     * l'affichage à l'aide de la méthode repaint de
+     * M&eacute;thode permettant de d&eacute;marrer le Thread et de le faire Runner.
+     * Le Thread s'arr&ecirc;te tout les 1/100 de seconde afin de mettre &agrave; jour
+     * l'affichage &agrave; l'aide de la m&eacute;thode repaint de
      * la classe Fenetre en fonction du temps t
      * @see Fenetre#repaint(float)
      */
