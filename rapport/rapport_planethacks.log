@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.15)  2 JAN 2016 20:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.15)  2 JAN 2016 23:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -633,13 +633,13 @@ Package frenchb.ldf Warning: OT1 encoding should not be used for French.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<java.png, id=68, 519.9425pt x 519.9425pt>
+<java.png, id=76, 519.9425pt x 519.9425pt>
 File: java.png Graphic file (type png)
  <use java.png>
 Package pdftex.def Info: java.png used on input line 31.
 (pdftex.def)             Requested size: 128.0387pt x 128.03362pt.
 
-<ufrst.jpg, id=70, 793.96625pt x 451.6875pt>
+<ufrst.jpg, id=78, 793.96625pt x 451.6875pt>
 File: ufrst.jpg Graphic file (type jpg)
  <use ufrst.jpg>
 Package pdftex.def Info: ufrst.jpg used on input line 38.
@@ -666,7 +666,7 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.48 \newpage
-              [1] [2] <git.png, id=109, 1204.5pt x 606.76688pt>
+              [1] [2] <git.png, id=119, 1204.5pt x 606.76688pt>
 File: git.png Graphic file (type png)
  <use git.png>
 Package pdftex.def Info: git.png used on input line 79.
@@ -676,7 +676,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 83--85
 
  []
 
-<idea.png, id=110, 1204.5pt x 677.53125pt>
+<idea.png, id=120, 1204.5pt x 677.53125pt>
 File: idea.png Graphic file (type png)
  <use idea.png>
 Package pdftex.def Info: idea.png used on input line 86.
@@ -687,7 +687,7 @@ Overfull \hbox (9.15367pt too wide) in paragraph at lines 109--111
 ne classe sp^^Secifique conte-nant les ou-tils n^^Secessaires
  []
 
-<classes_astre.png, id=118, 511.9125pt x 588.1975pt>
+<classes_astre.png, id=128, 511.9125pt x 588.1975pt>
 File: classes_astre.png Graphic file (type png)
  <use classes_astre.png>
 Package pdftex.def Info: classes_astre.png used on input line 115.
@@ -697,12 +697,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 123--124
 
  []
 
-<arbo.png, id=119, 259.7203pt x 216.81pt>
+<arbo.png, id=129, 259.7203pt x 216.81pt>
 File: arbo.png Graphic file (type png)
  <use arbo.png>
 Package pdftex.def Info: arbo.png used on input line 125.
 (pdftex.def)             Requested size: 181.80296pt x 151.76596pt.
- [4 <./classes_astre.png>] <classes_mvc.png, id=125, 1084.05pt x 702.625pt>
+ [4 <./classes_astre.png>] <classes_mvc.png, id=135, 1084.05pt x 702.625pt>
 File: classes_mvc.png Graphic file (type png)
  <use classes_mvc.png>
 Package pdftex.def Info: classes_mvc.png used on input line 160.
@@ -727,25 +727,39 @@ c-tion de $\OML/cmm/m/it/10 s:calculPositionSatelliteX\OT1/cmr/m/n/10 (\OML/cmm
 /m/it/10 t\OT1/cmr/m/n/10 )$ et
  []
 
-[6 <./classes_mvc.png>] [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 231.
- [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 231.
+[6 <./classes_mvc.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 249--251
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--254
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 262.
+[8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 262.
  (./rapport_planethacks.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 231.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 231.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 262.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 262.
 Package rerunfilecheck Info: File `rapport_planethacks.out' has not changed.
-(rerunfilecheck)             Checksum: F7BE65566B2B77A3B1531CB6F8D4F59A;1151.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 231.
+(rerunfilecheck)             Checksum: 134739363F9DEFB4FE31169AF62FFA38;1285.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 262.
  ) 
 Here is how much of TeX's memory you used:
- 8251 strings out of 493054
- 116702 string characters out of 6140585
- 222456 words of memory out of 5000000
- 11642 multiletter control sequences out of 15000+600000
+ 8255 strings out of 493054
+ 116762 string characters out of 6140585
+ 223456 words of memory out of 5000000
+ 11644 multiletter control sequences out of 15000+600000
  8278 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,6n,35p,515b,445s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,6n,35p,569b,445s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/publ
@@ -756,10 +770,10 @@ ist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pf
 b>
-Output written on rapport_planethacks.pdf (9 pages, 527208 bytes).
+Output written on rapport_planethacks.pdf (9 pages, 531211 bytes).
 PDF statistics:
- 195 PDF objects out of 1000 (max. 8388607)
- 161 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 164 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 205 PDF objects out of 1000 (max. 8388607)
+ 171 compressed objects within 2 object streams
+ 29 named destinations out of 1000 (max. 500000)
+ 180 words of extra memory for PDF output out of 10000 (max. 10000000)
 

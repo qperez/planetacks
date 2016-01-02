@@ -1,0 +1,19 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Sujet}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Contexte}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}But de l'application}{2}{subsection.1.2}
+\contentsline {section}{\numberline {2}Conception}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Introduction}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Structures de donn\IeC {\'e}es au sein de l'application}{3}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Mod\IeC {\'e}lisation d'un astre (Etoile ou Satellite)}{4}{subsubsection.2.2.1}
+\contentsline {subsection}{\numberline {2.3}Structure g\IeC {\'e}n\IeC {\'e}rale de l'application}{4}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Emplacement des fichiers}{4}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Architecture MVC}{6}{subsubsection.2.3.2}
+\contentsline {subsection}{\numberline {2.4}Les algorithmes int\IeC {\'e}ressants}{6}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Points int\IeC {\'e}ressants et suppl\IeC {\'e}mentaires du programme}{6}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Tests}{7}{subsection.2.6}
+\contentsline {section}{\numberline {3}Conclusion}{8}{section.3}
+\contentsline {subsection}{\numberline {3.1}Bilan}{8}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Les acquis}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Am\IeC {\'e}liorations apport\IeC {\'e}es}{8}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Am\IeC {\'e}liorations futures}{8}{subsection.3.4}

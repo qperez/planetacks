@@ -212,19 +212,49 @@ La classe \textit{Audio} nous permet de gérer plus facilement la lancement et l
 \end{algorithmic}
 \end{algorithm}
 
-\newpage
 \subsection{Points intéressants et supplémentaires du programme}
 Afin de ne pas rester dans la banalité, avons décidé de créer un "mode" \textit{StarWars}. 
 
 Tout d'abord, il a fallu recréer des nouvelles planètes tirées de la saga, comme \textit{Tatooine}, \textit{Naboo}, \textit{Jakku}, l'\textit{étoile noire} ainsi qu'un \textit{fighter} (vaisseau côté obscur de la force) ou encore le \textit{Faucon Millenium} d'Han Solo. Ceci nous a fait découvrir l'utilisation de zones transparentes dans une image PNG, ainsi que le logiciel Gimp que nous n'avions pas utilisé dans notre formation jusqu'à présent.
 
-De plus, nous avons implémenté la gestion du son, que l'on peut activer ou désactiver grâce à un menu prévu pour. Celui-ci s'active automatiquement lorsque l'on charge la sauvegarde de l'environnement \textit{StarWars}, avec le thème original des 7 films. L'intégration de son dans une application était inconnue pour nous auparavant, c'est pourquoi nous avons décidé de l'ajouter à notre projet pour la découvrir.
+De plus, nous avons implémenté la gestion du son, que l'on peut activer ou désactiver grâce à un menu prévu pour. Celui-ci s'active automatiquement lorsque l'on charge la sauvegarde de l'environnement \textit{StarWars}, avec le thème original des 7 films accompagné de plusieurs bruitages célèbres. L'intégration de son dans une application était inconnue pour nous auparavant, c'est pourquoi nous avons décidé de l'ajouter à notre projet pour la découvrir.
+
+\subsection{Tests}
+Les tests ainsi que la documentation ont été réalisés tout au long du développement. Ceci nous a permis de pouvoir déboguer facilement et de ne pas perdre de temps dans la production à cause d'erreurs de programmation. Les outils utilisés pour la construction du projet nous ont aussi facilité les tests. 
+
+En effet, \textit{IntelliJ IDEA} propose des fonctionnalités permettant d'éviter un grand nombre d'erreurs (auto-complétion inter-classes, renommage des variables et fonctions sur tout le projet, messages explicites lors d'une erreur...) et de passer moins de temps sur des problèmes de syntaxe. 
+
+De plus, grâce au gestionnaire de version GitHub, il est aisé de retrouver les modifications apportées à un fichier, et pourquoi elles ont été faites. Ici encore, cela permet de gagner du temps et de pouvoir retrouver un projet fonctionnel même après avoir rencontré un problème lourd lors du développement. 
+
+Pour finir, ces deux logiciels fonctionnent l'un avec l'autre, ce qui rend la construction du projet très confortable.
+\\
+
+Une phase de tests plus conséquente a été réalisée à la fin du projet, pour trouver d'éventuels conflits entre les différentes fonctionnalités et au fur et à mesure du déroulement du programme.
 
 \newpage
 \section{Conclusion}
 \subsection{Bilan}
+Nous avons pu répondre aux différents points demandés à savoir :
+\begin{itemize}
+ \item Créer un astre qui est ajouté dynamiquement à l'ensemble des astres de l'appli
+ \item Supprimer un astre dynamiquement de l'application
+ \item Enregistrer sur le disque un fichier comprenant une étoile et ses satellites
+ \item Ouvrir un fichier enregistré comprenant une étoile et ses satellites
+\end{itemize}
+
+Toutes les classes ont été testées afin de limiter au maximum les bogues et les problèmes lors de l'éxécution.
+
 
 \subsection{Les acquis}
+Les acquis au cours de ce projet ont été divers. Premièrement, nous avons approfondi nos connaissances sur le MVC ainsi que sur la manière de l'utiliser. Des problèmes de conception et nottamment d'accessibilité des variables ont été rencontrés et par la suite corrigés, ce qui a été formatteur.
+\\
+
+Par le fait d'avoir implémenté un mode \textit{StarWars}, nous avons pu découvrir plusieurs technologies que nous ne savions pas utiliser. La première, la retouche photo qui a été effectuée avec \textit{Gimp} (logiciel gratuit et libre) afin de créer différentes planètes à partir d'images, en ajoutant un filtre de transparence. La deuxième, la prise en charge de la musique dans l'application a été amusante à mettre en place, d'autant plus que nous ne l'avions jamais fait auparavant lors de projets diverses.
+\\
+
+Le travail en groupe n'était pas une déouverte, mais nous avions pu confirmer notre méthode pour parvenir à fournir un travail efficace avec le moins de problèmes possibles.
+
+\subsection{Améliorations apportées}
 
 \subsection{Améliorations futures}
 
