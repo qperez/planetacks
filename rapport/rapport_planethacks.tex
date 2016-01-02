@@ -4,22 +4,53 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{algorithm,algpseudocode}
-
-%opening
-\title{Méthodes et Outils pour la Programmation: Rapport de projet \\% 
-Planethacks \\%
-UFR-ST Besançon}
-\author{Pierre LIMBALLE, groupe TP2B \\ Quentin PEREZ, groupe TP2B}
-\date{\today}
+\usepackage{default}
+\usepackage{xcolor}
+\usepackage[francais]{babel}
+\usepackage[top=3cm,bottom=3cm,right=3cm,left=3cm]{geometry}
 
 \begin{document}
 
-\maketitle
+\author{LIMBALLE Pierre - PEREZ Quentin}
+\title{Méthodes et Outils pour la Programmation\\% 
+Mini Projet 2015}
+\definecolor{primary}{RGB}{37,72,124}
+\definecolor{secondary}{RGB}{253,250,200}
+
+    
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber\\}
+ %\addtobeamertemplate{sidebar bottom}{\insertframenumber}
+\makeatletter
+  \begin{titlepage}
+  \centering
+      {\LARGE \textbf{LIMBALLE Pierre - PEREZ Quentin}}\\
+      UFR-ST - Licence informatique 3ème année\\Groupe TP 2B\\
+    \vspace{2cm}
+      {\LARGE \@date\\}
+    \vspace{1cm}
+        \includegraphics[width=0.3\textwidth]{java.png}\\
+    \vspace{1em}
+       {\LARGE \textbf{\@title}\\
+    \vspace{1em}
+       Rapport\\} 
+    \vspace{2em}
+    \vspace{1cm}
+        \includegraphics[width=0.7\textwidth]{ufrst.jpg}\\
+    \vspace{1.5cm}
+      {Contacts : \href{mailto:pierre.limballe@edu.univ-fcomte.fr}{pierre.limballe@edu.univ-fcomte.fr}, \href{mailto:quentin.perez@edu.univ-fcomte.fr}{quentin.perez@edu.univ-fcomte.fr}\\Professeurs : GREFFIER Françoise, BONNEVILLE François}
+    \vfill
+        %\includegraphics[width=0.7\textwidth]{radare.png}\\
+  \end{titlepage}
+\makeatother
+
+\newpage
+\tableofcontents
+\newpage
 
 \section{Sujet}
 \subsection{Contexte}
 Dans le cadre du module: Méthodes et Outils pour la Programmation (MOP) la réalisation d'un projet nous a été demandé afin de mettre
-en application les connaissances théoriques acquisent tout au long du semestre cinq. \\
+en application les connaissances théoriques acquisent tout au long du semestre 5. \\
 La conception de l'application a pour objectifs:
 \begin{itemize}
   \item l'utilisation du langage de programmation Java en orienté objets
@@ -41,8 +72,8 @@ La contrainte d'ergonomie est également importante quant à l'utilisation du lo
 
 \section{Conception}
 \subsection{Introduction}
-Planethacks est le nom choisi pour l'application. Du fait d'un travail en binôme l'utilisation
-du logiciel de gestion de version Git en lien avec le serveur d'hébergement \href{https://github.com}{GitHub} fut priviligiée (sources GitHub de Planethacks: \url{https://github.com/qperez/planetacks}). \\
+Planethacks est le nom choisi pour l'application. Du fait d'un travail en binôme, l'utilisation
+d'un logiciel de gestion de version fut priviligiée. Nous avons pour cela utilisé Git, en lien avec le serveur d'hébergement \href{https://github.com}{GitHub} (sources GitHub de Planethacks: \url{https://github.com/qperez/planetacks}). \\
 L'IDE (\textit{Internal Development Environement}) IntelliJ IDEA fut utilisé durant toute la phase de développement et de tests et ce afin 
 d'accélérer et faciliter le développement de l'application ainsi que son déboguage.
 
@@ -56,8 +87,8 @@ nous permettent de modéliser un astre:
 \end{itemize}
 
 Planethacks repose sur une conception basée sur le paradigme MVC. Ce paradigme impose l'utilisation à minima de 3 classes (Modèle - Vue - Contrôleur) permettant de
-séparer les données, de l'affichage et des interactions utilisateur. \\ 
-Dans un souçis de respect du modèle MVC nous disposons donc des classes suivantes:
+séparer les données de l'affichage et des interactions utilisateur. \\ 
+Dans un soucis de respect du modèle MVC nous disposons donc des classes suivantes:
 \begin{itemize}
   \item Fenetre
   \item Modele
@@ -67,19 +98,19 @@ Dans un souçis de respect du modèle MVC nous disposons donc des classes suivan
 \end{itemize}
 
 Afin de réaliser la fonctionnalité de sauvegarde une classe spécifique contenant les outils nécessaires fut créée: XMLTools. \\
-Le point d'entré de l'application est assuré par la classe: Appli
+Le point d'entré de l'application est assuré par la classe Appli.
 
-\subsubsection{Modélisation d'un astre (Etoile ou Satellite}
+\subsubsection{Modélisation d'un astre (Etoile ou Satellite)}
 Le diagramme UML ci-dessous représente la modélisation choisie pour un astre:
-\begin{flushleft}
+\begin{center}
   $\includegraphics[scale=0.4]{classes_astre.png}$
-\end{flushleft}
+\end{center}
 Les méthodes : \textit{calculPositionSatelliteX(float)} et \textit{calculPositionSatelliteX(float)} présentes dans la classe Satellite permettent
 de calculer la position en X et en Y du Satellite en fonction du temps.
 \subsubsection{Architecture MVC}
-\begin{flushleft}
+\begin{center}
   $\includegraphics[scale=0.4]{classes_mvc.png}$
-\end{flushleft}
+\end{center}
 
 \begin{algorithm}
 \caption{méthode repaint de la classe Fenetre}
@@ -100,5 +131,8 @@ de calculer la position en X et en Y du Satellite en fonction du temps.
 \EndFunction
 \end{algorithmic}
 \end{algorithm}
+
+
+\section{Conclusion}
 
 \end{document}

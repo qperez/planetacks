@@ -4,22 +4,53 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{algorithm,algpseudocode}
-
-%opening
-\title{Méthodes et Outils pour la Programmation: Rapport de projet \\% 
-Planethacks \\%
-UFR-ST Besançon}
-\author{Pierre LIMBALLE, groupe TP2B \\ Quentin PEREZ, groupe TP2B}
-\date{\today}
+\usepackage{default}
+\usepackage{xcolor}
+\usepackage[francais]{babel}
+\usepackage[top=3cm,bottom=3cm,right=3cm,left=3cm]{geometry}
 
 \begin{document}
 
-\maketitle
+\author{LIMBALLE Pierre - PEREZ Quentin}
+\title{Méthodes et Outils pour la Programmation\\% 
+Mini Projet 2015}
+\definecolor{primary}{RGB}{37,72,124}
+\definecolor{secondary}{RGB}{253,250,200}
+
+    
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber\\}
+ %\addtobeamertemplate{sidebar bottom}{\insertframenumber}
+\makeatletter
+  \begin{titlepage}
+  \centering
+      {\LARGE \textbf{LIMBALLE Pierre - PEREZ Quentin}}\\
+      UFR-ST - Licence informatique 3ème année\\Groupe TP 2B\\
+    \vspace{2cm}
+      {\LARGE \@date\\}
+    \vspace{1cm}
+        \includegraphics[width=0.3\textwidth]{java.png}\\
+    \vspace{1em}
+       {\LARGE \textbf{\@title}\\
+    \vspace{1em}
+       Rapport\\} 
+    \vspace{2em}
+    \vspace{1cm}
+        \includegraphics[width=0.7\textwidth]{ufrst.jpg}\\
+    \vspace{1.5cm}
+      {Contacts : \href{mailto:pierre.limballe@edu.univ-fcomte.fr}{pierre.limballe@edu.univ-fcomte.fr}, \href{mailto:quentin.perez@edu.univ-fcomte.fr}{quentin.perez@edu.univ-fcomte.fr}\\Professeurs : GREFFIER Françoise, BONNEVILLE François}
+    \vfill
+        %\includegraphics[width=0.7\textwidth]{radare.png}\\
+  \end{titlepage}
+\makeatother
+
+\newpage
+\tableofcontents
+\newpage
 
 \section{Sujet}
 \subsection{Contexte}
 Dans le cadre du module: Méthodes et Outils pour la Programmation (MOP) la réalisation d'un projet nous a été demandé afin de mettre
-en application les connaissances théoriques acquisent tout au long du semestre. \\
+en application les connaissances théoriques acquisent tout au long du semestre cinq. \\
 La conception de l'application a pour objectifs:
 \begin{itemize}
   \item l'utilisation du langage de programmation Java en orienté objets
@@ -74,7 +105,7 @@ Le diagramme UML ci-dessous représente la modélisation choisie pour un astre:
 \begin{flushleft}
   $\includegraphics[scale=0.4]{classes_astre.png}$
 \end{flushleft}
-Les méthodes : \textit{calculPositionSatelliteX(float)} et \textit{calculPositionSatelliteX(float)} présentent dans la classe Satellite permettent
+Les méthodes : \textit{calculPositionSatelliteX(float)} et \textit{calculPositionSatelliteX(float)} présentes dans la classe Satellite permettent
 de calculer la position en X et en Y du Satellite en fonction du temps.
 \subsubsection{Architecture MVC}
 \begin{flushleft}
@@ -85,38 +116,23 @@ de calculer la position en X et en Y du Satellite en fonction du temps.
 \caption{méthode repaint de la classe Fenetre}
 \begin{algorithmic}
 \Function{repaint}{t temps}
-\State Méthode permettant d'afficher les Astres en fonction du temps dans un JPanel de la JFrame
-\For{chaque Etoile $e$ de la liste d'étoiles}
-    \State Créer un nouveau JLabel avec l'image de $e$
-    \State Afficher le JLabel en fonction de la position $aa_{e}$X et Y de $e$
-    \State Evaluate the fitness {$f(\overrightarrow{X}_i)$}
+\State Supprimer l'ensemble des composants graphique du JPanel
+\For{chaque Etoile $e$ de la liste d'étoiles du Modele}
+    \State $jlabastre\gets$ nouveau JLabel avec l'image de $e$
+    \State Afficher $jlabastre$ en fonction de la position $X_{e}$ et $Y_{e}$
+    \State Ajouter le $jlabastre$ au JPanel
     \For{chaque Satellite $s$ de la liste des satellites de $e$}
-	\State
+	\State $jlabsat\gets$ nouveau JLabel avec l'image de $s$
+	\State Afficher $jlabsat$ en fonction de $s.calculPositionSatelliteX(t)$ et $s.calculPositionSatelliteY(t)$
+	\State Ajouter le $jlabsat$ au JPanel
     \EndFor
 \EndFor
+\State Appel de la méthode $repaint()$ sur le JPanel
 \EndFunction
 \end{algorithmic}
 \end{algorithm}
 
- public void repaint(float t) {
-        jpaneGlobal.removeAll();
-        for (Etoile e : modele.getListeEtoiles()) {
-            JLabel jlabastre = new JLabel(e.getImage());
-            System.out.println("Astre = "+e.getNom());
-            System.out.println("X = "+e.getPositionX());
-            System.out.println("Y = "+e.getPositionY());
-            //jlabastre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-            jlabastre.setBounds(e.getPositionX(), e.getPositionY(), e.getImage().getIconWidth(), e.getImage().getIconHeight());
 
-            jpaneGlobal.add(jlabastre);
-
-            for (Satellite s : e.getListeSatellites()){
-                JLabel jlabsat = new JLabel(s.getImage());
-                jlabsat.setBounds(s.calculPositionSatelliteX(t), s.calculPositionSatelliteY(t), s.getImage().getIconWidth(), s.getImage().getIconHeight());
-                jpaneGlobal.add(jlabsat);
-            }
-        }
-        jpaneGlobal.repaint();
-    }
+\section{Conclusion}
 
 \end{document}
