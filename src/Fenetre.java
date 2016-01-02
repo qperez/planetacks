@@ -12,21 +12,20 @@ import java.util.Iterator;
  */
 
 /**
- * <b>Classe permettant créer et gérer l'affichage</b>
- * Une Fenetre est caractérisée par les informations suivantes :
+ * <b>Classe permettant cr&eacute;er et g&eacute;rer l'affichage</b>
+ * Une Fenetre est caract&eacute;ris&eacute;e par les informations suivantes :
  * <ul>
  * <li>Un Modele.</li>
  * <li>Des JMenuItem.</li>
- * <li>Des controleurs .</li>
- * <li>Des JLabels</li>
+ * <li>Un controleurMenu .</li>
+ * <li>Un Audio</li>
+ * <li>Un AffichageAstres</li>
  * </ul>
  */
 public class Fenetre extends JFrame {
 
-    //Constante permettant de parametrer le chemin relatif aux ressources images nécessaires
     private static final String PATH_RESSOURCES_IMG_APPLI = "./resources/img/appli/";
     private static final String PATH_RESSOURCES_SOUNDS = "./resources/sounds/";
-
 
     private Modele modele;
     private JPanel jpaneGlobal;
@@ -56,7 +55,7 @@ public class Fenetre extends JFrame {
      * avec commme param&egrave;tres un Modele.
      * </p>
      *
-     * @param modele le modele servant à la construction
+     * @param modele le Modele servant à la construction
      * @see Fenetre#modele
      */
     public Fenetre(Modele modele) {
@@ -71,14 +70,12 @@ public class Fenetre extends JFrame {
         this.modele.ajouterEtoile(en);
         Satellite satellite = new Satellite("s", "faucon_millenium.png", 150, 100, 100, soleil);
         this.modele.ajouterEtoile(new Etoile("Soleil2", "premier_ordre.png", 100, 100));*/
-        affichageAstres = new AffichageAstres(this);
-        affichageAstres.start();
         // audio.launchSound(PATH_RESSOURCES_SOUNDS + "star_wars_theme.wav");
     }
 
     /**
-     * Fonction permettant d'initialiser les éléments graphiques Java Swing,
-     * ainsi que l'ajout des Actions Listener sur les éléments
+     * Fonction permettant d'initialiser les &eacute;l&eacute;ments graphiques Java Swing,
+     * l'ajout des Actions Listener sur les &eacute;l&eacute;ments
      */
     private void initAttributs() {
         itemQuitter = new JMenuItem("Quitter", new ImageIcon(PATH_RESSOURCES_IMG_APPLI + "exit.png"));
@@ -94,10 +91,12 @@ public class Fenetre extends JFrame {
         itemSonOff = new JMenuItem("Couper le son", new ImageIcon(PATH_RESSOURCES_IMG_APPLI + "sonOff.png"));
 
         audio = new Audio();
+
+        affichageAstres = new AffichageAstres(this);
     }
 
     /**
-     * Fonction permettant de créer la barre de menu (JMenuBar)
+     * Fonction permettant de cr&eacute;er la barre de menu (JMenuBar)
      *
      * @return la barre de menu JMenuBar
      */
@@ -157,8 +156,6 @@ public class Fenetre extends JFrame {
         try {
             jpaneGlobal = new JPanel() {
                 private static final long serialVersionUID = 1;
-
-                //private BufferedImage buf = ImageIO.read(new File(PATH_RESSOURCES_IMG_APPLI + "fond_voielact_jpanel.jpg"));
                 private BufferedImage buf = ImageIO.read(new File(PATH_RESSOURCES_IMG_APPLI + "background.jpg"));
 
                 @Override
@@ -173,19 +170,23 @@ public class Fenetre extends JFrame {
         jpaneGlobal.setLayout(null);
         getContentPane().setLayout(null);
         setContentPane(jpaneGlobal);
-
-
-        /*ImageIcon lune = new ImageIcon(PATH_RESSOURCES_IMG_APPLI + "../astres/lune.png");
-        JLabel a = new JLabel(lune);
-        a.setBounds(100, 100, lune.getIconWidth(), lune.getIconHeight());
-        jpaneGlobal.add(a);*/
+        affichageAstres.start();
     }
 
-
+    /**
+     * Retourne le modele de la Fenetre
+     *
+     * @return modele Model
+     */
     public Modele getModele() {
         return modele;
     }
 
+    /**
+     * Retourne le composant Audio
+     *
+     * @return audio Audio
+     */
     public Audio getAudio() {
         return audio;
     }
@@ -200,7 +201,7 @@ public class Fenetre extends JFrame {
     }
 
     /**
-     * Retourne le JMenuItem permettant de restaurer le système planétaire
+     * Retourne le JMenuItem permettant de restaurer le syst&egrave;me plan&eacute;taire
      *
      * @return Item restaurer
      */
@@ -226,67 +227,73 @@ public class Fenetre extends JFrame {
         return itemRestaurer;
     }
 
+    /**
+     * Retourne le JMenuItem permettant d'activer le son
+     *
+     * @return Item sonOn
+     */
     public JMenuItem getItemSoundOn() {
         return itemSonOn;
     }
 
+    /**
+     * Retourne le JMenuItem permettant de couper le son
+     *
+     * @return Item sonOff
+     */
     public JMenuItem getItemSoundOff() {
         return itemSonOff;
     }
 
+    /**
+     * Retourne le JMenuItem permettant de cr&eacute;er une nouvelle Etoile
+     *
+     * @return Item nouvelleEtoile
+     */
     public JMenuItem getItemNouvelleEtoile() {
         return itemNouvelleEtoile;
     }
 
+    /**
+     * Retourne le JMenuItem permettant de cr&eacute;er un nouveau Satellite
+     *
+     * @return Item nouveauSatellite
+     */
     public JMenuItem getItemNouveauSatellite() {
         return itemNouveauSatellite;
     }
 
+    /**
+     * Retourne le JMenuItem permettant de supprimer un Astre
+     *
+     * @return Item supprimerAstre
+     */
     public JMenuItem getItemSupprimerAstre() {
         return itemSupprimerAstre;
     }
 
-    public JPanel getJpaneGlobal() {
-        return jpaneGlobal;
-    }
-
     /**
-     * Commentaire d'explication:
-     * La méthode JFrame prend en paramètre un flottant qui correspond au temps en provenance du Thread
-     * je supprime l'ensemble des composants genre Jlabels à l'aide de removeAll sur le JPanel global ;)
-     * ensuite je parcours comme toi la liste d'étoile du modele
-     * pour chacune des étoiles:
-     * je l'ajoute au jpaneGlobal
-     * je parcours la liste des satellites de l'étoile
-     * pour chacun des satellites:
-     * je le crée puis l'ajoute au jpaneGlobal en ayant pris soin de calculer sa position X et Y en fonction du temps
-     * j'appelle ensuite la méthode repaint() native de Swing afin de rafraichir l'affichage
+     * M&eacute;thode repaint permettant l'affichage des diff&eacute;rents Astres (Etoiles et Satellites)
+     * @param t le temps permettant un affichage &agrave; l'instant t
      */
     public void repaint(float t) {
         jpaneGlobal.removeAll();
         for (Etoile e : modele.getListeEtoiles()) {
             JLabel jlabastre = new JLabel(e.getImage());
-            /*System.out.println("Astre = " + e.getNom());
-            System.out.println("X = " + e.getPositionX());
-            System.out.println("Y = " + e.getPositionY());
-            System.out.println(e.getPositionX());
-            System.out.println(e.getPositionY());
-            System.out.println(e.getImage().getIconWidth());
-            System.out.println(e.getImage().getIconHeight());
-            System.out.println(e.getImage().getDescription());*/
-
-            //jlabastre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
             jlabastre.setBounds(e.getPositionX(), e.getPositionY(), e.getImage().getIconWidth(), e.getImage().getIconHeight());
-
             jpaneGlobal.add(jlabastre);
-
             repaintSatellite(e.getListeSatellites(), t);
         }
         jpaneGlobal.repaint();
     }
 
-    public void repaintSatellite(ArrayList<Satellite> ls, float t) {
-        Iterator<Satellite> it = ls.iterator();
+    /**
+     * M&eacute;thode repaint permettant l'affichage des satellites
+     * @param listSat ArrayList de Satellite &agrave; afficher
+     * @param t le temps permettant un affichage &agrave; l'instant t
+     */
+    private void repaintSatellite(ArrayList<Satellite> listSat, float t) {
+        Iterator<Satellite> it = listSat.iterator();
         while (it.hasNext()) {
             Satellite s = it.next();
             JLabel jlabsat = new JLabel(s.getImage());
