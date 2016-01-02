@@ -31,7 +31,6 @@ public class AffichageAstres extends Thread {
             try {
                 this.sleep(10);
                 t+=1;
-               //System.out.println(t);
                 fenetre.repaint(t);
             } catch(InterruptedException e){}
         }

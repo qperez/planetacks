@@ -13,6 +13,7 @@ import java.util.Iterator;
 public class FenetreDialogue {
     private static final String PATH_RESSOURCES_IMG_ASTRES = "./resources/img/astres/";
     private static final String PATH_RESSOURCES_SAVE = "./save/";
+    private static final String PATH_RESSOURCES_SOUNDS = "./resources/sounds/";
     private String filename;
 
     public static int confirmationNouveau() {
@@ -296,9 +297,13 @@ public class FenetreDialogue {
         fileChooser.addChoosableFileFilter(filter);
 
         if (fileChooser.showOpenDialog(null) == 0) {
-            String filename = PATH_RESSOURCES_SAVE + fileChooser.getSelectedFile().getName();
+            String filename = fileChooser.getSelectedFile().getName();
+            String filepath = PATH_RESSOURCES_SAVE + filename;
             try {
-                fenetre.getModele().charger(filename);
+                if (filename.equals("starwars.xml"))
+                    fenetre.getAudio().launchSound(PATH_RESSOURCES_SOUNDS + "star_wars_theme.wav");
+                else fenetre.getAudio().stopSound();
+                fenetre.getModele().charger(filepath);
             } catch (IOException e) {
                 e.printStackTrace();
             }
