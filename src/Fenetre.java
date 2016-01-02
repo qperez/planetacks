@@ -62,8 +62,8 @@ public class Fenetre extends JFrame {
         this.modele = modele;
         setIconImage(new ImageIcon(PATH_RESSOURCES_IMG_APPLI + "icone_appli.jpg").getImage()); //Affiche une icone d'application
         initAttributs();
-        creerVue();
         creerMenu();
+        creerVue();
         /*Etoile soleil = new Etoile("Soleil", "soleil.png", 300, 300);
         this.modele.ajouterEtoile(soleil);
         Etoile en = new Etoile("Etoile noire", "etoile_noire.png", 300, 500);
