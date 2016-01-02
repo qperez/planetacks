@@ -3,9 +3,10 @@
  * Un Satellite est caract&eacute;ris&eacute; par les informations suivantes :
  * <ul>
  * <li>Un nom.</li>
+ * <li>Un nom d'image.</li>
  * <li>Un demi-grand axe.</li>
  * <li>Un demi-petit axe.</li>
- * <li>Une période</li>
+ * <li>Une p&eacute;riode</li>
  * <li>Un astre autour duquel gravite le satellite</li>
  * </ul>
  */
@@ -19,7 +20,7 @@ public class Satellite extends Astre{
     /**
      * Constructeur Astre.
      * <p>
-     * Constructeur vide nécessaire à la sauvegarde XML.
+     * Constructeur vide n&eacute;cessaire &agrave; la sauvegarde XML.
      * </p>
      */
     public Satellite(){
@@ -29,16 +30,16 @@ public class Satellite extends Astre{
     /**
      * Constructeur Satellite.
      * <p>
-     * A la construction d'un objet Astre, le Satellite est initinitialisé
-     * avec les paramètres du constructeur.
+     * A la construction d'un objet Astre, le Satellite est initinitialis&eacute;
+     * avec les param&egrave;tres du constructeur.
      * </p>
      *
      * @param nom       Le nom du satellite
      * @param nomImage  Le nom de l'image du satellite
      * @param demiGrandAxe Taille du demi-grand axe
      * @param demiPetitAxe Taille du demi-petit axe
-     * @param periode periode de révolution de l'astre
-     * @param astre Astre autour duquel gravite le satellite
+     * @param periode de r&eacute;volution de l'astre
+     * @param astre autour duquel gravite le satellite
      *
      * @see Astre#nom
      * @see Satellite#demiGrandAxe
@@ -66,11 +67,8 @@ public class Satellite extends Astre{
     }
 
     /**
-     * Met à jour le demi petit axe du satellite.
-     *
-     * @param demiPetitAxe
-     *            La nouvelle taille du demi petit axe du satellite.
-     *
+     * Met &agrave; jour le demi petit axe du satellite.
+     * @param demiPetitAxe La nouvelle taille du demi petit axe du satellite.
      */
     public void setDemiPetitAxe(int demiPetitAxe) {
         this.demiPetitAxe = demiPetitAxe;
@@ -85,18 +83,15 @@ public class Satellite extends Astre{
     }
 
     /**
-     * Met à jour le demi grand axe du satellite.
-     *
-     * @param demiGrandAxe
-     *            La nouvelle taille du demi grand axe du satellite.
-     *
+     * Met &agrave; jour le demi grand axe du satellite.
+     * @param demiGrandAxe La nouvelle taille du demi grand axe du satellite.
      */
     public void setDemiGrandAxe(int demiGrandAxe) {
         this.demiGrandAxe = demiGrandAxe;
     }
 
     /**
-     * Retourne la période du satellite
+     * Retourne la p&eacute;riode du satellite
      * @return P&eacute;riode du satellite
      */
     public int getPeriode() {
@@ -105,10 +100,7 @@ public class Satellite extends Astre{
 
     /**
      * Met &agrave; jour la p&eacute;riode du satellite.
-     *
-     * @param periode
-     *            La nouvelle p&eacute;riode du satellite.
-     *
+     * @param periode La nouvelle p&eacute;riode du satellite.
      */
     public void setPeriode(int periode) {
         this.periode = periode;
@@ -124,10 +116,7 @@ public class Satellite extends Astre{
 
     /**
      * Met &agrave; jour l'astre autour duquel gravite le satellite.
-     *
-     * @param astre
-     *            Le nouvelle astre de gravitation satellite.
-     *
+     * @param astre Le nouvelle astre de gravitation satellite.
      */
     public void setAstre(Astre astre) {
         this.astre = astre;
@@ -147,8 +136,6 @@ public class Satellite extends Astre{
      * @return int la nouvelle position X
      */
     public int calculPositionSatelliteX(float t) {
-        /*x=a.cos(t/p)+xAstreRéférent
-          y=b.sin(t/p)+yAstreRéférent*/
         int x = (int) (demiGrandAxe * Math.cos(t/periode) + astre.getPositionX() + (astre.getImage().getIconWidth() - this.getImage().getIconWidth())/2);
         setPositionX(x);
         return x;
@@ -160,8 +147,6 @@ public class Satellite extends Astre{
      * @return int la nouvelle position Y
      */
     public int calculPositionSatelliteY(float t) {
-        /*x=a.cos(t/p)+xAstreRéférent
-          y=b.sin(t/p)+yAstreRéférent*/
         int y = (int) (demiPetitAxe * Math.sin(t/periode) + astre.getPositionY() + (astre.getImage().getIconHeight() - this.getImage().getIconHeight())/2);
         setPositionY(y);
         return y;

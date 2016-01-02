@@ -2,15 +2,26 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 
 /**
- * Created by quentin on 24/12/15.
+ * <b>Classe permettant de cr&eacute;er un contr&ocirc;leur de Menu</b>
  */
 public class ControleurMenu extends Controleur {
     private static final String PATH_RESSOURCES_SOUNDS = "./resources/sounds/";
 
+    /**
+     * Constructeur de ControleurMenu
+     * @param fenetre la Fenetre de l'application
+     * @param modele le Modele de l'application
+     *
+     * @see Controleur#Controleur(Fenetre, Modele)
+     */
     public ControleurMenu(Fenetre fenetre, Modele modele){
         super(fenetre, modele);
     }
 
+    /**
+     * Impl&eacute;mentation de la m&eacute;thode actionPerformed
+     * @param e l'ActionEvent en provenance du listener
+     */
     public void actionPerformed(ActionEvent e){
         if(fenetre.getItemQuitter() == e.getSource()) {
             System.exit(0);
@@ -52,7 +63,5 @@ public class ControleurMenu extends Controleur {
         else if (fenetre.getItemSupprimerAstre() == e.getSource()) {
             FenetreDialogue.supprimerAstre(fenetre);
         }
-
-        else { System.out.println("Are you high bro?"); }
     }
 }

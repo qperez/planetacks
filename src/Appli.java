@@ -1,5 +1,5 @@
 /**
- * <b>Classe principale servant de point d'entrée à l'application</b>
+ * <b>Classe principale servant de point d'entr&eacute;e &agrave; l'application</b>
  */
 public class Appli {
     /**

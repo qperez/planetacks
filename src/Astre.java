@@ -22,7 +22,7 @@ public class Astre {
     private String nomImage;
     private int positionX;
     private int positionY;
-    private ArrayList<Satellite> listeSatellites;
+    protected ArrayList<Satellite> listeSatellites;
     private ImageIcon image;
 
     /**
@@ -48,6 +48,7 @@ public class Astre {
      * @param positionY La position Y de l'Astre
      *
      * @see Astre#nom
+     * @see Astre#nomImage
      * @see Astre#positionX
      * @see Astre#positionY
      */
@@ -172,7 +173,7 @@ public class Astre {
     }
 
     /**
-     * Méthode permettant de supprimer un Satellite de la liste des satellites
+     * M&eacute;thode permettant de supprimer un Satellite de la liste des satellites
      * @param m Le modele
      */
     public void supprimer(Modele m) {

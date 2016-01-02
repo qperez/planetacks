@@ -27,7 +27,7 @@ public class Audio {
     }
 
     /**
-     * Méthode permettant de créer un flux audio à l'aide d'un fichier wav
+     * M&eacute;thode permettant de cr&eacute;er un flux audio &agrave; l'aide d'un fichier wav
      * et de le lire
      * @param nomFichierAudio Le chemin vers le fichier audio (wav)
      */
@@ -41,7 +41,7 @@ public class Audio {
     }
 
     /**
-     * Méthode permettant de stopper le flux audio
+     * M&eacute;thode permettant de stopper le flux audio
      */
     public void stopSound(){
         p.stop(as);
