@@ -1,7 +1,11 @@
 /**
- * Created by quentin on 27/11/15.
+ * <b>Classe principale servant de point d'entrée à l'application</b>
  */
 public class Appli {
+    /**
+     * M&eacute;thode principale
+     * @param args Arguments de l'application
+     */
     public static void main(String[] args) {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
@@ -9,6 +13,5 @@ public class Appli {
                 Fenetre fenetre = new Fenetre(modele);
             }
         });
-        System.out.println("Hello world, it's was the first commit in the space because ponies are the most beautiful");
     }
 }

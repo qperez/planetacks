@@ -19,17 +19,16 @@ public class Astre {
     private static final String PATH_RESSOURCES_IMG_ASTRES = "./resources/img/astres/";
 
     private String nom;
-    protected String nomImage;
+    private String nomImage;
     private int positionX;
-    protected int positionY;
-    protected ArrayList<Satellite> listeSatellites;
-    //private JLabel labelImage;
+    private int positionY;
+    private ArrayList<Satellite> listeSatellites;
     private ImageIcon image;
 
     /**
      * Constructeur Astre.
      * <p>
-     * Constructeur vide nécessaire à la sauvegarde XML.
+     * Constructeur vide n&eacute;cessaire &agrave; la sauvegarde XML.
      * </p>
      */
     public Astre(){
@@ -39,11 +38,12 @@ public class Astre {
     /**
      * Constructeur Astre.
      * <p>
-     * A la construction d'un objet Astre, l'Astre est initinitialisé
-     * avec les paramètres du constructeur.
+     * A la construction d'un objet Astre, l'Astre est initinitialis&eacute;
+     * avec les param&egrave;tres du constructeur.
      * </p>
      *
      * @param nom Le nom de l'astre
+     * @param nomImage Le nom de l'image de l'Astre
      * @param positionX La position X de l'Astre
      * @param positionY La position Y de l'Astre
      *
@@ -70,11 +70,8 @@ public class Astre {
     }
 
     /**
-     * Met à jour le nom de l'astre.
-     *
-     * @param nom
-     *            Le nouveau nom de l'astre.
-     *
+     * Met &agrave; jour le nom de l'astre.
+     * @param nom Le nouveau nom de l'astre.
      */
     public void setNom(String nom) {
         this.nom = nom;
@@ -88,10 +85,18 @@ public class Astre {
         return nomImage;
     }
 
+    /**
+     * Met &agrave; jour le nom de l'image de l'Astre
+     * @param nomImage Le nouveau nom de l'image de l'Astre.
+     */
     public void setNomImage(String nomImage) {
         this.nomImage = nomImage;
     }
 
+    /**
+     * Met &agrave; jour l'ArrayList de Satellite de l'Astre
+     * @param listeSatellites La nouvelle ArrayList de Satellite
+     */
     public void setListeSatellites(ArrayList<Satellite> listeSatellites) {
         this.listeSatellites = listeSatellites;
     }
@@ -120,10 +125,7 @@ public class Astre {
 
     /**
      * Met &agrave; jour la position X de l'&eacute;toile.
-     *
-     * @param positionX
-     *            La nouvelle position X de l'&eacute;toile.
-     *
+     * @param positionX La nouvelle position X de l'&eacute;toile.
      */
     public void setPositionX(int positionX) {
         this.positionX = positionX;
@@ -138,11 +140,8 @@ public class Astre {
     }
 
     /**
-     * Met &agrave; jour la position Y de l'&eacute;toile.
-     *
-     * @param positionY
-     *            La nouvelle position Y de l'&eacute;toile.
-     *
+     * Met &agrave; jour la position Y de l'Astre
+     * @param positionY La nouvelle position Y de l'Astre
      */
     public void setPositionY(int positionY) {
         this.positionY = positionY;
@@ -172,6 +171,10 @@ public class Astre {
         listeSatellites.add(s);
     }
 
+    /**
+     * Méthode permettant de supprimer un Satellite de la liste des satellites
+     * @param m Le modele
+     */
     public void supprimer(Modele m) {
         Iterator<Satellite> it;
         it = getListeSatellites().iterator();
@@ -191,10 +194,18 @@ public class Astre {
         }
     }
 
+    /**
+     * Retourne l'image correspondant à l'Astre
+     * @return ImageIcon l'image correspondant à l'Astre
+     */
     public ImageIcon getImage() {
         return image;
     }
 
+    /**
+     * Met &agrave; jour l'ImageIcon correspondant à l'Astre
+     * @param image La nouvelle ImageIcon de l'Astre
+     */
     public void setImage(ImageIcon image) {
         this.image = image;
     }
