@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_66" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="Etoile" id="Etoile0">
+    <void property="image">
+     <object class="javax.swing.ImageIcon">
+      <string>./resources/img/astres/soleil.png</string>
+     </object>
+    </void>
+    <void property="listeSatellites">
+     <void method="add">
+      <object class="Satellite">
+       <void property="astre">
+        <object idref="Etoile0"/>
+       </void>
+       <void property="demiGrandAxe">
+        <int>100</int>
+       </void>
+       <void property="demiPetitAxe">
+        <int>100</int>
+       </void>
+       <void property="image">
+        <object class="javax.swing.ImageIcon">
+         <string>./resources/img/astres/mercure.png</string>
+        </object>
+       </void>
+       <void property="nom">
+        <string>mercure</string>
+       </void>
+       <void property="nomImage">
+        <string>mercure.png</string>
+       </void>
+       <void property="periode">
+        <int>120</int>
+       </void>
+       <void property="positionX">
+        <int>774</int>
+       </void>
+       <void property="positionY">
+        <int>342</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="Satellite" id="Satellite0">
+       <void property="astre">
+        <object idref="Etoile0"/>
+       </void>
+       <void property="demiGrandAxe">
+        <int>160</int>
+       </void>
+       <void property="demiPetitAxe">
+        <int>160</int>
+       </void>
+       <void property="image">
+        <object class="javax.swing.ImageIcon">
+         <string>./resources/img/astres/venus.png</string>
+        </object>
+       </void>
+       <void property="listeSatellites">
+        <void method="add">
+         <object class="Satellite">
+          <void property="astre">
+           <object idref="Satellite0"/>
+          </void>
+          <void property="demiGrandAxe">
+           <int>150</int>
+          </void>
+          <void property="demiPetitAxe">
+           <int>70</int>
+          </void>
+          <void property="image">
+           <object class="javax.swing.ImageIcon">
+            <string>./resources/img/astres/asteroide.png</string>
+           </object>
+          </void>
+          <void property="nom">
+           <string>asteroide3</string>
+          </void>
+          <void property="nomImage">
+           <string>asteroide.png</string>
+          </void>
+          <void property="periode">
+           <int>150</int>
+          </void>
+          <void property="positionX">
+           <int>643</int>
+          </void>
+          <void property="positionY">
+           <int>647</int>
+          </void>
+         </object>
+        </void>
+       </void>
+       <void property="nom">
+        <string>venus</string>
+       </void>
+       <void property="nomImage">
+        <string>venus.png</string>
+       </void>
+       <void property="periode">
+        <int>160</int>
+       </void>
+       <void property="positionX">
+        <int>746</int>
+       </void>
+       <void property="positionY">
+        <int>592</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="Satellite" id="Satellite1">
+       <void property="astre">
+        <object idref="Etoile0"/>
+       </void>
+       <void property="demiGrandAxe">
+        <int>220</int>
+       </void>
+       <void property="demiPetitAxe">
+        <int>220</int>
+       </void>
+       <void property="image">
+        <object class="javax.swing.ImageIcon">
+         <string>./resources/img/astres/terre.png</string>
+        </object>
+       </void>
+       <void property="listeSatellites">
+        <void method="add">
+         <object class="Satellite">
+          <void property="astre">
+           <object idref="Satellite1"/>
+          </void>
+          <void property="demiGrandAxe">
+           <int>30</int>
+          </void>
+          <void property="demiPetitAxe">
+           <int>30</int>
+          </void>
+          <void property="image">
+           <object class="javax.swing.ImageIcon">
+            <string>./resources/img/astres/lune.png</string>
+           </object>
+          </void>
+          <void property="nom">
+           <string>lune</string>
+          </void>
+          <void property="nomImage">
+           <string>lune.png</string>
+          </void>
+          <void property="periode">
+           <int>50</int>
+          </void>
+          <void property="positionX">
+           <int>702</int>
+          </void>
+          <void property="positionY">
+           <int>272</int>
+          </void>
+         </object>
+        </void>
+       </void>
+       <void property="nom">
+        <string>terre</string>
+       </void>
+       <void property="nomImage">
+        <string>terre.png</string>
+       </void>
+       <void property="periode">
+        <int>220</int>
+       </void>
+       <void property="positionX">
+        <int>675</int>
+       </void>
+       <void property="positionY">
+        <int>242</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="Satellite">
+       <void property="astre">
+        <object idref="Etoile0"/>
+       </void>
+       <void property="demiGrandAxe">
+        <int>300</int>
+       </void>
+       <void property="demiPetitAxe">
+        <int>300</int>
+       </void>
+       <void property="image">
+        <object class="javax.swing.ImageIcon">
+         <string>./resources/img/astres/asteroide.png</string>
+        </object>
+       </void>
+       <void property="nom">
+        <string>asteroide</string>
+       </void>
+       <void property="nomImage">
+        <string>asteroide.png</string>
+       </void>
+       <void property="periode">
+        <int>450</int>
+       </void>
+       <void property="positionX">
+        <int>503</int>
+       </void>
+       <void property="positionY">
+        <int>519</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="Satellite">
+       <void property="astre">
+        <object idref="Etoile0"/>
+       </void>
+       <void property="demiGrandAxe">
+        <int>150</int>
+       </void>
+       <void property="demiPetitAxe">
+        <int>600</int>
+       </void>
+       <void property="image">
+        <object class="javax.swing.ImageIcon">
+         <string>./resources/img/astres/asteroide.png</string>
+        </object>
+       </void>
+       <void property="nom">
+        <string>asteroide2</string>
+       </void>
+       <void property="nomImage">
+        <string>asteroide.png</string>
+       </void>
+       <void property="periode">
+        <int>400</int>
+       </void>
+       <void property="positionX">
+        <int>644</int>
+       </void>
+       <void property="positionY">
+        <int>379</int>
+       </void>
+      </object>
+     </void>
+    </void>
+    <void property="nom">
+     <string>Soleil</string>
+    </void>
+    <void property="nomImage">
+     <string>soleil.png</string>
+    </void>
+    <void property="positionX">
+     <int>743</int>
+    </void>
+    <void property="positionY">
+     <int>395</int>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

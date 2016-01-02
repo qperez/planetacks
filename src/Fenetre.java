@@ -149,7 +149,7 @@ public class Fenetre extends JFrame {
         try {
             jpaneGlobal = new JPanel() {
                 private static final long serialVersionUID = 1;
-                private BufferedImage buf = ImageIO.read(new File(PATH_RESSOURCES_IMG_APPLI + "background.jpg"));
+                private BufferedImage buf = ImageIO.read(new File(PATH_RESSOURCES_IMG_APPLI + "background2.jpg"));
 
                 @Override
                 protected void paintComponent(Graphics g) {
