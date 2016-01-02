@@ -5,5 +5,12 @@
 \BOOKMARK [2][-]{subsection.2.1}{Introduction}{section.2}% 5
 \BOOKMARK [2][-]{subsection.2.2}{Structures de donn\351es au sein de l'application}{section.2}% 6
 \BOOKMARK [3][-]{subsubsection.2.2.1}{Mod\351lisation d'un astre \(Etoile ou Satellite\)}{subsection.2.2}% 7
-\BOOKMARK [3][-]{subsubsection.2.2.2}{Architecture MVC}{subsection.2.2}% 8
-\BOOKMARK [1][-]{section.3}{Conclusion}{}% 9
+\BOOKMARK [2][-]{subsection.2.3}{Structure g\351n\351rale de l'application}{section.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Emplacement des fichiers}{subsection.2.3}% 9
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Architecture MVC}{subsection.2.3}% 10
+\BOOKMARK [2][-]{subsection.2.4}{Les algorithmes int\351ressants}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.5}{Points int\351ressants et suppl\351mentaires du programme}{section.2}% 12
+\BOOKMARK [1][-]{section.3}{Conclusion}{}% 13
+\BOOKMARK [2][-]{subsection.3.1}{Bilan}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.2}{Les acquis}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.3}{Am\351liorations futures}{section.3}% 16

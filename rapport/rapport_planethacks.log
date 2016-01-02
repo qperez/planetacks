@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.15)  2 JAN 2016 14:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.15)  2 JAN 2016 18:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -633,13 +633,13 @@ Package frenchb.ldf Warning: OT1 encoding should not be used for French.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<java.png, id=40, 519.9425pt x 519.9425pt>
+<java.png, id=68, 519.9425pt x 519.9425pt>
 File: java.png Graphic file (type png)
  <use java.png>
 Package pdftex.def Info: java.png used on input line 31.
 (pdftex.def)             Requested size: 128.0387pt x 128.03362pt.
 
-<ufrst.jpg, id=42, 793.96625pt x 451.6875pt>
+<ufrst.jpg, id=70, 793.96625pt x 451.6875pt>
 File: ufrst.jpg Graphic file (type jpg)
  <use ufrst.jpg>
 Package pdftex.def Info: ufrst.jpg used on input line 38.
@@ -666,69 +666,95 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.48 \newpage
-              [1]
-Overfull \hbox (9.15367pt too wide) in paragraph at lines 100--102
+              [1] [2] <git.png, id=109, 1204.5pt x 606.76688pt>
+File: git.png Graphic file (type png)
+ <use git.png>
+Package pdftex.def Info: git.png used on input line 79.
+(pdftex.def)             Requested size: 361.35278pt x 182.03146pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--85
+
+ []
+
+<idea.png, id=110, 1204.5pt x 677.53125pt>
+File: idea.png Graphic file (type png)
+ <use idea.png>
+Package pdftex.def Info: idea.png used on input line 86.
+(pdftex.def)             Requested size: 361.35278pt x 203.26094pt.
+ [3 <./git.png (PNG copy)> <./idea.png (PNG copy)>]
+Overfull \hbox (9.15367pt too wide) in paragraph at lines 109--111
 []\OT1/cmr/m/n/10 Afin de r^^Sealiser la fonc-tion-na-lit^^Se de sau-ve-garde u
 ne classe sp^^Secifique conte-nant les ou-tils n^^Secessaires
  []
 
-[2] <classes_astre.png, id=77, 511.9125pt x 588.1975pt>
+<classes_astre.png, id=118, 511.9125pt x 588.1975pt>
 File: classes_astre.png Graphic file (type png)
-
-<use classes_astre.png>
-Package pdftex.def Info: classes_astre.png used on input line 106.
+ <use classes_astre.png>
+Package pdftex.def Info: classes_astre.png used on input line 115.
 (pdftex.def)             Requested size: 204.76137pt x 235.27483pt.
- <classes_mvc.png, id=78, 1084.05pt x 702.625pt>
-File: classes_mvc.png Graphic file (type png)
 
-<use classes_mvc.png>
-Package pdftex.def Info: classes_mvc.png used on input line 112.
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+
+ []
+
+<arbo.png, id=119, 259.7203pt x 216.81pt>
+File: arbo.png Graphic file (type png)
+ <use arbo.png>
+Package pdftex.def Info: arbo.png used on input line 125.
+(pdftex.def)             Requested size: 181.80296pt x 151.76596pt.
+ [4 <./classes_astre.png>] <classes_mvc.png, id=125, 1084.05pt x 702.625pt>
+File: classes_mvc.png Graphic file (type png)
+ <use classes_mvc.png>
+Package pdftex.def Info: classes_mvc.png used on input line 160.
 (pdftex.def)             Requested size: 433.61232pt x 281.04501pt.
 
-Overfull \hbox (6.82097pt too wide) in paragraph at lines 112--113
+Overfull \hbox (6.82097pt too wide) in paragraph at lines 160--161
  []$ 
  []
 
+[5 <./arbo.png (PNG copy)>]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 116.
+put line 167.
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
 [] \OT1/cmr/m/n/10 Af-fi-cher $\OML/cmm/m/it/10 jlabsat$ \OT1/cmr/m/n/10 en fon
 c-tion de $\OML/cmm/m/it/10 s:calculPositionSatelliteX\OT1/cmr/m/n/10 (\OML/cmm
 /m/it/10 t\OT1/cmr/m/n/10 )$ et
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 138.
-[3 <./classes_astre.png> <./classes_mvc.png>] [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 138.
+[6 <./classes_mvc.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
+ [7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
  (./rapport_planethacks.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 138.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 138.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
 Package rerunfilecheck Info: File `rapport_planethacks.out' has not changed.
-(rerunfilecheck)             Checksum: B4E7C4C9085BFBDAD87F540BE389799E;599.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 138.
+(rerunfilecheck)             Checksum: F7BE65566B2B77A3B1531CB6F8D4F59A;1151.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
  ) 
 Here is how much of TeX's memory you used:
- 8220 strings out of 493054
- 116331 string characters out of 6140585
- 221449 words of memory out of 5000000
- 11625 multiletter control sequences out of 15000+600000
+ 8253 strings out of 493054
+ 116749 string characters out of 6140585
+ 221456 words of memory out of 5000000
+ 11645 multiletter control sequences out of 15000+600000
  8278 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,6n,35p,287b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,6n,35p,358b,445s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
 r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmtt10.pfb>
-Output written on rapport_planethacks.pdf (5 pages, 273358 bytes).
+ist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pf
+b>
+Output written on rapport_planethacks.pdf (8 pages, 519630 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
- 107 compressed objects within 2 object streams
- 16 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 191 PDF objects out of 1000 (max. 8388607)
+ 158 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 164 words of extra memory for PDF output out of 10000 (max. 10000000)
 

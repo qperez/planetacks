@@ -70,12 +70,21 @@ L'utilisateur doit disposer des fonctionnalités suivantes:
 \end{itemize}
 La contrainte d'ergonomie est également importante quant à l'utilisation du logiciel.
 
+\newpage
 \section{Conception}
 \subsection{Introduction}
 Planethacks est le nom choisi pour l'application. Du fait d'un travail en binôme, l'utilisation
-d'un logiciel de gestion de version fut priviligiée. Nous avons pour cela utilisé Git, en lien avec le serveur d'hébergement \href{https://github.com}{GitHub} (sources GitHub de Planethacks: \url{https://github.com/qperez/planetacks}). \\
+d'un logiciel de gestion de version fut priviligiée. Nous avons pour cela utilisé Git, en lien avec le serveur d'hébergement \href{https://github.com}{GitHub} (sources GitHub de Planethacks: \url{https://github.com/qperez/planetacks}). 
+\begin{center}
+  $\includegraphics[scale=0.3]{git.png}$
+\end{center}
+
+
 L'IDE (\textit{Internal Development Environement}) IntelliJ IDEA fut utilisé durant toute la phase de développement et de tests et ce afin 
-d'accélérer et faciliter le développement de l'application ainsi que son déboguage.
+d'accélérer et faciliter le développement de l'application ainsi que son déboguage.\\
+\begin{center}
+  $\includegraphics[scale=0.3]{idea.png}$
+\end{center}
 
 \subsection{Structures de données au sein de l'application}
 La définition de classes permettant de structurer les données de notre programme fut la première étape de conception. Ainsi 3 classes 
@@ -105,12 +114,54 @@ Le diagramme UML ci-dessous représente la modélisation choisie pour un astre:
 \begin{center}
   $\includegraphics[scale=0.4]{classes_astre.png}$
 \end{center}
-Les méthodes : \textit{calculPositionSatelliteX(float)} et \textit{calculPositionSatelliteX(float)} présentes dans la classe Satellite permettent
-de calculer la position en X et en Y du Satellite en fonction du temps.
+Les méthodes \textit{calculPositionSatelliteX(float)} et \textit{calculPositionSatelliteX(float)} présentes dans la classe Satellite permettent
+de calculer la position en X et en Y du Satellite en fonction du temps. La méthode \textit{ajouterSatellite(Satellite)} permet de mettre en orbite un satellite autour d'un astre. Enfin, la méthode \textit{supprimer(Modele)} permet de supprimer récursivement un astre et ses satellites à partir du modèle donné.
+
+\subsection{Structure générale de l'application}
+
+\subsubsection{Emplacement des fichiers}
+Nous avons utilisé une structure de fichiers qui nous parraissait être la plus simple et la meilleure pour le fonctionnement de l'application. Ci-dessous, une représentation de l'arborescence :\\
+\begin{center}
+  $\includegraphics[scale=0.7]{arbo.png}$
+\end{center}
+
+Nous pouvons retrouver les dossiers de production suivants, dans lesquels nous manipulions directement les fichiers :
+\begin{itemize}
+ \item \begin{verbatim}src\end{verbatim} $\rightarrow$ dossier des sources (.java)
+ \item \begin{verbatim}ressources\end{verbatim} $\rightarrow$ dossier des différents fichiers image ou audio
+ \begin{itemize}
+  \item \begin{verbatim}img\end{verbatim} $\rightarrow$ dossier contenant toutes les images du projet
+  \begin{itemize}
+   \item \begin{verbatim}appli\end{verbatim} $\rightarrow$ dossier des images de l'application en général
+   \item \begin{verbatim}astres\end{verbatim} $\rightarrow$ dossier des images des astres (.png)
+  \end{itemize}
+  \item \begin{verbatim}sounds\end{verbatim} $\rightarrow$ dossier contenant tous les sons du projet
+ \end{itemize}
+ \item \begin{verbatim}rapport\end{verbatim} $\rightarrow$ dossier contenant les fichiers permettant de réaliser ce rapport (fichiers \LaTeX)
+\end{itemize}
+\vspace{0.5cm}
+Mais également des dossiers dont le contenu est généré automatiquement :
+\begin{itemize}
+ \item \begin{verbatim}out\end{verbatim} $\rightarrow$ dossier des fichiers java compilés (.class)
+ \item \begin{verbatim}save\end{verbatim} $\rightarrow$ dossier des fichiers de sauvegarde générés par l'application (.xml)
+ \item \begin{verbatim}documentation\end{verbatim} $\rightarrow$ dossier contenant la documentation du projet (.html)
+ \item \begin{verbatim}.idea\end{verbatim} $\rightarrow$ dossier contenant les fichiers de configuration du logiciel \textit{IntelliJ IDEA}
+\end{itemize}
+\vspace{0.5cm}
+Ainsi que des fichiers seuls :
+\begin{itemize}
+ \item \begin{verbatim}.gitignore\end{verbatim} $\rightarrow$ fichier permettant d'ignorer l'envoi de fichiers sur GitHub (ex : dossier \textit{out})
+ \item \begin{verbatim}README.md\end{verbatim} $\rightarrow$ fichier MarkDown de présentation du projet sur GitHub
+ \item \begin{verbatim}planetacks.iml\end{verbatim} $\rightarrow$ fichier de configuration du projet pour \textit{IntelliJ IDEA}
+\end{itemize}
+
 \subsubsection{Architecture MVC}
 \begin{center}
   $\includegraphics[scale=0.4]{classes_mvc.png}$
 \end{center}
+
+
+\subsection{Les algorithmes intéressants}
 
 \begin{algorithm}
 \caption{méthode repaint de la classe Fenetre}
@@ -132,7 +183,14 @@ de calculer la position en X et en Y du Satellite en fonction du temps.
 \end{algorithmic}
 \end{algorithm}
 
+\subsection{Points intéressants et supplémentaires du programme}
 
+\newpage
 \section{Conclusion}
+\subsection{Bilan}
+
+\subsection{Les acquis}
+
+\subsection{Améliorations futures}
 
 \end{document}
