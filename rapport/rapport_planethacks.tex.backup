@@ -5,6 +5,7 @@
 \usepackage{hyperref}
 \usepackage{algorithm,algpseudocode}
 \usepackage{default}
+\usepackage{tikz}
 \usepackage{xcolor}
 \usepackage[francais]{babel}
 \usepackage[top=3cm,bottom=3cm,right=3cm,left=3cm]{geometry}
@@ -229,8 +230,149 @@ De plus, grâce au gestionnaire de version GitHub, il est aisé de retrouver les
 Pour finir, ces deux logiciels fonctionnent l'un avec l'autre, ce qui rend la construction du projet très confortable.
 \\
 
-Une phase de tests plus conséquente a été réalisée à la fin du projet, pour trouver d'éventuels conflits entre les différentes fonctionnalités et au fur et à mesure du déroulement du programme.
+Une phase de tests fonctionnels plus conséquente a été réalisée à la fin du projet. Dans un souçis de professionnalisation et de rigueur quant à
+la démarche de tests, plusieurs fiches de vérification d'aptitude au bon fonctionnement de l'application ont été réalisées.
 
+
+\newpage
+\begin{tikzpicture}[remember picture,overlay]
+	\draw[very thick]
+		([yshift=-15pt,xshift=15pt]current page.north west)--
+		([yshift=-15pt,xshift=-15pt]current page.north east)--
+		([yshift=15pt,xshift=-15pt]current page.south east)--
+		([yshift=15pt,xshift=15pt]current page.south west)--cycle;
+
+
+\end{tikzpicture}
+\begin{center}
+  \begin{huge}
+    Vérification d'aptitude au bon fonctionnement \\
+  \end{huge}
+  \vspace{1cm}
+  \begin{Large}
+    Scénario de test numéro 1
+  \end{Large}
+\end{center}
+\rule{\linewidth}{.5pt}
+Profil d'utilisateur visé: Étudiant \\\\
+Titre du scénario: Création et sauvegarde d'un système planétaire \\\\
+Conditions préalables:
+\begin{itemize}
+ \item Disposer d'un ordinateur ayant Java Runtime Environement installé
+ \item Disposer du logiciel Planethacks
+ \item Aucunes aides à la prise en main ou à la décision durant la durée du test
+\end{itemize}
+Description: on souhaite vérifier que l'application permet l'ajout de 2 étoiles ainsi que de 3 satellites. 
+On désire ensuite sauvegarder l'ensemble du système planétaire créé dans un fichier ``test.xml''.
+Le test s'effectue sans jeu de données préalables.
+\begin{center}
+ \begin{Large}
+    Instructions du scénario
+  \end{Large}
+\end{center}
+\begin{enumerate}
+ \item Ne pas ouvrir de nouveau système planétaire à l'ouverture de l'application
+ \item Ajouter une étoile se nommant Tatooine en position X=250 et Y=300 et ayant pour image ``tatooine.png''
+ \item Ajouter un satellite à l'étoile Tatooine se nommant Asteroide et ayant un demi-grand axe=50, un demi-petit axe = 50, une période 
+ de 150 et ayant pour image ``asteroide.png'' 
+ \item Ajouter un satellite à l'étoile Tatooine se nommant Faucon et ayant un demi-grand axe=50, un demi-petit axe = 50, une période 
+de 150 et ayant pour image ``faucon\_millenium.png''
+ \item Ajouter une étoile se nommant Terre en position X=600 et Y=400 et ayant pour image ``terre.png''
+ \item Ajouter un satellite à l'étoile Terre se nommant Lune et ayant un demi-grand axe=200, un demi-petit axe=50, une période 
+ de 80 et ayant pour image ``lune.png''
+ \item Sauvegarder le système planétaire sous le nom ``test''
+ \item Quitter l'application
+\end{enumerate}
+
+\newpage
+\begin{tikzpicture}[remember picture,overlay]
+	\draw[very thick]
+		([yshift=-15pt,xshift=15pt]current page.north west)--
+		([yshift=-15pt,xshift=-15pt]current page.north east)--
+		([yshift=15pt,xshift=-15pt]current page.south east)--
+		([yshift=15pt,xshift=15pt]current page.south west)--cycle;
+\end{tikzpicture}
+
+\begin{center}
+  \begin{huge}
+    Vérification d'aptitude au bon fonctionnement \\
+  \end{huge}
+  \vspace{1cm}
+  \begin{Large}
+    Scénario de test numéro 2
+  \end{Large}
+\end{center}
+\rule{\linewidth}{.5pt}
+Profil d'utilisateur visé: Étudiant \\\\
+Titre du scénario: Chargement et modification d'un système planétaire \\\\
+Conditions préalables:
+\begin{itemize}
+ \item Disposer d'un ordinateur ayant Java Runtime Environement installé
+ \item Disposer du logiciel Planethacks
+ \item Disposer d'un jeu de données correpondant à une sauvegarde d'un système planétaire
+ \item Aucunes aides à la prise en main ou à la décision durant la durée du test
+\end{itemize}
+Description: on souhaite vérifier que l'application puisse charger correctement un système planétaire enregistré au format 
+XML mais également qu'il puisse être modifié, c'est à dire que 2 astres puissent être supprimés et un autre ajouté. 
+Le test s'effectue avec jeu de données ``starwars.xml''.
+\begin{center}
+ \begin{Large}
+    Instructions du scénario
+  \end{Large}
+\end{center}
+\begin{enumerate}
+ \item Choisir d'ouvrir un nouveau système planétaire lors du démarrage de l'application, choisir ``starwars.xml''
+ \item Supprimer l'astre ``tatooine''
+ \item Ajouter une étoile se nommant Terre en position X=600 et Y=400 et ayant pour image ``terre.png''
+ \item Supprimer l'astre ``etoile noire''
+ \item Quitter l'application
+\end{enumerate}
+
+\newpage
+\begin{tikzpicture}[remember picture,overlay]
+	\draw[very thick]
+		([yshift=-15pt,xshift=15pt]current page.north west)--
+		([yshift=-15pt,xshift=-15pt]current page.north east)--
+		([yshift=15pt,xshift=-15pt]current page.south east)--
+		([yshift=15pt,xshift=15pt]current page.south west)--cycle;
+\end{tikzpicture}
+
+\begin{center}
+  \begin{huge}
+    Vérification d'aptitude au bon fonctionnement \\
+  \end{huge}
+  \vspace{1cm}
+  \begin{Large}
+    Scénario de test numéro 3
+  \end{Large}
+\end{center}
+\rule{\linewidth}{.5pt}
+Profil d'utilisateur visé: Étudiant \\\\
+Titre du scénario: Vérification de l'activation de la désactivation de l'environnement sonore et de la fonction de fermeture de l'application \\\\
+Conditions préalables:
+\begin{itemize}
+ \item Disposer d'un ordinateur ayant Java Runtime Environement installé
+ \item Disposer du logiciel Planethacks
+ \item Disposer d'enceintes stéréo (le surround est en option dans certaines salles équipées) 
+ \item Aucunes aides à la prise en main ou à la décision durant la durée du test
+\end{itemize}
+Description: on souhaite vérifier que l'on puisse activer ou désactiver l'environnement sonore de l'application mais également
+que la fonction permettant de quitter l'application fonctionne correctement.
+Le test s'effectue sans jeu de données préalables.
+\begin{center}
+ \begin{Large}
+    Instructions du scénario
+  \end{Large}
+\end{center}
+\begin{enumerate}
+ \item Ne pas ouvrir de nouveau système planétaire à l'ouverture de l'application
+ \item Activer le son et vérifier que le thème original de Star Wars est entendu
+ \item Désactiver le son
+ \item Activer le son et vérifier que le thème original de Star Wars est entendu
+ \item Quitter l'application à l'aide du menu
+\end{enumerate}
+
+\newpage
 \newpage
 \section{Conclusion}
 \subsection{Bilan}
@@ -255,7 +397,11 @@ Par le fait d'avoir implémenté un mode \textit{StarWars}, nous avons pu décou
 Le travail en groupe n'était pas une déouverte, mais nous avions pu confirmer notre méthode pour parvenir à fournir un travail efficace avec le moins de problèmes possibles.
 
 \subsection{Améliorations apportées}
+Globalement, nous n'avons pas apporté d'importantes fonctionnalités au projet, ne serait-ce la possibilité d'enregistrer plusieurs étoiles dans un même fichier de sauvegarde qui n'était pas demandé. Autre détail, nous pouvons aussi lancer ou couper de la musique, mais nous n'avons pas implémenté le fait de choisir celle que l'on veut. Pour ce qui est de la conception, nous avions pensé que le paradigme MVC était le meilleur moyen pour réaliser le projet, c'est pourquoi nous nous somme tourné vers cette solution. 
 
 \subsection{Améliorations futures}
+Pour ce qui est des améliorations possibles de l'application, nous avons pensé à un système de ``Drag and drop'' pour le placement des étoiles et satellites, à la place d'un menu où l'on doit rentrer nos coordonnées à la main. Ceci permetterai de créer des systèmes planétaires plus rapidement. Toute fois, il reste important de conserver la possibilité de rentrer les coordonnées manuellement afin de pouvoir construire de manière précise les astres.
+
+Pour ce qui est du réalisme de l'application, nous avions pensé à plusieurs améliorations. Tout d'abord, nous pourrions prendre en compte la masse des astres, composante qui est prise en compte dans la loi de Kepler. Ceci donnerai un aspect plus vrai sur la rotation des astres. Au niveau de l'affichage de ceux-ci, nous pensions qu'établir nue
 
 \end{document}

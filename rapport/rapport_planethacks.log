@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.16)  3 JAN 2016 22:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.15)  3 JAN 2016 22:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1014,21 +1014,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 394--396
 
  []
 
-[11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 404.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 404.
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--404
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 407--408
+
+ []
+
+[11] [12]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 411.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 411.
  (./rapport_planethacks.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 404.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 404.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 411.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 411.
 Package rerunfilecheck Info: File `rapport_planethacks.out' has not changed.
 (rerunfilecheck)             Checksum: 134739363F9DEFB4FE31169AF62FFA38;1285.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 404.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 411.
  ) 
 Here is how much of TeX's memory you used:
- 17685 strings out of 493054
- 321597 string characters out of 6140585
+ 17687 strings out of 493054
+ 321612 string characters out of 6140585
  398196 words of memory out of 5000000
- 20852 multiletter control sequences out of 15000+600000
+ 20853 multiletter control sequences out of 15000+600000
  8577 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,6n,54p,569b,447s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1042,10 +1052,10 @@ ist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on rapport_planethacks.pdf (12 pages, 549579 bytes).
+Output written on rapport_planethacks.pdf (13 pages, 551449 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 210 compressed objects within 3 object streams
- 50 named destinations out of 1000 (max. 500000)
+ 254 PDF objects out of 1000 (max. 8388607)
+ 214 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
  192 words of extra memory for PDF output out of 10000 (max. 10000000)
 
