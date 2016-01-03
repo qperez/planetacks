@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.15)  3 JAN 2016 22:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.15)  3 JAN 2016 23:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -918,11 +918,6 @@ File: idea.png Graphic file (type png)
 Package pdftex.def Info: idea.png used on input line 87.
 (pdftex.def)             Requested size: 361.35278pt x 203.26094pt.
  [3 <./git.png (PNG copy)> <./idea.png (PNG copy)>]
-Overfull \hbox (9.15367pt too wide) in paragraph at lines 110--112
-[]\OT1/cmr/m/n/10 Afin de r^^Sealiser la fonc-tion-na-lit^^Se de sau-ve-garde u
-ne classe sp^^Secifique conte-nant les ou-tils n^^Secessaires
- []
-
 <classes_astre.png, id=131, 511.9125pt x 588.1975pt>
 File: classes_astre.png Graphic file (type png)
  <use classes_astre.png>
@@ -952,6 +947,11 @@ Overfull \hbox (6.82097pt too wide) in paragraph at lines 161--162
 Overfull \hbox (9.56937pt too wide) in paragraph at lines 164--165
 []\OT1/cmr/m/n/10 Comme dit pr^^Sec^^Sedemment, nous avons uti-lis^^Se le pa-ra
 -digme MVC afin de fa-ci-li-ter le d^^Seveloppement.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
+
  []
 
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
@@ -1052,7 +1052,7 @@ ist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on rapport_planethacks.pdf (13 pages, 551449 bytes).
+Output written on rapport_planethacks.pdf (13 pages, 551469 bytes).
 PDF statistics:
  254 PDF objects out of 1000 (max. 8388607)
  214 compressed objects within 3 object streams

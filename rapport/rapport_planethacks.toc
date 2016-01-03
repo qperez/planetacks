@@ -9,8 +9,8 @@
 \contentsline {subsection}{\numberline {2.3}Structure g\IeC {\'e}n\IeC {\'e}rale de l'application}{4}{subsection.2.3}
 \contentsline {subsubsection}{\numberline {2.3.1}Emplacement des fichiers}{4}{subsubsection.2.3.1}
 \contentsline {subsubsection}{\numberline {2.3.2}Architecture MVC}{6}{subsubsection.2.3.2}
-\contentsline {subsection}{\numberline {2.4}Les algorithmes int\IeC {\'e}ressants}{6}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}Points int\IeC {\'e}ressants et suppl\IeC {\'e}mentaires du programme}{6}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.4}Les algorithmes int\IeC {\'e}ressants}{7}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Points int\IeC {\'e}ressants et suppl\IeC {\'e}mentaires du programme}{7}{subsection.2.5}
 \contentsline {subsection}{\numberline {2.6}Tests}{7}{subsection.2.6}
 \contentsline {section}{\numberline {3}Conclusion}{11}{section.3}
 \contentsline {subsection}{\numberline {3.1}Bilan}{11}{subsection.3.1}
