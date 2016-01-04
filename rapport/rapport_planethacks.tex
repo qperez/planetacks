@@ -87,6 +87,7 @@ d'accélérer et de faciliter le développement de l'application ainsi que son d
   $\includegraphics[scale=0.3]{idea.png}$
 \end{center}
 
+\newpage
 \subsection{Structures de données au sein de l'application}
 La définition de classes permettant de structurer les données de notre programme fut la première étape de conception. Ainsi 3 classes 
 nous permettent de modéliser un astre :
@@ -118,8 +119,8 @@ Le diagramme UML ci-dessous représente la modélisation choisie pour un astre :
 Les méthodes \textit{calculPositionSatelliteX(float)} et \textit{calculPositionSatelliteX(float)} présentes dans la classe Satellite permettent
 de calculer la position en X et en Y du Satellite en fonction du temps. La méthode \textit{ajouterSatellite(Satellite)} permet de mettre en orbite un satellite autour d'un astre. Enfin, la méthode \textit{supprimer(Modele)} permet de supprimer récursivement un astre et ses satellites à partir du modèle donné.
 
+\newpage
 \subsection{Structure générale de l'application}
-
 \subsubsection{Emplacement des fichiers}
 Nous avons utilisé une structure de fichiers qui nous parraissait être la plus simple et la meilleure pour le fonctionnement de l'application. Ci-dessous, une représentation de l'arborescence :\\
 \begin{center}
@@ -264,7 +265,9 @@ Pour finir, ces deux logiciels fonctionnent l'un avec l'autre, ce qui rend la co
 
 Une phase de tests fonctionnels plus conséquente a été réalisée à la fin du projet. Dans un souçis de professionnalisation et de rigueur quant à
 la démarche de tests, plusieurs fiches de vérification d'aptitude au bon fonctionnement de l'application ont été réalisées.
+\\
 
+Pour ce qui est des tests des entrées utilisateur lors du déroulement du programme, nous testons si le type des données rentrées est bon. Par exemple, si nous attendons un entier et que l'utilisateur rentre ``toto'', un message est affiché à l'écran. De même, si l'utilisateur a oublié de remplir un champ, il lui sera annoncé à l'écran et il ne pourra pas valider son ajout ou sa suppression d'astre tant que les données ne sont pas conformes.
 
 \newpage
 \begin{tikzpicture}[remember picture,overlay]
@@ -314,6 +317,7 @@ de 150 et ayant pour image ``faucon\_millenium.png''
  de 80 et ayant pour image ``lune.png''
  \item Sauvegarder le système planétaire sous le nom ``test''
  \item Quitter l'application
+ \item Vérifier que test.xml a été créé
 \end{enumerate}
 
 \newpage
@@ -414,6 +418,8 @@ Nous avons pu répondre aux différents points demandés à savoir :
  \item Supprimer un astre dynamiquement de l'application
  \item Enregistrer sur le disque un fichier comprenant une étoile et ses satellites
  \item Ouvrir un fichier enregistré comprenant une étoile et ses satellites
+ \item JavaDoc générée du programme
+ \item .jar exécutable
 \end{itemize}
 
 Toutes les classes ont été testées afin de limiter au maximum les bogues et les problèmes lors de l'éxécution.
@@ -430,6 +436,8 @@ Le travail en groupe n'était pas une déouverte, mais nous avions pu confirmer 
 
 \subsection{Améliorations apportées}
 Globalement, nous n'avons pas apporté d'importantes fonctionnalités au projet, ne serait-ce la possibilité d'enregistrer plusieurs étoiles dans un même fichier de sauvegarde qui n'était pas demandé. Autre détail, nous pouvons aussi lancer ou couper de la musique, mais nous n'avons pas implémenté le fait de choisir celle que l'on veut. Pour ce qui est de la conception, nous avions pensé que le paradigme MVC était le meilleur moyen pour réaliser le projet, c'est pourquoi nous nous somme tourné vers cette solution. 
+
+Afin de mieux visualiser le travail fourni par chacun d'entre nous, nous avons généré un rapport d'analyse statistique du dépôt \textit{GitHub}, où vous pourrez retrouver les différentes modifications apportées au cours du développement, le nombre de lignes codées ainsi que les responsabilités de chacun
 
 \subsection{Améliorations futures}
 Pour ce qui est des améliorations possibles de l'application, nous avons pensé à un système de ``Drag and drop'' pour le placement des étoiles et satellites, à la place d'un menu où l'on doit rentrer nos coordonnées à la main. Ceci permetterai de créer des systèmes planétaires plus rapidement. Toute fois, il reste important de conserver la possibilité de rentrer les coordonnées manuellement afin de pouvoir construire de manière précise les astres.\\
