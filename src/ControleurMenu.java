@@ -31,6 +31,7 @@ public class ControleurMenu extends Controleur {
             int choix = FenetreDialogue.confirmationNouveau();
             if(choix == JOptionPane.YES_OPTION){
                 fenetre.getAudio().stopSound();
+                fenetre.dispose();
                 fenetre = new Fenetre(new Modele());
             }
         }
