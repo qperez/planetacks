@@ -319,6 +319,7 @@ public class FenetreDialogue {
         if (fileChooser.showOpenDialog(null) == 0) {
             String filename = fileChooser.getSelectedFile().getName();
             String filepath = PATH_RESSOURCES_SAVE + filename;
+            fenetre.getAudio().stopSound();
             try {
                 if (filename.equals("starwars.xml")) {
                     fenetre.getAudio().launchSound(PATH_RESSOURCES_SOUNDS + "tir.wav");
