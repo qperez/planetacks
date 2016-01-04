@@ -51,7 +51,7 @@ public class Fenetre extends JFrame {
     /**
      * Constructeur Fenetre.
      * <p>
-     * A la construction d'un objet Fenetre, la Fenetre est initinitialis&eacute;e
+     * A la construction d'un objet Fenetre, la Fenetre est initialis&eacute;e
      * avec commme param&egrave;tres un Modele.
      * </p>
      *
@@ -135,7 +135,7 @@ public class Fenetre extends JFrame {
     }
 
     /**
-     * Fonction permettant d'ajouter les différents éléments graphiques à la JFrame
+     * Fonction permettant d'ajouter les diff&eacute;rents &eacute;l&eacute;ments graphiques &agrave; la JFrame
      */
     private void creerVue() {
         Dimension dimension = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
