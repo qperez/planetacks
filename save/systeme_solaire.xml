@@ -35,10 +35,10 @@
         <int>120</int>
        </void>
        <void property="positionX">
-        <int>774</int>
+        <int>871</int>
        </void>
        <void property="positionY">
-        <int>342</int>
+        <int>500</int>
        </void>
       </object>
      </void>
@@ -85,10 +85,10 @@
            <int>150</int>
           </void>
           <void property="positionX">
-           <int>643</int>
+           <int>872</int>
           </void>
           <void property="positionY">
-           <int>647</int>
+           <int>454</int>
           </void>
          </object>
         </void>
@@ -103,10 +103,10 @@
         <int>160</int>
        </void>
        <void property="positionX">
-        <int>746</int>
+        <int>929</int>
        </void>
        <void property="positionY">
-        <int>592</int>
+        <int>511</int>
        </void>
       </object>
      </void>
@@ -153,10 +153,10 @@
            <int>50</int>
           </void>
           <void property="positionX">
-           <int>702</int>
+           <int>627</int>
           </void>
           <void property="positionY">
-           <int>272</int>
+           <int>556</int>
           </void>
          </object>
         </void>
@@ -171,10 +171,10 @@
         <int>220</int>
        </void>
        <void property="positionX">
-        <int>675</int>
+        <int>591</int>
        </void>
        <void property="positionY">
-        <int>242</int>
+        <int>540</int>
        </void>
       </object>
      </void>
@@ -204,10 +204,10 @@
         <int>450</int>
        </void>
        <void property="positionX">
-        <int>503</int>
+        <int>1030</int>
        </void>
        <void property="positionY">
-        <int>519</int>
+        <int>259</int>
        </void>
       </object>
      </void>
@@ -237,10 +237,43 @@
         <int>400</int>
        </void>
        <void property="positionX">
-        <int>644</int>
+        <int>692</int>
        </void>
        <void property="positionY">
-        <int>379</int>
+        <int>5</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="Satellite">
+       <void property="astre">
+        <object idref="Etoile0"/>
+       </void>
+       <void property="demiGrandAxe">
+        <int>300</int>
+       </void>
+       <void property="demiPetitAxe">
+        <int>300</int>
+       </void>
+       <void property="image">
+        <object class="javax.swing.ImageIcon">
+         <string>./resources/img/astres/mars.png</string>
+        </object>
+       </void>
+       <void property="nom">
+        <string>Mars</string>
+       </void>
+       <void property="nomImage">
+        <string>mars.png</string>
+       </void>
+       <void property="periode">
+        <int>270</int>
+       </void>
+       <void property="positionX">
+        <int>950</int>
+       </void>
+       <void property="positionY">
+        <int>684</int>
        </void>
       </object>
      </void>
