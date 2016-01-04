@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.15)  3 JAN 2016 23:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.16)  4 JAN 2016 08:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -954,91 +954,92 @@ Underfull \hbox (badness 10000) in paragraph at lines 177--178
 
  []
 
+[6 <./classes_mvc.png>]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 190.
+put line 191.
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--209
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
 [] \OT1/cmr/m/n/10 Af-fi-cher $\OML/cmm/m/it/10 jlabsat$ \OT1/cmr/m/n/10 en fon
 c-tion de $\OML/cmm/m/it/10 s:calculPositionSatelliteX\OT1/cmr/m/n/10 (\OML/cmm
 /m/it/10 t\OT1/cmr/m/n/10 )$ et
  []
 
-[6 <./classes_mvc.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 230--232
-
- []
-
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 256--260
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 256--260
+Underfull \hbox (badness 10000) in paragraph at lines 262--264
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 305--309
+Underfull \hbox (badness 10000) in paragraph at lines 288--292
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--309
+Underfull \hbox (badness 10000) in paragraph at lines 288--292
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 337--341
 
  []
 
 
-Overfull \hbox (2.2371pt too wide) in paragraph at lines 315--318
+Underfull \hbox (badness 10000) in paragraph at lines 337--341
+
+ []
+
+
+Overfull \hbox (2.2371pt too wide) in paragraph at lines 347--350
 \OT1/cmr/m/n/10 Description : on sou-haite v^^Serifier que l'ap-pli-ca-tion pui
 sse char-ger cor-rec-te-ment un syst^^Reme plan^^Setaire
  []
 
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 349--353
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 349--353
-
- []
-
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 391--393
+Underfull \hbox (badness 10000) in paragraph at lines 381--385
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--396
+Underfull \hbox (badness 10000) in paragraph at lines 381--385
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 423--425
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 403--404
+Underfull \hbox (badness 10000) in paragraph at lines 426--428
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 407--408
+Underfull \hbox (badness 10000) in paragraph at lines 435--436
 
  []
 
-[11] [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 411.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 411.
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+
+ []
+
+[12] [13]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 443.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 443.
  (./rapport_planethacks.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 411.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 411.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 443.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 443.
 Package rerunfilecheck Info: File `rapport_planethacks.out' has not changed.
 (rerunfilecheck)             Checksum: 134739363F9DEFB4FE31169AF62FFA38;1285.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 411.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 443.
  ) 
 Here is how much of TeX's memory you used:
- 17687 strings out of 493054
- 321612 string characters out of 6140585
+ 17695 strings out of 493054
+ 321723 string characters out of 6140585
  398196 words of memory out of 5000000
- 20853 multiletter control sequences out of 15000+600000
+ 20858 multiletter control sequences out of 15000+600000
  8577 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,6n,54p,569b,447s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1052,10 +1053,10 @@ ist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on rapport_planethacks.pdf (13 pages, 551469 bytes).
+Output written on rapport_planethacks.pdf (14 pages, 556411 bytes).
 PDF statistics:
- 254 PDF objects out of 1000 (max. 8388607)
- 214 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
+ 260 PDF objects out of 1000 (max. 8388607)
+ 219 compressed objects within 3 object streams
+ 54 named destinations out of 1000 (max. 500000)
  192 words of extra memory for PDF output out of 10000 (max. 10000000)
 

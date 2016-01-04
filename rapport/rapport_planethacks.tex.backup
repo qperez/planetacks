@@ -202,7 +202,7 @@ La classe \textit{Audio} nous permet de gérer plus facilement la lancement et l
 \end{algorithmic}
 
 \begin{algorithmic}
-\Function{repaintSatellite}{l listeSatellite, t temps}
+\Function{repaintSatellite}{listeSatellite $l$, temps $t$}
 \For{chaque Satellite $s$ de la liste des satellites $l$}
   \State $jlabsat\gets$ nouveau JLabel avec l'image de $s$
   \State Afficher $jlabsat$ en fonction de $s.calculPositionSatelliteX(t)$ et $s.calculPositionSatelliteY(t)$
@@ -213,12 +213,41 @@ La classe \textit{Audio} nous permet de gérer plus facilement la lancement et l
 \end{algorithmic}
 \end{algorithm}
 
+\begin{algorithm}
+\caption{méthode encodeFromFile de la classe XMLTools}
+ \begin{algorithmic}
+\Function{repaintSatellite}{listeSatellite $l$, temps $t$}
+\For{chaque Satellite $s$ de la liste des satellites $l$}
+  \State $jlabsat\gets$ nouveau JLabel avec l'image de $s$
+  \State Afficher $jlabsat$ en fonction de $s.calculPositionSatelliteX(t)$ et $s.calculPositionSatelliteY(t)$
+  \State Ajouter le $jlabsat$ au JPanel
+  \State Appel récursif de $repaintSatellite$
+\EndFor
+\EndFunction
+ \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{méthode decodeFromFile de la classe XMLTools}
+ \begin{algorithmic}
+\Function{decodeFromFile}{Object $object$, String $fileName$}
+\State $fis\gets$ nouveau FileInputStream initialisé avec $fileName$
+\State $decoder\gets$ nouveau XMLEncoder initialisé avec $fis$
+\State $object\gets$ l'objet renvoyé par $decoder.readObject()$
+\State $la\gets$ transtypage de $object$ en ArrayList d'Astre
+\State $it\gets$ nouvelle itérateur d'ArrayList d'Astre
+\While{$it$ a un élém}
+\EndWhile
+\EndFunction
+ \end{algorithmic}
+\end{algorithm}
+
 \subsection{Points intéressants et supplémentaires du programme}
-Afin de ne pas rester dans la banalité, avons décidé de créer un "mode" \textit{StarWars}. 
+Afin d'être original, avons décidé de créer un "mode" \textit{StarWars}. 
 
 Tout d'abord, il a fallu recréer des nouvelles planètes tirées de la saga, comme \textit{Tatooine}, \textit{Naboo}, \textit{Jakku}, l'\textit{étoile noire} ainsi qu'un \textit{fighter} (vaisseau côté obscur de la force) ou encore le \textit{Faucon Millenium} d'Han Solo. Ceci nous a fait découvrir l'utilisation de zones transparentes dans une image PNG, ainsi que le logiciel Gimp que nous n'avions pas utilisé dans notre formation jusqu'à présent.
 
-De plus, nous avons implémenté la gestion du son, que l'on peut activer ou désactiver grâce à un menu prévu pour. Celui-ci s'active automatiquement lorsque l'on charge la sauvegarde de l'environnement \textit{StarWars}, avec le thème original des 7 films accompagné de plusieurs bruitages célèbres. L'intégration de son dans une application était inconnue pour nous auparavant, c'est pourquoi nous avons décidé de l'ajouter à notre projet pour la découvrir.
+De plus, nous avons implémenté la gestion du son, que l'on peut activer ou désactiver grâce à un menu prévu à cet effet. Celui-ci s'active automatiquement lorsque l'on charge la sauvegarde de l'environnement \textit{StarWars}, avec le thème original des 7 films accompagné de plusieurs bruitages célèbres. L'intégration de son dans une application était inconnue pour nous auparavant, c'est pourquoi nous avons décidé de l'ajouter à notre projet pour la découvrir.
 
 \subsection{Tests}
 Les tests ainsi que la documentation ont été réalisés tout au long du développement. Ceci nous a permis de pouvoir déboguer facilement et de ne pas perdre de temps dans la production à cause d'erreurs de programmation. Les outils utilisés pour la construction du projet nous ont aussi facilité les tests. 

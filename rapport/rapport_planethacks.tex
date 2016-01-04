@@ -184,6 +184,7 @@ La classe \textit{AffichageAstres} étendue de la classe \textit{Thread}, permet
 
 La classe \textit{Audio} nous permet de gérer plus facilement la lancement et l'arrêt du son de l'application.
 
+\newpage
 \subsection{Les algorithmes intéressants}
 
 \begin{algorithm}
@@ -202,7 +203,7 @@ La classe \textit{Audio} nous permet de gérer plus facilement la lancement et l
 \end{algorithmic}
 
 \begin{algorithmic}
-\Function{repaintSatellite}{l listeSatellite, t temps}
+\Function{repaintSatellite}{listeSatellite $l$, temps $t$}
 \For{chaque Satellite $s$ de la liste des satellites $l$}
   \State $jlabsat\gets$ nouveau JLabel avec l'image de $s$
   \State Afficher $jlabsat$ en fonction de $s.calculPositionSatelliteX(t)$ et $s.calculPositionSatelliteY(t)$
@@ -213,6 +214,37 @@ La classe \textit{Audio} nous permet de gérer plus facilement la lancement et l
 \end{algorithmic}
 \end{algorithm}
 
+\begin{algorithm}
+\caption{méthode encodeFromFile de la classe XMLTools}
+ \begin{algorithmic}
+\Function{decodeFromFile}{Object $object$, String $fileName$}
+\State $fos\gets$ nouveau FileOutputStream initialisé avec $fileName$
+\State $decoder\gets$ nouveau XMLEncoder initialisé avec $fos$
+\State écrire $object$ dans le buffer I/O avec $encoder.writeObject(object)$
+\State flush du buffer I/O avec $encoder.flush()$
+\EndFunction
+ \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{méthode decodeFromFile de la classe XMLTools}
+ \begin{algorithmic}
+\Function{decodeFromFile}{Object $object$, String $fileName$}
+\State $fis\gets$ nouveau FileInputStream initialisé avec $fileName$
+\State $decoder\gets$ nouveau XMLEncoder initialisé avec $fis$
+\State $object\gets$ l'objet renvoyé par $decoder.readObject()$
+\State $la\gets$ transtypage de $object$ en ArrayList d'Astre
+\State $it\gets$ nouvelle itérateur d'ArrayList d'Astre
+\While{$it$ retourne qu'il reste un élément à parcourir}
+  \State $astre\gets$ élément suivant Astre pointé par $it$
+  \State mise à jour de l'image de l'image de $astre$ à l'aide de $a.setImage()$
+\EndWhile \\
+\Return $la$
+\EndFunction
+ \end{algorithmic}
+\end{algorithm}
+
+\newpage
 \subsection{Points intéressants et supplémentaires du programme}
 Afin d'être original, avons décidé de créer un "mode" \textit{StarWars}. 
 
